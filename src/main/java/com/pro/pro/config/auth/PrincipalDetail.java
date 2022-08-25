@@ -8,17 +8,18 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import com.pro.pro.model.Customer;
 
-import lombok.Data;
-import lombok.Getter;
 
-@Data
-@Getter
 public class PrincipalDetail implements UserDetails {
 	private Customer customer;
+
+	public Customer getCustomer() {
+		return customer;
+	}
 	
 	public PrincipalDetail(Customer customer) {
-		this.customer= customer;
+		this.customer=customer;
 	}
+	
 	
 
 	@Override
@@ -30,7 +31,7 @@ public class PrincipalDetail implements UserDetails {
 	@Override
 	public String getUsername() {
 		// TODO Auto-generated method stub
-		return customer.getId();
+		return customer.getUserId();
 	}
 
 	@Override
@@ -62,4 +63,6 @@ public class PrincipalDetail implements UserDetails {
 		Collection<GrantedAuthority> collectors = new ArrayList<>();
 		return collectors;
 	}
+
 }
+

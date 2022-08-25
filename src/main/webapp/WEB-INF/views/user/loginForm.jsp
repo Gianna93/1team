@@ -6,7 +6,7 @@
 		<div class="form-group">
 			<label for="id">ID</label> <input type="text"
 				class="form-control" placeholder="Enter id" 
-				id="id" name="id">
+				id="username" name="username">
 		</div>
 		<div class="form-group">
 			<label for="password">PASSWORD</label> <input type="password"

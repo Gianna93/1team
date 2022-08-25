@@ -7,6 +7,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
 
 <c:set var="path" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
@@ -19,7 +24,17 @@
 <link rel="stylesheet" href="/css/footer.css">
 <link rel="stylesheet" href="/css/adminCheck.css">
 <link rel="stylesheet" href="/css/loginForm.css">
+<link rel="stylesheet" href="/css/noticeList.css">
+<link rel="stylesheet" href="/css/qnaList.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+<script src="/js/summernote/summernote-lite.js"></script>
+<script src="/js/summernote/lang/summernote-ko-KR.js"></script>
+<link rel="stylesheet" href="/css/summernote/summernote-lite.css">
+
+
+
 <style>
 #container3 {
 	margin:0 auto;
@@ -45,14 +60,14 @@
 					<li><a href="/auth/loginForm">로그인</a></li>
 					<li><a href="/auth/adminCheck">회원가입</a></li>
 					<li><a href="#">장바구니</a></li>
-					<li><a href="#">고객센터</a></li>
+					<li><a href="/notice/noticeList">고객센터</a></li>
 				</ul>
 				</c:when>
 				<c:otherwise>
 					<ul id="topMenu">
 						<li><a href="#">마이페이지</a><li>
 						<li><a href="#">장바구니</a></li>
-						<li><a href="#">고객센터</a></li>
+						<li><a href="/notice/noticeList">고객센터</a></li>
 						<li><a href="#">로그아웃</a></li>
 					</ul>
 				</c:otherwise>

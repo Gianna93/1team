@@ -9,13 +9,20 @@ let index = {
 	},
 
 	save: function() {
+		const radioval = document.getElementsByName('gridRadios');
+		var adminchkval;
+		radioval.forEach((node)=>{
+			if(node.checked){
+				adminchkval = node.value;
+			}
+		})
 		let data = {
-			id: $("#id").val(),
+			userId: $("#userId").val(),
 			password: $("#password").val(),
 			name: $("#name").val(),
 			email: $("#email").val() + "@" + $("#email2").val(),
 			address: $("#address").val(),
-			roles: $(".form-check-input").val()
+			roles: adminchkval
 		};
 
 		$.ajax({

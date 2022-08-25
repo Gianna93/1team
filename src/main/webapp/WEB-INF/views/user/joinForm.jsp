@@ -7,8 +7,8 @@
 <div class="container" >
 	<form>
 		<div >
-			<label for="id">아이디</label><br>
-			<input type="text"  placeholder="Enter id" id="id">
+			<label for="userId">아이디</label><br>
+			<input type="text"  placeholder="Enter id" id="userId">
 		</div>
 		<div >
 			<label for="password">비밀번호</label> <br>
