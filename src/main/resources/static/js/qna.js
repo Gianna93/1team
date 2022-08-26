@@ -1,8 +1,5 @@
 let index={
 	init: function(){
-		$("btn-answer").on("click",()=>{
-			this.answer();
-		})
 		$("#btn-save").on("click",()=>{
 			this.save();
 		});
@@ -11,23 +8,6 @@ let index={
 		});
 		$("#btn-update").on("click",()=>{
 			this.update();
-		});
-	},
-	answer: function(){
-		let data={
-			content: $("#content").val()
-		};
-		$.ajax({
-			type: "POST",
-			url:"api/qna/answer",
-			data: JSON.stringify(data),
-			contentType:"application/json; charset=utf-8",
-			dataType: "json"
-		}).done(function(resp){
-			alert("답변이 등록되었습니다.");
-			location.href="/qna/qnaList";
-		}).fail(function(error){
-			alert(JSON.stringify(error));
 		});
 	},
 	

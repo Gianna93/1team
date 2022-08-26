@@ -21,11 +21,6 @@ public class QnaApiController {
 	
 	@Autowired
 	private QnaService qnaService;
-	
-	@PostMapping("/api/qna/answer")
-	public  ResponseDto<Integer> answer(@RequestBody Qna qna){
-		return new ResponseDto<Integer>(HttpStatus.OK.value(),1); 
-	}
 
 	@PostMapping("qna/api/qna")
 	public ResponseDto<Integer> save(@RequestBody Qna qna,

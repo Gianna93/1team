@@ -6,7 +6,7 @@
 .container {
 	margin-top: 50px;
 	width: 1000px;
-	height: 500px;
+	height: 400px;
 	margin: 0 auto;
 }
 h1{
@@ -42,25 +42,37 @@ h1{
 		<button id="btn-delete" class="btn btn-danger">삭제</button>
 	</c:if>	
 </div>
+
+
+<h1>🐾 1:1문의 답변</h1>
+<div class="container">
+${reply.content}
+</div>
+
+
 <c:if test="${principal.customer.roles=='ADMIN'}">
  <div class="container">
 	<h1>답변 작성</h1>
 	<form>
 		<div class="form-group">
 			<label for="content">Content</label>
-			<textarea rows="5" class="form-control summernote" id="content"
+			<input type="hidden" id="num" value="${qna.num}"/>
+			<textarea rows="5" class="form-control summernote" id="reply-content"
 			placeholder="내용을 입력해주세요." required></textarea>
 		</div>
-	</form>
-	<button id="btn-answer" class="btn btn-primary">저장</button>	
+	</form>	
+	<button  id="reply-btn-save" class="btn btn-primary">저장</button>
  </div>
-<br/>
+ </c:if>
+ 
+ 
+<br/>  
 <script>
 	$('.summernote').summernote({
 		height: 300
 	});	
 </script>
-</c:if>
+
 <br>	
-<script type="text/javascript" src="/js/qna.js"></script>
+<script type="text/javascript" src="/js/reply.js"></script>
 <%@ include file="../layout/footer.jsp"%>
