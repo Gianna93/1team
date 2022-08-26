@@ -29,13 +29,21 @@
 					<td class="qna_num">${qna.num}</td>
 					<c:choose>
 						<c:when test="${qna.customer.userId==principal.customer.userId}">
-							<td id="left_align"><a id="a_detail" style="text-decoration:none; color:black" href="/qna/${qna.num}">🔒 ${qna.title}</a></td>
+							<td id="left_align">
+							<a id="a_detail" style="text-decoration:none; color:black" href="/qna/${qna.num}">
+							🔒 ${qna.title}</a>
+								<c:if test="${not empty qna.reply}">&nbsp&nbsp&nbsp<i style="color:#ccc">답변완료</i></c:if>
+							</td>
 						</c:when>
 						<c:when test="${principal.customer.roles=='ADMIN'}">
-							<td id="left_align"><a id="a_detail" style="text-decoration:none; color:black" href="/qna/${qna.num}">🔒 ${qna.title}</a></td>
+							<td id="left_align"><a id="a_detail" style="text-decoration:none; color:black" href="/qna/${qna.num}">🔒 ${qna.title}</a>
+							<c:if test="${not empty qna.reply}">&nbsp&nbsp&nbsp<i style="color:#ccc">답변완료</i></c:if>
+							</td>
 						</c:when>
 						<c:otherwise>
-							<td id="left_align">🔒 ${qna.title}</td>
+							<td id="left_align">🔒 ${qna.title}
+							<c:if test="${not empty qna.reply}">&nbsp&nbsp&nbsp<i style="color:#ccc">답변완료</i>
+							</c:if></td>
 						</c:otherwise>
 					</c:choose>	
 					<td class="qna_writer">${qna.customer.userId}</td>
@@ -68,7 +76,7 @@
 			</c:choose>		
 		</ul>	
 	<br><br>
-		<button id="btn-write"><a style="text-decoration:none; color:black" href="/qna/qnaForm">글쓰기</a></button>
+		<button class="menu" id="btn-write"><a style="text-decoration:none; color:black" href="/qna/qnaForm">글쓰기</a></button>
 </div>
 <br><br>
 <script type="text/javascript" src="/js/qna.js"></script>

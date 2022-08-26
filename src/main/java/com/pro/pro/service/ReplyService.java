@@ -18,10 +18,16 @@ public class ReplyService {
     private final QnaRepository qnaRepository;
 
     @Transactional
-    public void replySave(Long num, Reply reply, Customer customer) {
+    public void replySave(int num, Reply reply, Customer customer) {
     	Qna qna = qnaRepository.findByNum(num).orElseThrow(() -> 
-    	new IllegalArgumentException("해당 num이 없습니다. id=" + num));
-        reply.save(qna, customer);
+    	new IllegalArgumentException("해당 num이 없습니다. 글번호=" + num));
+        System.out.println(qna.getTitle());
+    	reply.save(qna, customer);
         replyRepository.save(reply);
     }
+    
+    @Transactional
+	public void 답변삭제하기(int replyId) { 
+		replyRepository.deleteById(replyId);
+	}
 }

@@ -11,6 +11,7 @@
 	margin: 0 auto;
 }
 h1{
+	margin-top: 50px;
 	font-weight: 900;
 	font-size: 25px;
 	text-align: center;

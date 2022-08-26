@@ -7,8 +7,8 @@
 <div id="board_menu">
 	<div id="button">
 		<button class="menu" type="button" id="notice"><a style="text-decoration:none; color:black"  href="/notice/noticeList">공지사항</a></button>
-		<button class="menu"type="button" id="fnq"><a style="text-decoration:none; color:black" href="#">자주묻는질문</a></button>
-		<button class="menu"type="button" id="qna"><a style="text-decoration:none; color:black" href="/qna/qnaList">1:1문의</a></button>
+		<button class="menu" type="button" id="fnq"><a style="text-decoration:none; color:black" href="#">자주묻는질문</a></button>
+		<button class="menu" type="button" id="qna"><a style="text-decoration:none; color:black" href="/qna/qnaList">1:1문의</a></button>
 	</div>
 </div>
 <h1>공지사항</h1>
@@ -61,7 +61,7 @@
 		</ul>	
 	<br><br>
  <c:if test="${principal.customer.roles=='ADMIN'}">
-		<button id="btn-write"><a style="text-decoration:none; color:black" href="/notice/noticeForm">글쓰기</a></button>
+		<button class="menu" id="btn-write"><a style="text-decoration:none; color:black" href="/notice/noticeForm">글쓰기</a></button>
 	</c:if>
 </div>
 <br><br>

@@ -116,3 +116,9 @@ ul {
 	color: #bbb;
 	text-shadow: 0 -1px #eee;
 }
+.menu{
+	margin: 8px;
+	padding: 8px;
+	border-width: 1px;
+	border-radius: 10px;
+}

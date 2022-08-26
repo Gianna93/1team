@@ -10,7 +10,7 @@ import com.pro.pro.model.Qna;
 
 public interface QnaRepository extends JpaRepository<Qna,Integer> {
 
-	Optional<Qna> findByNum(Long num);
+	Optional<Qna> findByNum(int num);
 
 	
 
