@@ -29,37 +29,47 @@
   text-decoration: none;
 }
 
-#company{
+#uldiv2{
+  width: 1500px;
+  height: 400px;
+
+}
+
+#uldiv2>ul>li{
+  float: left;
+}
+#uldiv2>ul>li>#company{
   float: left;
   width: 500px;
   height: 145px;
   margin-left: 50px;
 }
 
-#company>p{
+#uldiv2>ul>li>#company>p{
   font-size: 12px;
+  
   margin-left: 15px;
   color: rgb(97, 94, 94);
 }
 
-#company>p:first-child{
+#uldiv2>ul>li>#company>p:first-child{
   font-size: 15px;
   color: black;
 }
 
-#costomer{
+#customer{
   float: left;
   width: 250px;
   height: 145px;
 }
 
-#costomer>p{
+#customer>p{
   font-size: 12px;
   margin-left: 15px;
   color: rgb(97, 94, 94);
 }
 
-#costomer>p:first-child{
+#customer>p:first-child{
   font-size: 15px;
   color: black;
 }
@@ -98,9 +108,4 @@
   font-size: 12px;
   margin-left: 15px;
   color: rgb(97, 94, 94);
-}
-
-#etc>p:first-child{
-  font-size: 15px;
-  color: black;
 }
