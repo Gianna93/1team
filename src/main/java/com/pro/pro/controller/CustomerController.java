@@ -27,8 +27,5 @@ public class CustomerController {
 	public String idcheckForm() {
 		return "user/idcheck";
 	}
-	
-	
-	
-	
+
 }

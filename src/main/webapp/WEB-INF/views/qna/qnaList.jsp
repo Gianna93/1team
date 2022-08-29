@@ -7,7 +7,7 @@
 <div id="board_menu">
 	<div id="button">
 		<button class="menu" type="button" id="notice"><a style="text-decoration:none; color:black"  href="/notice/noticeList">공지사항</a></button>
-		<button class="menu"type="button" id="fnq"><a style="text-decoration:none; color:black" href="#">자주묻는질문</a></button>
+		<button class="menu"type="button" id="fnq"><a style="text-decoration:none; color:black" href="/faq/faqList">자주묻는질문</a></button>
 		<button class="menu"type="button" id="qna"><a style="text-decoration:none; color:black" href="/qna/qnaList">1:1문의</a></button>
 	</div>
 </div>

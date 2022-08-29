@@ -1,5 +1,5 @@
 package com.pro.pro.config;
-
+ 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -35,7 +35,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http
 			.csrf().disable() // csrf토큰 비활성화(테스트시 걸어두는게 좋음)
 			.authorizeRequests()
-			.antMatchers("/","/auth/**","/js/**","/css/**","/img/**","/notice/**","/info/**","/qna/**")
+			.antMatchers("/","/auth/**","/js/**","/css/**","/img/**","/notice/**","/info/**","/qna/**","/faq/**")
 			.permitAll()
 			.anyRequest()//이게 아닌 다른 모든 요청은 
 			.authenticated()//인증이 필요

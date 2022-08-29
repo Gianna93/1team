@@ -11,7 +11,7 @@
 		<button class="menu" type="button" id="qna"><a style="text-decoration:none; color:black" href="/qna/qnaList">1:1문의</a></button>
 	</div>
 </div>
-<h1>공지사항</h1>
+<h1>자주 묻는 질문</h1>
 <br>
 <div class = "container">
 	<table>
@@ -20,19 +20,14 @@
 			<td class="notice_num"><b>번호</b></td>
 			<td class="notice_title"><b>제목</b></td>
 			<td class="notice_writer"><b>작성자</b></td>
-			<td class="notice_date"><b>작성일</b></td>
-			<td class="notice_count"><b>조회수</b></td>
 		</tr>
 	
 
-		<c:forEach var = "notice" items="${notice.content}">
+		<c:forEach var = "faq" items="${faq.content}">
 				<tr style="border-bottom: 1px solid #ccc">
-					<td class="notice_num">${notice.num}</td>
-					<td id="left_align"><a style="text-decoration:none; color:black" href="/notice/${notice.num}">${notice.title}</a></td>
-					<td class="notice_writer">${notice.customer.userId}</td>
-					<td class="notice_date">
-						<fmt:formatDate pattern="yyyy-MM-dd" value="${notice.createDate}" /></td>
-					<td class="notice_count">${notice.count}</td>
+					<td class="notice_num">${faq.faqid}</td>
+					<td id="left_align"><a style="text-decoration:none; color:black" href="/notice/${faq.faqid}">${faq.title}</a></td>
+					<td class="notice_writer">${faq.customer.userId}</td>
 				</tr>
 		</c:forEach>
 
@@ -43,26 +38,26 @@
 	
 	<ul id="page" class="pagination justify-content-center">
 			<c:choose>
-				<c:when test="${notice.first}">
-					<li class="page-item disabled"><a style="text-decoration:none; color:black" class="page-link" href="?page=${notice.number-1}">◁</a></li>
+				<c:when test="${faq.first}">
+					<li class="page-item disabled"><a style="text-decoration:none; color:black" class="page-link" href="?page=${faq.number-1}">◁</a></li>
 				</c:when>
 				<c:otherwise>
-					<li class="page-item"><a style="text-decoration:none; color:black" class="page-link" href="?page=${notice.number-1}">◁</a></li>
+					<li class="page-item"><a style="text-decoration:none; color:black" class="page-link" href="?page=${faq.number-1}">◁</a></li>
 				</c:otherwise>
 			</c:choose>
 			<c:choose>
-				<c:when test="${notice.last}">
-					<li class="page-item disabled"><a style="text-decoration:none; color:black" class="page-link" href="?page=${notice.number+1}">▷</a></li>
+				<c:when test="${faq.last}">
+					<li class="page-item disabled"><a style="text-decoration:none; color:black" class="page-link" href="?page=${faq.number+1}">▷</a></li>
 				</c:when>
 				<c:otherwise>
-					<li class="page-item"><a style="text-decoration:none; color:black" class="page-link" href="?page=${notice.number+1}">▷</a></li>
+					<li class="page-item"><a style="text-decoration:none; color:black" class="page-link" href="?page=${faq.number+1}">▷</a></li>
 				</c:otherwise>
 			</c:choose>		
 		</ul>	
 	<br><br>
  <c:if test="${principal.customer.roles=='ADMIN'}">
-		<button class="menu" id="btn-write"><a style="text-decoration:none; color:black" href="/notice/noticeForm">글쓰기</a></button>
-	</c:if>
+		<button class="menu" id="btn-write"><a style="text-decoration:none; color:black" href="/faq/faqForm">글쓰기</a></button>
+</c:if> 
 </div>
 <br><br>
 <%@ include file="../layout/footer.jsp"%>
