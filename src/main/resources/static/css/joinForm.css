@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+.joincontainer{
+	margin:0 auto;
+	width:300px;
+	height:1300px;
+}
+
+#btn-check{
+	width:300px;
+	margin-top:5px;
+}
+#btn-save{
+	width:300px;
+}
+
+.row{
+	margin-bottom:5px;
+}
+
+#id_check{
+	text-align:center;
+	font-size:18px;
+}
+
+#find-addr{
+	margin-top:-7px;
+}
+
+.form-group{
+	margin-bottom:5px;
+}
+
+.form-control{
+	margin-top:10px;
+}
+.form-control:last-of-type{
+	margin-top:1px;
+}
+#sel{
+	width:150px;
+	height:30px;
+	border-radius:5px;
+}
+#sel2{
+	width:300px;
+	height:30px;
+	border-radius:5px;
+}

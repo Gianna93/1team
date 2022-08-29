@@ -4,6 +4,8 @@
 	url('https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap')
 	;
 
+
+
 #hdcontainer {
 
 	width: 1500px;
@@ -35,7 +37,7 @@ header>a>img {
 
 #searchbtn {
 	float: left;
-	margin-top: 60px;
+	margin-top: 55px;
 	margin-left: 5px; border : none;
 	background-color: white;
 	cursor: pointer;

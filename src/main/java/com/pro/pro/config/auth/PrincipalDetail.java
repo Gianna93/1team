@@ -31,7 +31,7 @@ public class PrincipalDetail implements UserDetails {
 	@Override
 	public String getUsername() {
 		// TODO Auto-generated method stub
-		return customer.getUserId();
+		return customer.getUserid();
 	}
 
 	@Override

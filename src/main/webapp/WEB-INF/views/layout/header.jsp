@@ -68,7 +68,7 @@
 						<li><a href="#">마이페이지</a><li>
 						<li><a href="#">장바구니</a></li>
 						<li><a href="/notice/noticeList">고객센터</a></li>
-						<li><a href="#">로그아웃</a></li>
+						<li><a href="/logout">로그아웃</a></li>
 					</ul>
 				</c:otherwise>
 				 

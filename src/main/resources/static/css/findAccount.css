@@ -1,0 +1,96 @@
+@charset "UTF-8";
+
+@import
+	url('https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap')
+	;
+
+#findAccuCon{
+	margin: 0 auto;
+	width: 500px;
+	height:150px;
+}
+
+p{
+	padding-top:50px;
+	text-align:center;
+	font-family: 'Gamja Flower', cursive;
+	font-weight: 900;
+	font-size: 30px;
+}
+
+#button{
+	margin-left:80px;
+	margin-top:50px;
+	width:500px;
+	height:200px;
+	
+}
+
+
+
+.container{
+	width:400px;
+	height:200px;
+	margin-top:50px;
+}
+
+#check-btn{
+	width:350px;
+}
+
+#btn-findid{
+	margin-top:5px;
+	width:375px;
+}
+
+#btn-back{
+	margin-top:5px;
+	width:375px;
+}
+
+#findid-btn{
+	margin-top:5px;
+	width:375px;
+}
+
+#btn-findpwd{
+	margin-top:5px;
+	width:375px;
+}
+
+#findpwd-btn{
+	margin-top:5px;
+	width:375px;
+}
+
+#btn-close{
+	margin-top:5px;
+	width:375px;
+}
+
+#find_id{
+	margin-top:10px;
+	width:375px;
+	height:50px;
+	text-align:center;
+	line-height:50px;
+	border-radius:10px;
+	font-size:18px;
+	font-weight:bold;
+}
+
+#find_pwd{
+	margin-top:10px;
+	width:375px;
+	height:50px;
+	text-align:center;
+	line-height:50px;
+	border-radius:10px;
+	font-size:18px;
+	font-weight:bold;
+}
+
+
+#btn-change{
+	width:375px;
+}

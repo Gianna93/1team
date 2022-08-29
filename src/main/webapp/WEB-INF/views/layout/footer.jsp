@@ -18,7 +18,7 @@
       <p>사업자등록번호 : 123-45-6789<br>
         개인정보관리책임자 : 기다은 이메일문의 : kde1234@naver.com</p>
     </div>
-    <div id="costomer">
+    <div id="customer">
       <p><b>고객센터</b></p>
       <p>1234-5678<br><br>
         상담시간 : 09:00 ~ 17:00<br>

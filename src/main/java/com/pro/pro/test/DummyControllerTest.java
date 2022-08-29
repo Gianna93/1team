@@ -18,7 +18,7 @@ public class DummyControllerTest {
 	private CustomerRepository customerRepository;
 
 	@GetMapping("dummy/customer/{id}")
-	public Customer detail(@PathVariable String id) {
+	public Customer detail(@PathVariable Integer id) {
 		Customer customer = customerRepository.findById(id).orElseThrow(new Supplier<IllegalArgumentException>() {
 			public IllegalArgumentException get() {
 				return new IllegalArgumentException("해당 유저는 없습니다. id : " + id);

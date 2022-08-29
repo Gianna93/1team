@@ -1,7 +1,15 @@
 @charset "UTF-8";
 
+.container{
+	width:1500px;
+}
 .logcontainer{
 	margin:0 auto;
 	width:300px;
 	height:300px;
+}
+
+#btn-login,#findid-btn,#findpwd-btn{
+	width:300px;
+	margin-bottom:10px;
 }

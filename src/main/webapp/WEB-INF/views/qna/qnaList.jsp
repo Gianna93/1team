@@ -76,7 +76,10 @@
 			</c:choose>		
 		</ul>	
 	<br><br>
+	<c:if test="${principal.customer.roles=='CUSTOMER'}">
 		<button class="menu" id="btn-write"><a style="text-decoration:none; color:black" href="/qna/qnaForm">글쓰기</a></button>
+		
+	</c:if>
 </div>
 <br><br>
 <script type="text/javascript" src="/js/qna.js"></script>
