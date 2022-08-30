@@ -55,7 +55,7 @@ h1{
 	<br><br>
 	<button class="btn btn-secondary" onclick="history.back()">돌아가기</button>
 	<c:if test="${qna.customer.userid==principal.customer.userid}">
-		<button class="btn btn-warning">
+		<button class="btn btn-success">
 		<a href="/qna/${qna.num}/updateForm">수정</a></button>
 		<button id="btn-delete" class="btn btn-danger">삭제</button>
 	</c:if>	
@@ -108,7 +108,7 @@ h1{
 <br/>  
 <script>
 	$('.summernote').summernote({
-		height: 300
+		height: 200
 	});	
 </script>
 

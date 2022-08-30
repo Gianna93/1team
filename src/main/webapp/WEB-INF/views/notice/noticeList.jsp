@@ -3,18 +3,17 @@
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>	
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ include file="../layout/header.jsp"%>
-
 <div id="board_menu">
 	<div id="button">
-		<button class="menu" type="button" id="notice"><a style="text-decoration:none; color:black"  href="/notice/noticeList">공지사항</a></button>
-		<button class="menu" type="button" id="fnq"><a style="text-decoration:none; color:black" href="#">자주묻는질문</a></button>
-		<button class="menu" type="button" id="qna"><a style="text-decoration:none; color:black" href="/qna/qnaList">1:1문의</a></button>
+		<button type="button" class="btn btn-outline-secondary"><a style="text-decoration:none; color:black"  href="/notice/noticeList">공지사항</a></button>
+		<button type="button" class="btn btn-outline-secondary"><a style="text-decoration:none; color:black" href="/faq/faqList">자주묻는질문</a></button>
+		<button type="button" class="btn btn-outline-secondary"><a style="text-decoration:none; color:black" href="/qna/qnaList">1:1문의</button>
 	</div>
 </div>
 <h1 id="titleh1">공지사항</h1>
 <br>
 <div class = "container">
-	<table id="tb">
+	<table  class="table table-striped" style="text-align: center">
 	
 		<tr style="border-bottom: 1px solid #ccc; background-color: #f1f3f5">
 			<td class="notice_num"><b>번호</b></td>
@@ -61,7 +60,7 @@
 		</ul>	
 	<br><br>
  <c:if test="${principal.customer.roles=='ADMIN'}">
-		<button class="menu" id="btn-write"><a style="text-decoration:none; color:black" href="/notice/noticeForm">글쓰기</a></button>
+		<button type="button" class="btn btn-dark"><a style="text-decoration:none; color:white" href="/notice/noticeForm">글쓰기</a></button>
 	</c:if>
 </div>
 <br><br>
