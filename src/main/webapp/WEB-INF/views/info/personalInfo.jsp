@@ -20,7 +20,7 @@ h1{
 
 </style>
 </head>
-
+<br>
 <h1>개인정보 취급방침</h1>
 <div id="container">
 <b>제1조 총칙</b><br>

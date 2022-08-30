@@ -7,11 +7,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script
-	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 
 <c:set var="path" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
@@ -24,9 +21,11 @@
 <link rel="stylesheet" href="/css/footer.css">
 <link rel="stylesheet" href="/css/adminCheck.css">
 <link rel="stylesheet" href="/css/loginForm.css">
+<link rel="stylesheet" href="/css/joinForm.css">
+<link rel="stylesheet" href="/css/myPage.css">
 <link rel="stylesheet" href="/css/noticeList.css">
 <link rel="stylesheet" href="/css/qnaList.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 <script src="/js/summernote/summernote-lite.js"></script>
@@ -53,7 +52,7 @@
 			<a href="/"><img src="/img/로고3.png" alt="냥반댁 댕댕이 로고" class="logo"></a>
 			<input type="text" id="search" placeholder=" 무엇이든지 검색해라냥 🐾">
 			<input type="button" id="searchbtn" value="🔍">
-			<nav>
+			<nav class="navbar navbar-expand-sm sticky-top">
 			<c:choose>
 				<c:when test="${empty principal }">
 				<ul id="topMenu">
@@ -64,9 +63,16 @@
 				</ul>
 				</c:when>
 				<c:otherwise>
+					<span id="loginsp"><b>${principal.customer.name}(${principal.customer.userid})님</b></span>
 					<ul id="topMenu">
-						<li><a href="#">마이페이지</a><li>
+						<li><a href="/auth/myPage">마이페이지</a><li>
+						<c:if test="${principal.customer.roles eq 'ADMIN' }">
+						<li><a href="#">상품관리</a></li>
+						</c:if>
+						<c:if test="${principal.customer.roles eq 'CUSTOMER' }">
 						<li><a href="#">장바구니</a></li>
+						</c:if>
+						
 						<li><a href="/notice/noticeList">고객센터</a></li>
 						<li><a href="/logout">로그아웃</a></li>
 					</ul>

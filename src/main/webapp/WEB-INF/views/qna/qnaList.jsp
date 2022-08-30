@@ -28,7 +28,7 @@
 				<tr style="border-bottom: 1px solid #ccc">
 					<td class="qna_num">${qna.num}</td>
 					<c:choose>
-						<c:when test="${qna.customer.userId==principal.customer.userId}">
+						<c:when test="${qna.customer.userid==principal.customer.userid}">
 							<td id="left_align">
 							<a id="a_detail" style="text-decoration:none; color:black" href="/qna/${qna.num}">
 							🔒 ${qna.title}</a>
@@ -46,7 +46,7 @@
 							</c:if></td>
 						</c:otherwise>
 					</c:choose>	
-					<td class="qna_writer">${qna.customer.userId}</td>
+					<td class="qna_writer">${qna.customer.userid}</td>
 					<td class="qna_date">
 						<fmt:formatDate pattern="yyyy-MM-dd" value="${qna.createDate}" /></td>
 				</tr>

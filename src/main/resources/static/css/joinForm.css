@@ -2,16 +2,23 @@
 
 .joincontainer{
 	margin:0 auto;
-	width:300px;
+	width:1500px;
 	height:1300px;
+}
+
+.joincontainer>form{
+	width:300px;
+	margin:0 auto;
 }
 
 #btn-check{
 	width:300px;
 	margin-top:5px;
+	
 }
 #btn-save{
 	width:300px;
+	margin-left:600px;
 }
 
 .row{
@@ -31,12 +38,7 @@
 	margin-bottom:5px;
 }
 
-.form-control{
-	margin-top:10px;
-}
-.form-control:last-of-type{
-	margin-top:1px;
-}
+
 #sel{
 	width:150px;
 	height:30px;

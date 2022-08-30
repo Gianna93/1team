@@ -20,7 +20,7 @@ h1{
 
 </style>
 </head>
-
+<br>
 <h1>이용약관</h1>
 <div id="container">
 <b>제1조(목적)</b><br>

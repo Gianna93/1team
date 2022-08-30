@@ -1,8 +1,8 @@
 let index = {
 	init: function() {
 		$("#btn-save").on("click", () => {	
-			this.save();
 			this.joinCheck();
+			this.save();
 		});
 		$("#btn-login").on("click", () => {
 			this.loginCheck();
@@ -25,7 +25,12 @@ let index = {
 		});
 		$("#phone").on("keyup",()=>{
 			this.phoneCheck();
-		})
+		});
+		
+		$("#btn-edit").on("click", () => {	
+			this.editCheck();
+			this.save2();
+		});
 	},
 
 /////////////////////////////////
@@ -37,6 +42,7 @@ let index = {
 		&&$("#reid").val() != ""
 		&&$("#password").val() != ""
 		&&$("#password2").val() != ""
+		&&$("#password").val()==$("#password2").val()
 		&&$("#name").val() != ""
 		&&$("#phone").val() != ""
 		&&$("#phnchk").val() != ""
@@ -45,7 +51,7 @@ let index = {
 		&&$("#addr1").val() != ""
 		&&$("#addr2").val() != ""
 		&&$("#addr3").val() != ""
-		&&$("#sel2").val() != ""
+		&& sel2.selectedIndex!=0
 		&&$("#answer").val() != ""){
 			
 			this.add();
@@ -67,8 +73,11 @@ let index = {
 			password: $("#password").val(),
 			name: $("#name").val(),
 			phone: $("#phone").val(),
-			email: $("#email").val() + "@" + $("#email2").val(),
-			address: $("#addr1").val()+$("#addr2").val()+$("#addr3").val(),
+			email1: $("#email").val(),
+			email2: $("#email2").val(),
+			address1: $("#addr1").val(),
+			address2:$("#addr2").val(),
+			address3:$("#addr3").val(),
 			qestion:$("#sel2").val(),
 			answer:$("#answer").val(),
 			roles: adminchkval
@@ -110,6 +119,8 @@ let index = {
 		return true;
 	},
 	
+	
+	///////아이디중복체크/////
 	idCheck: function(){
 		
 	    let data = {
@@ -129,10 +140,17 @@ let index = {
 					$("#id_check").css("font-weight", "900");
 					$("#reid").val("");
 				}else{
+					if($("#userid").val().length>=5){
 					$("#id_check").text("사용가능한 아이디입니다");
 					$("#id_check").css("color", "#6A82FB");
 					$("#id_check").css("font-weight", "900");
 					$("#reid").val($("#userid").val());
+					}
+					else{
+						alert("아이디는 5글자 이상이여야 합니다.");
+						$("#id_check").text("");
+						$("#reid").val("");
+					}
 				}
 			},
 			error:function(){
@@ -171,7 +189,12 @@ let index = {
 						$("#phnchk").val($("#phone").val());
 						console.log($("#phnchk").val());
 					}
+				}else{
+					$("#ph-chk").text("");
+					$("#phnchk").val("");
 				}
+					
+				
 			},
 			error:function(){
 				alert('에러입니다');
@@ -321,6 +344,63 @@ let index = {
 		self.close();
 	},
 	
+	
+	/////////////////////
+	////////회원정보수정/////
+	/////////////////////
+	save2: function() {
+		if(
+		$("#password").val() != ""
+		&&$("#password2").val() != ""
+		&&$("#password").val()==$("#password2").val()
+		&&$("#phone").val() != ""
+		&&$("#phnchk").val() != ""
+		&&$("#email").val() != ""
+		&&$("#email2").val() != ""
+		&&$("#addr1").val() != ""
+		&&$("#addr2").val() != ""
+		&&$("#addr3").val() != ""){
+			
+			this.edit();
+			
+		}
+	},
+
+	edit: function(){
+
+		let data = {
+			userid:$("#userid").val(),
+			password: $("#password").val(),
+			phone: $("#phone").val(),
+			email1: $("#email").val() ,
+			email2: $("#email2").val(),
+			address1: $("#addr1").val(),
+			address2: $("#addr2").val(),
+			address3: $("#addr3").val()
+		};
+
+		$.ajax({
+			type: "PUT",
+			url: "/auth/editProc",
+			data: JSON.stringify(data),
+			contentType: "application/json; charset=utf-8",
+			dataType: "json"
+		}).done(function() {
+			alert("회원정보 수정이 완료되었습니다.");
+			location.href = "/";
+		});
+	},
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	////////////////////////////
 	///////////회원가입체크/////////
 	////////////////////////////
@@ -402,16 +482,86 @@ let index = {
 		}
 		
 		
+		
+		 if($("#answer").val() == "") {
+			alert("계정찾기용 답변을 확인하세요.");
+			$("#answer").focus();
+			return false;
+		}
 		if(sel2.selectedIndex==0) {
 			alert("계정찾기용 질문을 확인하세요.");
 			$("#sel2").focus();
 			return false;
 		}
-		if($("#answer").val() == "") {
-			alert("계정찾기용 답변을 확인하세요.");
-			$("#answer").focus();
+		
+		return true;
+	},
+	
+	/////////////////////////
+	/////////회원정보수정체크/////
+	//////////////////////////
+	
+	editCheck: function(){
+		var password = $("#password").val();
+		var password2 = $("#password2").val();
+		
+		
+				
+	
+		if(password == "") {
+			alert("비밀번호를 입력하세요.");
+			$("#password").focus();
 			return false;
 		}
+		if(password2 == "") {
+			alert("비밀번호확인을 입력하세요.");
+			$("#password2").focus();
+			return false;
+		}
+		if(password!=password2){
+			alert("비밀번호를 일치하지 않습니다. 확인해주세요.")
+			$("#password2").focus();
+			return false;
+		}
+	
+		if($("#phone").val() == "") {
+			alert("전화번호를 입력하세요.");
+			$("#phone").focus();
+			return false;
+		}
+		if($("#phnchk").val() == "") {
+			alert("이미 전화번호가 존재합니다");
+			$("#phone").focus();
+			return false;
+		}
+		if($("#email").val() == "") {
+			alert("이메일아이디를 입력하세요.");
+			$("#email").focus();
+			return false;
+		}
+		if($("#email2").val() == "") {
+			alert("이메일 형식으로 입력하세요.");
+			$("#email2").focus();
+			return false;
+		}
+		if($("#addr1").val() == "") {
+			alert("주소를 입력하세요.");
+			$("#addr3").focus();
+			return false;
+		}
+		if($("#addr2").val() == "") {
+			alert("주소를 입력하세요.");
+			$("#addr3").focus();
+			return false;
+		}
+		if($("#addr3").val() == "") {
+			alert("상세주소를 확인하세요.");
+			$("#addr3").focus();
+			return false;
+		}
+		
+		
+
 		
 		
 		return true;
@@ -460,6 +610,7 @@ function findAccount(){
 ////////////////////////////
 ///////////주소api///////////
 ///////////////////////////
+
 
 
 

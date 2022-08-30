@@ -10,7 +10,14 @@
 	<form>
 		<div class="form-group">
 			<label for="userid"><b>아이디</b></label><br>
-			<input type="text" class="form-control" placeholder="아이디" id="userid" name="userid">
+			<c:choose>
+				<c:when test="${adminchk eq 'ADMIN'}">
+					<input type="text" class="form-control" placeholder="아이디" id="userid" name="userid" value="admin" disabled>
+				</c:when>
+				<c:otherwise>
+					<input type="text" class="form-control" placeholder="아이디" id="userid" name="userid">
+				</c:otherwise>
+			</c:choose>
 			<input type="hidden" id="reid" >
 			<input type="button" value="중복체크" class="btn btn-dark" id="btn-check">
 			<div id="id_check"></div>
@@ -36,16 +43,13 @@
 			<input type="hidden" id=phnchk>
 		</div>
 		<br>
-		<label for="email"><b>이메일</b></label> <br>
-		<div class="row">
-			<div class="col-lg-6">
-				
-				<input type="text" class="form-control"  id="email">
-			</div>
 		
-			<div class="col-lg-6" id="email2div">
-				<input type="text" class="form-control" placeholder="@dog.cat" id="email2">
-			</div>
+		<label for="email"><b>이메일</b></label> <br>
+		<div class="input-group mb-3">
+		
+  		<input type="text" class="form-control" aria-label="email" id="email">
+  		<span class="input-group-text">@</span>
+ 	 	<input type="text" class="form-control" placeholder="ex) naver.com" aria-label="email2" id="email2">
 		</div>
 		
 		
@@ -137,10 +141,12 @@
 	
 	</c:otherwise>
 	</c:choose>
+	<br><br>
 		
 	</form>
-	<br><br>
-	<button id="btn-save" class="btn btn-dark" >회원가입</button>
+	<div>
+		<button id="btn-save" class="btn btn-dark" >회원가입</button>
+	</div>
 	</div>
 	
 	 <script type="text/javascript" src="/js/customer.js"></script>

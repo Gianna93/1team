@@ -11,10 +11,10 @@
 		<button class="menu" type="button" id="qna"><a style="text-decoration:none; color:black" href="/qna/qnaList">1:1문의</a></button>
 	</div>
 </div>
-<h1>공지사항</h1>
+<h1 id="titleh1">공지사항</h1>
 <br>
 <div class = "container">
-	<table>
+	<table id="tb">
 	
 		<tr style="border-bottom: 1px solid #ccc; background-color: #f1f3f5">
 			<td class="notice_num"><b>번호</b></td>
@@ -29,7 +29,7 @@
 				<tr style="border-bottom: 1px solid #ccc">
 					<td class="notice_num">${notice.num}</td>
 					<td id="left_align"><a style="text-decoration:none; color:black" href="/notice/${notice.num}">${notice.title}</a></td>
-					<td class="notice_writer">${notice.customer.userId}</td>
+					<td class="notice_writer">${notice.customer.userid}</td>
 					<td class="notice_date">
 						<fmt:formatDate pattern="yyyy-MM-dd" value="${notice.createDate}" /></td>
 					<td class="notice_count">${notice.count}</td>

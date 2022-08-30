@@ -84,4 +84,10 @@ public class CustomerApiController {
 		return phonechk;
 	}
 	
+	@PutMapping("/auth/editProc")
+	public ResponseDto<Integer> edit(@RequestBody Customer customer){
+		customerService.회원정보수정(customer);
+		return new ResponseDto<Integer>(HttpStatus.OK.value(),1);
+	}
+	
 }

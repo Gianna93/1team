@@ -47,10 +47,19 @@ public class Customer {
 	private String phone;
 	
 	@Column(nullable=false, length = 50)
-	private String email;
+	private String email1;
 	
-	@Column(nullable=false, length = 300)
-	private String address;
+	@Column(nullable=false, length = 50)
+	private String email2;
+	
+	@Column(nullable=false, length = 100)
+	private String address1;
+	
+	@Column(nullable=false, length = 100)
+	private String address2;
+	
+	@Column(nullable=false, length = 100)
+	private String address3;
 
 	@Column(nullable=false, length = 50)
 	private String qestion;

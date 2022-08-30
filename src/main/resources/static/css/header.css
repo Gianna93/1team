@@ -25,6 +25,15 @@ header>a>img {
 	margin-left: 50px;
 }
 
+#loginsp{
+	position:absolute;
+	margin-top:-140px;
+	margin-left:262px;
+	font-family: 'Gamja Flower', cursive;
+	font-size:1.3em;
+	color: rgb(64, 128, 128);
+}
+
 #search {
 	float: left;
 	width: 300px;

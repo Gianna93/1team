@@ -40,7 +40,7 @@ h1{
 <div class = "container_qna">
 		<div>
 			글 번호 : <span id="num"><i>${qna.num}</i></span>
-			작성자 : <span id="id"><i>${qna.customer.userId}</i></span>
+			작성자 : <span id="id"><i>${qna.customer.userid}</i></span>
 		</div>
 		<br>
 		<div>
@@ -54,7 +54,7 @@ h1{
 		
 	<br><br>
 	<button class="btn btn-secondary" onclick="history.back()">돌아가기</button>
-	<c:if test="${qna.customer.userId==principal.customer.userId}">
+	<c:if test="${qna.customer.userid==principal.customer.userid}">
 		<button class="btn btn-warning">
 		<a href="/qna/${qna.num}/updateForm">수정</a></button>
 		<button id="btn-delete" class="btn btn-danger">삭제</button>

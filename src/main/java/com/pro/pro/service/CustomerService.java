@@ -62,4 +62,20 @@ public class CustomerService {
 		cus.setPassword(encPassword);
 		customerRepository.save(cus);
 	}
+	
+	@Transactional
+	public void 회원정보수정(Customer customer) {
+		Customer cus = customerRepository.findByUserid(customer.getUserid()).orElseThrow(()->{
+			return new IllegalArgumentException("fail");
+			});
+		String rawPassword = customer.getPassword();
+		String encPassword = encoder.encode(rawPassword);
+		cus.setPassword(encPassword);
+		cus.setPhone(customer.getPhone());
+		cus.setEmail1(customer.getEmail1());
+		cus.setEmail2(customer.getEmail2());
+		cus.setAddress1(customer.getAddress1());
+		cus.setAddress2(customer.getAddress2());
+		cus.setAddress3(customer.getAddress3());
+	}
 }
