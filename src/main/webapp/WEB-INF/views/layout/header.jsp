@@ -67,7 +67,7 @@
 					<ul id="topMenu">
 						<li><a href="/auth/myPage">마이페이지</a><li>
 						<c:if test="${principal.customer.roles eq 'ADMIN' }">
-						<li><a href="#">상품관리</a></li>
+						<li><a href="/product/registerForm">상품관리</a></li>
 						</c:if>
 						<c:if test="${principal.customer.roles eq 'CUSTOMER' }">
 						<li><a href="#">장바구니</a></li>
