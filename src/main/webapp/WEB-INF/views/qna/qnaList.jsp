@@ -32,7 +32,7 @@
 							<td id="left_align">
 							<a id="a_detail" style="text-decoration:none; color:black" href="/qna/${qna.num}">
 							🔒 ${qna.title}</a>
-								<c:if test="${not empty qna.reply}">&nbsp&nbsp&nbsp<i style="color:#ccc">답변완료</i></c:if>
+								<c:if test="${not empty qna.reply}">&nbsp;&nbsp;&nbsp;<i style="color:#ccc">답변완료</i></c:if>
 							</td>
 						</c:when>
 						<c:when test="${principal.customer.roles=='ADMIN'}">

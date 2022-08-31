@@ -19,12 +19,20 @@
 <title>냥반댁 댕댕이</title>
 <link rel="stylesheet" href="/css/header.css">
 <link rel="stylesheet" href="/css/footer.css">
+<link rel="stylesheet" href="/css/index.css">
 <link rel="stylesheet" href="/css/adminCheck.css">
 <link rel="stylesheet" href="/css/loginForm.css">
 <link rel="stylesheet" href="/css/joinForm.css">
 <link rel="stylesheet" href="/css/myPage.css">
 <link rel="stylesheet" href="/css/noticeList.css">
 <link rel="stylesheet" href="/css/qnaList.css">
+<link rel="stylesheet" href="/css/registerForm.css">
+<link rel="stylesheet" href="/css/foodProduct.css">
+<link rel="stylesheet" href="/css/bathProduct.css">
+<link rel="stylesheet" href="/css/toyProduct.css">
+<link rel="stylesheet" href="/css/beautyProduct.css">
+<link rel="stylesheet" href="/css/houseProduct.css">
+<link rel="stylesheet" href="/css/etcProduct.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
@@ -51,7 +59,7 @@
 		<header>
 			<a href="/"><img src="/img/로고3.png" alt="냥반댁 댕댕이 로고" class="logo"></a>
 			<input type="text" id="search" placeholder=" 무엇이든지 검색해라냥 🐾">
-			<input type="button" id="searchbtn" value="🔍">
+			<img src="/img/icon_btn.png" id="searchbtn">
 			<nav class="navbar navbar-expand-sm sticky-top">
 			<c:choose>
 				<c:when test="${empty principal }">
@@ -85,12 +93,12 @@
 	<div id="hdcontainer2">
 
 		<ul id="topMenu2">
-			<li><a href="#">사료/간식</a></li>
-			<li><a href="#">화장실/위생</a></li>
-			<li><a href="#">장난감</a></li>
-			<li><a href="#">미용/목욕</a></li>
-			<li><a href="#">하우스</a></li>
-			<li><a href="#">기타</a></li>
+			<li><a href="/product/foodProduct">사료/간식</a></li>
+			<li><a href="/product/bathProduct">화장실/위생</a></li>
+			<li><a href="/product/toyProduct">장난감</a></li>
+			<li><a href="/product/beautyProduct">미용/목욕</a></li>
+			<li><a href="/product/houseProduct">하우스</a></li>
+			<li><a href="/product/etcProduct">기타</a></li>
 		</ul>
 
 	</div>
