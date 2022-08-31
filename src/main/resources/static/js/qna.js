@@ -1,14 +1,23 @@
 let index={
 	init: function(){
 		$("#btn-save").on("click",()=>{
-			this.save();
+			this.saveCheck();
 		});
 		$("#btn-delete").on("click",()=>{
 			this.deleteById();
 		});
 		$("#btn-update").on("click",()=>{
-			this.update();
+			this.updateCheck();
 		});
+	},
+	
+	saveCheck: function(){
+		var title = $("#title").val();
+		var content = $("#content").val();
+			if (title == ""|| content == "") {		
+			alert("제목과 내용을 입력해주세요.");	
+			return false;
+		}else this.save();
 	},
 	
 	save: function(){
@@ -42,6 +51,15 @@ let index={
 		}).fail(function(error){
 			alert(JSON.stringify(error));
 		});
+	},
+	
+	updateCheck: function(){
+		var title = $("#title").val();
+		var content = $("#content").val();
+			if (title == ""||content == "") {		
+			alert("제목과 내용을 입력해주세요.");	
+			return false;
+		}else this.update();
 	},
 	
 	update: function(){

@@ -25,6 +25,13 @@
 <link rel="stylesheet" href="/css/myPage.css">
 <link rel="stylesheet" href="/css/noticeList.css">
 <link rel="stylesheet" href="/css/qnaList.css">
+<link rel="stylesheet" href="/css/registerForm.css">
+<link rel="stylesheet" href="/css/foodProduct.css">
+<link rel="stylesheet" href="/css/bathProduct.css">
+<link rel="stylesheet" href="/css/toyProduct.css">
+<link rel="stylesheet" href="/css/beautyProduct.css">
+<link rel="stylesheet" href="/css/houseProduct.css">
+<link rel="stylesheet" href="/css/etcProduct.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
@@ -67,7 +74,7 @@
 					<ul id="topMenu">
 						<li><a href="/auth/myPage">마이페이지</a><li>
 						<c:if test="${principal.customer.roles eq 'ADMIN' }">
-						<li><a href="#">상품관리</a></li>
+						<li><a href="/product/registerForm">상품관리</a></li>
 						</c:if>
 						<c:if test="${principal.customer.roles eq 'CUSTOMER' }">
 						<li><a href="#">장바구니</a></li>
@@ -85,12 +92,12 @@
 	<div id="hdcontainer2">
 
 		<ul id="topMenu2">
-			<li><a href="#">사료/간식</a></li>
-			<li><a href="#">화장실/위생</a></li>
-			<li><a href="#">장난감</a></li>
-			<li><a href="#">미용/목욕</a></li>
-			<li><a href="#">하우스</a></li>
-			<li><a href="#">기타</a></li>
+			<li><a href="/product/foodProduct">사료/간식</a></li>
+			<li><a href="/product/bathProduct">화장실/위생</a></li>
+			<li><a href="/product/toyProduct">장난감</a></li>
+			<li><a href="/product/beautyProduct">미용/목욕</a></li>
+			<li><a href="/product/houseProduct">하우스</a></li>
+			<li><a href="/product/etcProduct">기타</a></li>
 		</ul>
 
 	</div>

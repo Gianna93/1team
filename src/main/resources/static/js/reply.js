@@ -2,12 +2,19 @@
 let replyIndex = {
     init: function () {
         $("#reply-btn-save").on("click", () => {
-            this.replySave();
+            this.replySaveCheck();
         });
         $("#reply-btn-delete").on("click", () => {
             this.replyDelete();
         });
     },
+    replySaveCheck: function(){
+		var content = $("#reply-content").val();
+			if (content == "") {		
+			alert("내용을 입력해주세요.");	
+			return false;
+		}else this.replySave();
+	},
 
     replySave: function () {
 	let numm =$("#num").text();
