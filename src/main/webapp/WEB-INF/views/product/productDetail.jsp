@@ -31,7 +31,11 @@
 					<div class="card-body"><br>
 						<h4 class="card-text" id="grand-lg-font"><b>제품명&nbsp;&nbsp;:&nbsp;&nbsp;${product.productName}</b></h4><br>
 						<br>
-						<p class="card-text" id="lg-font">가격&nbsp;&nbsp;:&nbsp;&nbsp;${product.price}	&nbsp;&nbsp;원</p>
+						<label class="card-text" id="lg-font">가격&nbsp;&nbsp;:&nbsp;&nbsp;${product.price}	&nbsp;원</label>
+						<br>
+						<label class="card-text" id="lg-font">수량&nbsp;&nbsp;:&nbsp;&nbsp;<input type="number" name="favnum" min="1" max="99" style="margin-bottom : 10px; font-size: 22.5px; width:60px;">&nbsp;개<br></label>
+						<p style="font-size:25px;">(최대 99개)</p>
+						
 						<br><!-- ${item.account} -->
 						<div style="margin-bottom:30px; border-top: solid black 1px; width:550px;" ></div>
 						<button type="#" class="btn btn-dark">구매하기</button> <!-- 구매 장바구니 링크  -->

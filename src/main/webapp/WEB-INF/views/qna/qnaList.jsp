@@ -6,15 +6,15 @@
 
 <div id="board_menu">
 	<div id="button">
-		<button class="menu" type="button" id="notice"><a style="text-decoration:none; color:black"  href="/notice/noticeList">공지사항</a></button>
-		<button class="menu"type="button" id="fnq"><a style="text-decoration:none; color:black" href="#">자주묻는질문</a></button>
-		<button class="menu"type="button" id="qna"><a style="text-decoration:none; color:black" href="/qna/qnaList">1:1문의</a></button>
+		<button type="button" class="btn btn-outline-secondary"><a style="text-decoration:none; color:black"  href="/notice/noticeList">공지사항</a></button>
+		<button type="button" class="btn btn-outline-secondary"><a style="text-decoration:none; color:black" href="/faq/faqList">자주묻는질문</a></button>
+		<button type="button" class="btn btn-outline-secondary"><a style="text-decoration:none; color:black" href="/qna/qnaList">1:1문의</button>
 	</div>
 </div>
 <h1>1:1문의</h1>
 <br>
 <div class = "container">
-	<table>
+<table class="table table-striped" style="text-align: center">
 	
 		<tr style="border-bottom: 1px solid #ccc; background-color: #f1f3f5">
 			<td class="qna_num"><b>번호</b></td>
@@ -32,7 +32,7 @@
 							<td id="left_align">
 							<a id="a_detail" style="text-decoration:none; color:black" href="/qna/${qna.num}">
 							🔒 ${qna.title}</a>
-								<c:if test="${not empty qna.reply}">&nbsp;&nbsp;&nbsp;<i style="color:#ccc">답변완료</i></c:if>
+								<c:if test="${not empty qna.reply}">&nbsp&nbsp&nbsp<i style="color:#ccc">답변완료</i></c:if>
 							</td>
 						</c:when>
 						<c:when test="${principal.customer.roles=='ADMIN'}">
@@ -76,10 +76,7 @@
 			</c:choose>		
 		</ul>	
 	<br><br>
-	<c:if test="${principal.customer.roles=='CUSTOMER'}">
-		<button class="menu" id="btn-write"><a style="text-decoration:none; color:black" href="/qna/qnaForm">글쓰기</a></button>
-		
-	</c:if>
+		<button type="button" class="btn btn-dark"><a style="text-decoration:none; color:white" href="/qna/qnaForm">글쓰기</a></button>
 </div>
 <br><br>
 <script type="text/javascript" src="/js/qna.js"></script>
