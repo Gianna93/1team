@@ -31,13 +31,13 @@ public class Product {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="PRODUCT_SEQ_GENERATOR")
 	private int id;
 	
-	@Column(nullable=false, length=100)
+	@Column(nullable=false, length=2000)
 	private String productName;
 	
 	@Column(nullable=false, length=100)
 	private String price;
 	
-	@Column(nullable=false, length=100)
+	@Column(nullable=false, length=2000)
 	private String content;
 	
 	@Column

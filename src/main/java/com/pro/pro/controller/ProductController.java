@@ -4,11 +4,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.pro.pro.dto.ResponseDto;
+import com.pro.pro.model.Product;
 import com.pro.pro.service.ProductService;
 
 @Controller
@@ -17,17 +22,24 @@ public class ProductController {
 		@Autowired
 		private ProductService productService;
 		
-		@GetMapping("/product/registerForm/{id}")
-		public String findById(@PathVariable int id, Model model) {
-			model.addAttribute("product", productService.상품상세(id));
+		
+		@GetMapping({"/product/registerForm"})
+		public String registerForm() {
 			return "product/registerForm";
 		}
-
-		@GetMapping({"/product/registerForm"})
-		public String registerForm(Model model, @PageableDefault(size=1000, sort="id",
+		
+		@ResponseBody
+		@PostMapping({"/product/updateForm/{id}"})
+		public ResponseDto<Product> findById(@PathVariable int id) {
+			Product pro = productService.상품상세(id);
+			return new ResponseDto<Product>(HttpStatus.OK.value(),pro);
+		}
+	
+		@GetMapping({"/product/updateForm"})
+		public String updateForm(Model model, @PageableDefault(size=1000, sort="id",
 				direction =  Sort.Direction.DESC) Pageable pageable){
 			model.addAttribute("product", productService.상품목록(pageable));
-			return "product/registerForm";
+			return "product/updateForm";
 		}
 		
 		@GetMapping({"/product/foodProduct"})
