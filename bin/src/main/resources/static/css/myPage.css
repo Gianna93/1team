@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+
+
+.d-flex{
+	width:1500px;
+	height:1000px;
+	margin:0 auto;
+}
+
+.mypageTitle{
+	font-size:35px;
+	font-weight:900;
+	margin-left:60px;
+	font-family: 'Gamja Flower', cursive
+}
+
+#btn-edit{
+	width:300px;
+}
+
+.nav{
+	margin-left:100px;
+	margin-top:50px;
+}
+
+.tab-content{
+	margin-left:400px;
+	width:300px;
+}
+
+
+

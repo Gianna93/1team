@@ -71,4 +71,10 @@ public class ProductController {
 			model.addAttribute("product", productService.상품목록(pageable));
 			return "product/etcProduct";
 		}
+		@GetMapping({"/product/productDetail/{id}"})
+		public String productDetail(@PathVariable int id, Model model) {
+			model.addAttribute("product", productService.상품상세(id));
+			return "product/productDetail";
+		}
+		
 }

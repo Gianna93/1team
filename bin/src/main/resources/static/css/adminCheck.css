@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+#adchkCon{
+	width:1500px;
+	height:200px;
+	margin: 0 auto;
+}
+
+#check-btn{
+	margin-left:550px;
+	margin-top:100px;
+}
+
+#check-btn:nth-of-type(2){
+	margin-left:30px;
+}

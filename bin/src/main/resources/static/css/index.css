@@ -1,0 +1,151 @@
+@charset "UTF-8";
+
+.maincontainer{
+	margin:0 auto;
+	width:1500px;
+	height:2350px;
+}
+
+
+/*      슬라이드 쇼 부분       */
+
+#slideShow {
+  margin: 0 auto;
+  margin-top:1px;
+  width: 1200px;
+  height: 380px;
+  overflow: hidden;
+  position: relative;
+  border-radius:10px;
+
+}
+
+#slides {
+  margin:0 auto;
+  height: 400px;
+}
+
+#slides>a>img {
+  width: 1200px;
+  height:380px;
+  float: left;
+}
+ 
+#slideShow button{
+  position: absolute;
+  top: 0;
+  height: 100%;
+  border: none;
+  padding: 20px;
+  background-color: transparent;
+  color: #000;
+  font-weight: 800;
+  font-size: 24px;
+  opacity: 0.5;
+}
+
+#prev{
+  left: 0;
+}
+#next{
+  right: 0;
+}
+#slideShow button:hover{
+	background-color: #ccc;
+	color: #fff;
+	opacity: 0.6;
+	transition-duration :0.5s;
+	transition-delay: 0.01s;
+	cursor: pointer;
+}
+#slideShow button:focus{
+  outline: 0;
+} 
+/*    서브타이틀    */
+.subtitle{
+	text-align:center;
+	padding-top:10px;
+	font-size:30px;
+	font-family: 'Gamja Flower', cursive;
+	font-weight:900;
+}
+
+
+
+
+/*    강아지 베스트div    */
+
+#dogbest{
+	margin:0 auto;
+	margin-top:10px;
+	width: 1200px;
+	height: 500px;
+	background-color: yellow;
+}
+
+/*    고양이 베스트div    */
+#catbest{
+	margin:0 auto;
+	margin-top:10px;
+	width: 1200px;
+	height: 500px;
+	background-color: green;
+}
+
+/*    신상품 div    */
+
+#newproduct{
+	margin:0 auto;
+	margin-top:10px;
+	width: 1200px;
+	height: 500px;
+	background-color: #ccc;
+}
+
+/*    알림 div    */
+
+
+#news{
+	margin:0 auto;
+	margin-top:10px;
+	width: 1200px;
+	height: 400px;
+}
+
+#news>ul{
+	margin:0 auto;
+	width:1200px;
+	height:200px;
+	margin-top:80px;
+	
+}
+
+#news>ul>li:first-of-type{
+	margin-left:30px;
+}
+
+#news>ul>li {
+	float:left;
+	margin-right:65px;
+}
+
+#news>ul>li>a>img{
+	width:160px;
+	height:160px;
+	border-radius:50%;
+}
+
+#news>ul>li>p{
+	width:160px;
+	margin-top:10px;
+	text-align:center;
+	font-weight:700;
+}
+
+#news>ul>li>a>img:hover{
+	box-shadow: 1px 1px 20px black;
+	transition-duration :0.5s;
+	transition-delay: 0.01s;
+	transition-timimg-function: ease;
+	
+}

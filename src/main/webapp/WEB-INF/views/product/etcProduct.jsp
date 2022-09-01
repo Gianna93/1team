@@ -16,10 +16,10 @@
 <c:forEach var = "product" items="${product.content}">
 <c:if test="${product.category == 'etc' && product.pet == 'dog'}">
 	<div class="card">
-  		<img src="${product.image}" alt=""/>
+  		<img src="${product.image}" alt="#" onclick="location.href='/product/productDetail/${product.id}';"  />
  		 <div class="card-body">
-   			 <h5 class="card-title">${product.productName}</h5>
-   			 <p class="card-text">${product.price}원</p>
+   			 <a href="/product/productDetail/${product.id}" style="text-decoration:none; color:black;"><h5 class="card-title">${product.productName}</h5></a>
+   			 <a href="/product/productDetail/${product.id}" style="text-decoration:none; color:black;"><p class="card-text">${product.price}원</p></a>
 		  </div>
 	</div>
 </c:if>	
@@ -30,10 +30,10 @@
 <c:forEach var = "product" items="${product.content}">
 <c:if test="${product.category == 'etc' && product.pet == 'cat'}">
 	<div class="card">
-  		<img src="${product.image}" alt=""/>
+  		<img src="${product.image}" alt="#" onclick="location.href='/product/productDetail/${product.id}';"  />
  		 <div class="card-body">
-   			 <h5 class="card-title">${product.productName}</h5>
-   			 <p class="card-text">${product.price}원</p>
+   			 <a href="/product/productDetail/${product.id}" style="text-decoration:none; color:black;"><h5 class="card-title">${product.productName}</h5></a>
+   			 <a href="/product/productDetail/${product.id}" style="text-decoration:none; color:black;"><p class="card-text">${product.price}원</p></a>
 		  </div>
 	</div>
 </c:if>	
