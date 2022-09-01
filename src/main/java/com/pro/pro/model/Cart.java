@@ -13,7 +13,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Table(name="product")
+@Table(name="cart")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -25,19 +25,19 @@ import lombok.NoArgsConstructor;
 			, initialValue = 1
 			, allocationSize = 1 
 		)
-public class Product {
+public class Cart {
 		
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="PRODUCT_SEQ_GENERATOR")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="CART_SEQ_GENERATOR")
 	private int id;
 	
-	@Column(nullable=false, length=2000)
+	@Column(nullable=false, length=100)
 	private String productName;
 	
 	@Column(nullable=false, length=100)
-	private String price;
+	private String sumprice;
 	
-	@Column(nullable=false, length=2000)
+	@Column(nullable=false, length=100)
 	private String content;
 	
 	@Column
@@ -49,4 +49,18 @@ public class Product {
 	@Column(nullable=false)
 	private String pet;
 
+	@Column(nullable=false)
+	private String count;
+	
+	@Column(nullable=false)
+	private String userid;
+	
+	@Column(nullable=false)
+	private String addr1;
+	
+	@Column(nullable=false)
+	private String addr2;
+	
+	@Column(nullable=false)
+	private String addr3;
 }

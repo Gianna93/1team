@@ -2,8 +2,15 @@
 .container{
 	height:120%;
 }
-.select_pet{
-	text-align: center;
+.btndiv{
+	width:1200px;
+	margin:0 auto;
+}
+
+#btn-group{
+	margin:0 auto;
+	width:200px;
+
 }
 .card{
 	width:280px;

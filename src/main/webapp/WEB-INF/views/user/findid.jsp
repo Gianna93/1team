@@ -21,7 +21,7 @@
 			<input type="button" value ="아이디 찾기" class="btn btn-success" id="btn-findid">
 			</div>
 			<div id="find" style="display:none">
-				<div id="find_id" >
+				<div id="find_id">
 				</div>
 			</div>
 			<input type="submit" value ="비밀번호 찾기 이동" class="btn btn-success" id="findpwd-btn">

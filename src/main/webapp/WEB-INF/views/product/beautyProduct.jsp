@@ -7,19 +7,23 @@
 <div class ="container">
 <h1 style="font-weight:900;">미용 / 목욕</h1>
 <br><br>
-<div class="select_pet">
-<input type="radio" name="select_pet" id="dog" value="dog" checked>강아지
-<input type="radio" name="select_pet" id="cat" value="cat">고양이
+<div class="btndiv">
+	<div class="btn-group" role="group" aria-label="Basic radio toggle button group" style="margin-left:525px;">
+ 		<input type="radio" class="btn-check" name="select_pet" id="dog" value="dog" autocomplete="off" checked >
+		<label class="btn btn-outline-success" for="dog">강아지</label>
+		<input type="radio" class="btn-check" name="select_pet" id="cat" value="cat" autocomplete="off">
+		<label class="btn btn-outline-success" for="cat">고양이</label>
+	</div>
 </div>
 <br><br>
 <div id="dog_pop">
 <c:forEach var = "product" items="${product.content}">
 <c:if test="${product.category == 'beauty' && product.pet == 'dog'}">
 	<div class="card">
-  		<img src="${product.image}" alt=""/>
+  		<img src="${product.image}" alt="#" onclick="location.href='/product/productDetail/${product.id}';"  />
  		 <div class="card-body">
-   			 <h5 class="card-title">${product.productName}</h5>
-   			 <p class="card-text">${product.price}원</p>
+   			 <a href="/product/productDetail/${product.id}" style="text-decoration:none; color:black;"><h5 class="card-title">${product.productName}</h5></a>
+   			 <a href="/product/productDetail/${product.id}" style="text-decoration:none; color:black;"><p class="card-text">${product.price}원</p></a>
 		  </div>
 	</div>
 </c:if>	
@@ -30,10 +34,10 @@
 <c:forEach var = "product" items="${product.content}">
 <c:if test="${product.category == 'beauty' && product.pet == 'cat'}">
 	<div class="card">
-  		<img src="${product.image}" alt=""/>
+  		<img src="${product.image}" alt="#" onclick="location.href='/product/productDetail/${product.id}';"  />
  		 <div class="card-body">
-   			 <h5 class="card-title">${product.productName}</h5>
-   			 <p class="card-text">${product.price}원</p>
+   			 <a href="/product/productDetail/${product.id}" style="text-decoration:none; color:black;"><h5 class="card-title">${product.productName}</h5></a>
+   			 <a href="/product/productDetail/${product.id}" style="text-decoration:none; color:black;"><p class="card-text">${product.price}원</p></a>
 		  </div>
 	</div>
 </c:if>	

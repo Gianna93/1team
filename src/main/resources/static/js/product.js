@@ -3,10 +3,10 @@ let index={
 	init: function(){
 			$("#product_image").on("change",()=>{
          	this.theimage();
-      }),
+      });
 			$("#btn-save").on("click",()=>{
 			this.saveCheck();
-		}),
+		});
 			$('input[type="radio"][id="cat"]').on('click', function(){
   			var chkValue = $('input[type=radio][id="cat"]:checked').val();
   			if(chkValue){
@@ -16,7 +16,7 @@ let index={
               $('#dog_pop').css('display','block');
               $('#cat_pop').css('display','none');
   			}
-		}),
+		});
 		$('input[type="radio"][id="dog"]').on('click', function(){
   			var chkValue = $('input[type=radio][id="dog"]:checked').val();
   			if(chkValue){
@@ -26,21 +26,40 @@ let index={
               $('#dog_pop').css('display','none');
               $('#cat_pop').css('display','block');
   			}
-		}),
+		});
 		
 		$("#product_name_selected").on("change",()=>{
 			this.findById();
-		})
+		});
+		
+		$("#btn-delete").on("click",()=>{
+			this.deleteById();
+		});
+		$("#btn-update").on("click",()=>{
+			this.update();
+		});
 		
 	},
 	findById: function(){
 		let id = $("#product_name_selected").val();
-		console.log(id);
 		$.ajax({
-			type: "GET",
-			url:"/product/registerForm/"+id,
-			dataType: "json"
+			type: "POST",
+			url:"/product/updateForm/"+id,
+			data: JSON.stringify(id), 
+			contentType:"application/json; charset=utf-8"
 		}).done(function(resp){
+			$('#product_name').val(resp.data.productName);
+			$('#product_price').val(resp.data.price);
+			$('#product_price').val(resp.data.price);
+			$('#product_content').val(resp.data.content);
+			$('#product_category').val(resp.data.category);
+			
+			if(resp.data.pet=='cat'){
+				$("#cat").prop('checked', true); 
+			}else if(resp.data.pet=='dog'){
+				$("#dog").prop('checked', true); 
+			}
+			
 		}).fail(function(error){
 			alert(JSON.stringify(error));
 		});
@@ -109,6 +128,45 @@ let index={
 		}).fail(function(error){
 			alert(JSON.stringify(error));
 		});
+	},
+	deleteById: function(){
+		let id = $("#product_name_selected").val();
+		$.ajax({
+			type:"DELETE",
+			url:"/api/product/"+id,
+			dataType:"json"
+		}).done(function(resp){
+			alert("해당 상품이 삭제되었습니다.");
+			location.href="/product/updateForm";
+		}).fail(function(error){
+			alert(JSON.stringify(error));
+		});
+	},
+	
+	update: function(){
+		let id = $("#product_name_selected").val();
+		let data={
+		 productName: $("#product_name").val(),
+         price: $("#product_price").val(),
+         content: $("#product_content").val(),
+         image: $("#file-path").val(),
+         category: $("#product_category").val(),
+         pet: $('input:radio[name="select_pet"]:checked').val()
+		};
+		console.log(data);
+		$.ajax({
+			type: "POST",
+			url:"/api/product/"+id,
+			data: JSON.stringify(data),
+			contentType:"application/json; charset=utf-8",
+			dataType: "json"
+		}).done(function(resp){
+			alert("상품정보가 수정되었습니다.");
+			location.href="/product/updateForm";
+		}).fail(function(error){
+			alert(JSON.stringify(error));
+		});
+	
 	}
 }
 index.init();

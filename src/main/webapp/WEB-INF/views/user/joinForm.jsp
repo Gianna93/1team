@@ -142,11 +142,9 @@
 	</c:otherwise>
 	</c:choose>
 	<br><br>
-		
-	</form>
-	<div>
 		<button id="btn-save" class="btn btn-dark" >회원가입</button>
-	</div>
+	</form>
+
 	</div>
 	
 	 <script type="text/javascript" src="/js/customer.js"></script>

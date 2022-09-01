@@ -6,12 +6,12 @@
 
 <div id="board_menu">
 	<div id="button">
-		<button class="menu" type="button" id="notice"><a style="text-decoration:none; color:black"  href="/notice/noticeList">공지사항</a></button>
-		<button class="menu"type="button" id="fnq"><a style="text-decoration:none; color:black" href="#">자주묻는질문</a></button>
-		<button class="menu"type="button" id="qna"><a style="text-decoration:none; color:black" href="/qna/qnaList">1:1문의</a></button>
+		<button type="button" class="btn btn-outline-secondary" onclick="location.href='/notice/noticeList'" style="color: black">공지사항</button>
+		<button type="button" class="btn btn-outline-secondary" onclick="location.href='/faq/faqList'" style="color: black">자주묻는질문</button>
+		<button type="button" class="btn btn-outline-secondary" onclick="location.href='/qna/qnaList'" style="color: black">1:1문의</button>
 	</div>
 </div>
-<h1>1:1문의</h1>
+<h1 id="titleh1">1:1문의</h1>
 <br>
 <div class = "container">
 	<table>
@@ -77,7 +77,7 @@
 		</ul>	
 	<br><br>
 	<c:if test="${principal.customer.roles=='CUSTOMER'}">
-		<button class="menu" id="btn-write"><a style="text-decoration:none; color:black" href="/qna/qnaForm">글쓰기</a></button>
+		<button type="button" style="background-color:black; color:white; border-radius:10px; width:120px; height : 40px; margin-left:140px;" onclick="location.href='/qna/qnaForm'">문의하기</button>
 		
 	</c:if>
 </div>

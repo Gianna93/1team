@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../layout/header.jsp"%>
-<div class="container">
+
 <div class="logcontainer">
 <br><br>
 	<form action="/auth/loginProc" method="post">
@@ -22,6 +22,6 @@
 		</form>
 		<button id="findid-btn" class="btn btn-dark" onclick="findAccount()">아이디/비밀번호 찾기</button><br>
 </div>
-</div>
+
 <script type="text/javascript" src="/js/customer.js"></script>
 <%@ include file="../layout/footer.jsp"%>

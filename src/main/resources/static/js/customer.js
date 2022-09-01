@@ -234,7 +234,6 @@ let index = {
 			
 				if(res.data!="fail"){
 					$("#find_id").text("회원님의 아이디는 " +  res.data + " 입니다.");
-					$("#find_id").css("background-color", "rgba(135, 207, 235, 0.3)");
 					$("#saveid").val(res.data);
 				}else{
 					$("#find_id").text("아이디를 찾을 수 없습니다.");

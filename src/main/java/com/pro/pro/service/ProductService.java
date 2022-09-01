@@ -7,6 +7,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.pro.pro.model.Notice;
 import com.pro.pro.model.Product;
 import com.pro.pro.repository.ProductRepository;
 
@@ -33,4 +34,21 @@ public class ProductService {
 		public Page<Product> 상품목록(Pageable pageable){
 			return productRepository.findAll(pageable);
 		}	
+	 
+	 @Transactional
+		public void 상품수정(int id, Product requestProduct) {
+		 Product product = productRepository.findById(id).orElseThrow(()->{
+				return new IllegalArgumentException("상품 찾기 실패: 아이디를 찾을 수 없습니다.");
+			});
+			product.setProductName(requestProduct.getProductName());
+			product.setPrice(requestProduct.getPrice());
+			product.setContent(requestProduct.getContent());
+			product.setCategory(requestProduct.getCategory());
+			product.setImage("/img/"+requestProduct.getImage());
+			product.setPet(requestProduct.getPet());
+		}
+	 @Transactional
+		public void 상품삭제(int id) { 
+			productRepository.deleteById(id);
+		}
 }
