@@ -16,8 +16,9 @@
 	margin-top:5px;
 	
 }
-#btn-save{
+.joincontainer>#btn-join{
 	width:300px;
+	text-align:center;
 	margin-left:600px;
 }
 

@@ -1,7 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>	
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ include file="../layout/header.jsp"%>
+
+<% int finalprice = 0; 
+	pageContext.setAttribute("finalprice", finalprice);
+%>
+
 <c:choose>
 	<c:when test="${empty principal }">
 	<script>
@@ -35,25 +41,77 @@
 	<c:otherwise>
 	<br>
 		<h1 style="font-weight:900;">장바구니</h1><br>
+		<form name="form" id="form" onload = "alert('hello')">
 		<table class="carttb">
 			<tr id="firsttr" >
-				<th>상품이름</th>
+				<th></th>
+				<th></th>
+				<th>상품명</th>
 				<th>상품설명</th>
 				<th>개수</th>
-				<th>총액</th>
+				<th>개별금액 / 합산급액</th>
+				<th></th>
+				<th></th>
+			
 			</tr>
+			
+				<c:forEach var = "cart" items="${carts.content}">
+					
+							<c:if test="${cart.userid eq principal.customer.userid }">
+								
+								<tr>
+									<td>
+									<input type="checkbox" id="${cart.id }" name="chkbox" onClick="itemSum(this.form);"  value="${cart.sumprice }">
+									<input type="hidden" id="cartId" value="${cart.id }">
+									</td>
+									<td>
+									<img src="${cart.image}">
+									<input type="hidden" value="${cart.image }">
+									</td>
+									<td>
+									<b>${cart.productName }</b>
+									<input type="hidden" value="${cart.productName }">
+									</td>
+									<td>
+									${cart.content }
+									<input type="hidden" value="${cart.content }">
+									</td>
+									<td>
+				
+									<input type="number" value="${cart.count }" id="productCount" style="width: 40px;">
+									</td>
+									<td class='pritd'>
+									<span id="countPrice"><fmt:formatNumber value="${cart.price}" pattern="#,###" /></span>원
+									 / <span id="sumCountPrice"><fmt:formatNumber value="${cart.sumprice }" pattern="#,###" /></span>원
+									</td>
+									<td>
+									<button type="button" class="btn btn-danger" id="btn-cartdel">삭제</button>
+									</td>
+									
+								</tr>
+							</c:if>
+						
+					
+					
+					
+				</c:forEach>
+			
 			<tr>
-				<td>상품이름</td>
-				<td>상품설명</td>
-				<td>개수</td>
-				<td>총액</td>
-			</tr>
-			<tr>
-			<td colspan="3">선택상품금액 + 배송비 = 예상금액</td>
+			<td></td>
+			<td><b>총 금액 : </b></td>
+			<td colspan="4">
+			(합산금액 + 배송비 = 총 결제 금액)<br>
+			<span id="total_sum"></span>
+					
+					
+
+			</td>
+			
 			<td><button type="button" class="btn btn-success" id="order">주문하기</button></td>
 			</tr>
 		</table>
+		</form>
 	</c:otherwise>
 </c:choose>
-<script type="text/javascript" src="/js/customer.js"></script>
+<script type="text/javascript" src="/js/cart.js"></script>
 <%@ include file="../layout/footer.jsp"%>

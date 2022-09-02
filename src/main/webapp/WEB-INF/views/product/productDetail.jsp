@@ -7,28 +7,41 @@
 			<div class="row g-0 mb-4 h-md-250 position-relative">
 				<div class=" d-lg-block" style="width: 600px;height:500px;">
 					<svg class="bd-placeholder-img" style="width:500px; height:350px; margin-left:30px;">
-					<image href="${product.image}" width="100%" height="100%" id="productImg"/></svg>
+					<image href="${product.image}" width="100%" height="100%" /></svg>
+					<input type="hidden" value="${product.image}" id="productImg">
 				</div>
 				
 				<div class="col p-4 position-static">
 					<div class="card-body">
-						<h4 class="card-text" id="productName"><b>제품명&nbsp;&nbsp;:&nbsp;&nbsp;${product.productName}</b></h4><br>
+						<h4 class="card-text"><b>제품명&nbsp;&nbsp;:&nbsp;&nbsp;${product.productName}</b></h4><br>
 						<br>
-						<label class="card-text" id="productCategory"><b>분류&nbsp;&nbsp;:&nbsp;&nbsp;${product.category}	&nbsp;</b></label>
+						<label class="card-text"><b>분류&nbsp;&nbsp;:&nbsp;&nbsp;${product.category}	&nbsp;</b></label>
 						<br>
-						<c:if test="${product.pet eq 'dog'}"><label id="productPet">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>강아지용품</b></label></c:if>	
-						<c:if test="${product.pet eq 'cat'}"><label id="productPet">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>고양이용품</b></label></c:if>
+						<c:if test="${product.pet eq 'dog'}">
+						<label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>강아지용품</b></label>
+						<input type="hidden" id="productPet" value="dog">
+						</c:if>	
+						<c:if test="${product.pet eq 'cat'}">
+						<label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>고양이용품</b></label>
+						<input type="hidden" id="productPet" value="cat">
+						</c:if>
 						<br>
-						<label class="card-text" id="productPrice"><b>가격&nbsp;&nbsp;:&nbsp;&nbsp;${product.price}	&nbsp;원</b></label>
+						<label class="card-text"><b>가격&nbsp;&nbsp;:&nbsp;&nbsp;${product.price}	&nbsp;원</b></label>
 						<br>
 						
-						<label class="card-text" id="productCount"><b>수량&nbsp;&nbsp;:&nbsp;&nbsp;<input type="number" name="favnum" min="1" max="99" style="margin-bottom : 10px; font-size: 15px; width:60px;" value="0">&nbsp;개</b><br></label>
+						<label class="card-text"><b>수량&nbsp;&nbsp;:&nbsp;&nbsp;<input type="number" id="productCount" name="favnum" min="1" max="99" style="margin-bottom : 10px; font-size: 15px; width:60px;" value="1">&nbsp;개</b><br></label>
 						<p>(최대 99개)</p>
-						<input type="hidden" value="${principal.customer.userid }">
-						<input type="hidden" value="${principal.customer.address1 }">
-						<input type="hidden" value="${principal.customer.address2 }">
-						<input type="hidden" value="${principal.customer.address3 }">
-						<input type="hidden" value="${principal.customer.phone }">
+						
+						
+						<input type="hidden" value="${product.productName}" id="productName">
+						<input type="hidden" value="${product.category}" id="productCategory">
+						<input type="hidden" value="${product.price}" id="productPrice">
+						
+						<input type="hidden" value="${principal.customer.userid }" id="proUserid">
+						<input type="hidden" value="${principal.customer.address1 }" id="proAddr1">
+						<input type="hidden" value="${principal.customer.address2 }" id="proAddr2">
+						<input type="hidden" value="${principal.customer.address3 }" id="proAddr3">
+						<input type="hidden" value="${principal.customer.phone }" id="proPhone">
 						
 						<br><!-- ${item.account} -->
 						<div style="margin-bottom:30px; border-top: solid black 1px; width:550px;" ></div>
@@ -41,7 +54,7 @@
 								<button type="button" class="btn btn-outline-success" onclick="history.back()">제품리스트로</button>
 							</c:when>
 							<c:otherwise>
-								<button type="button" class="btn btn-outline-success">장바구니 담기</button>
+								<button type="button" class="btn btn-outline-success" id="btn-cart">장바구니 담기</button>
 								<button type="button" class="btn btn-outline-success" onclick="history.back()">제품리스트로</button>
 							</c:otherwise>
 						</c:choose>
@@ -53,7 +66,8 @@
 				<br>
 				 <h1 id="titleh1">상품설명</h1>
 				 <br><br>
-				 <p id="md-font">${product.content }</p>
+				 <p>${product.content }</p>
+				 <input type="hidden" value="${product.content }" id="productContent">
 				</div>
 			</div>
 		</div>
@@ -84,4 +98,6 @@
 휴대폰 결제는 <span style="background-color:#ced25c;"><b>부분취소는 불가능하고 당월 취소만 가능</b></span>하니, 취소하실 때 참고 부탁드립니다.</p>
 	
 </div>
+
+<script type="text/javascript" src="/js/cart.js"></script>
 <%@ include file="../layout/footer.jsp"%>

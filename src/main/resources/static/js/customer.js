@@ -1,6 +1,6 @@
 let index = {
 	init: function() {
-		$("#btn-save").on("click", () => {	
+		$("#btn-join").on("click", () => {	
 			this.joinCheck();
 			this.save();
 		});

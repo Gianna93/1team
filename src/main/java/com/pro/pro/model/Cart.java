@@ -20,8 +20,8 @@ import lombok.NoArgsConstructor;
 @Builder
 @Entity
 @SequenceGenerator(
-			name = "PRODUCT_SEQ_GENERATOR"
-			, sequenceName = "PRODUCT_SEQ"
+			name = "CART_SEQ_GENERATOR"
+			, sequenceName = "CART_SEQ"
 			, initialValue = 1
 			, allocationSize = 1 
 		)
@@ -33,6 +33,9 @@ public class Cart {
 	
 	@Column(nullable=false, length=100)
 	private String productName;
+	
+	@Column(nullable=false, length=100)
+	private String price;
 	
 	@Column(nullable=false, length=100)
 	private String sumprice;
@@ -63,4 +66,8 @@ public class Cart {
 	
 	@Column(nullable=false)
 	private String addr3;
+	
+	@Column(nullable=false)
+	private String phone;
+	
 }

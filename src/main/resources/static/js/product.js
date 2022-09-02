@@ -39,6 +39,10 @@ let index={
 			this.update();
 		});
 		
+		
+		
+		
+		
 	},
 	findById: function(){
 		let id = $("#product_name_selected").val();
@@ -168,5 +172,26 @@ let index={
 		});
 	
 	}
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
 index.init();
