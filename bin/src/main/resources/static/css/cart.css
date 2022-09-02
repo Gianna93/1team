@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+.carttb tr,td,th{
+	text-align:center;
+}
+.carttb tr{
+	height:80px;
+	border-bottom:1px solid #ddd;
+}
+.carttb tr:nth-of-type(1){
+	height:40px;
+}
+
+#firsttr{
+	
+	background-color:#ddd; 
+}

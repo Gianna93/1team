@@ -1,0 +1,17 @@
+@charset "UTF-8";
+.container {
+	margin-top: 50px;
+	width: 1000px;
+	height: 700px;
+	margin: 0 auto;	
+	padding: 50px;
+}
+h1{
+	font-weight: 1000;
+	font-size: 25px;
+	text-align: center;
+	font-family: 'Gamja Flower', cursive;
+}
+#btn-save, #btn-update, #btn-delete{
+	margin: 0 auto;
+}

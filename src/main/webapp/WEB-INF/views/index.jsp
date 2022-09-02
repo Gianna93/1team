@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ include file="layout/header.jsp"%>
 <div class='maincontainer'>
 
@@ -14,15 +15,168 @@
         <button id="next">&rang;</button> 
       </div>
     </div>
+    
     <div id="dogbest">
     	<p class="subtitle">강아지 베스트 상품</p>
-    </div>
+    	
+			<div class="card">	
+				<div class ="card_img">
+					<a href="#">
+  					<img src="/img/food_cat_care.jpg" alt=""/>
+  					</a>
+  				</div>	
+ 				<div class="card-body">
+   					 <h5 class="card-title">챠오츄르(4개입)</h5>
+   			 	 	<p class="card-text">
+   			 		 <b><fmt:formatNumber value="5500" pattern="#,###"/></b>원</p>
+		   		</div>
+		    </div>
+		    <div class="card">	
+				<div class ="card_img">
+					<a href="#">
+  					<img src="/img/food_cat_care.jpg" alt=""/>
+  					</a>
+  				</div>	
+ 				<div class="card-body">
+   					 <h5 class="card-title">챠오츄르(4개입)</h5>
+   			 	 	<p class="card-text">
+   			 		 <b><fmt:formatNumber value="5500" pattern="#,###"/></b>원</p>
+		   		</div>
+		    </div>
+		    <div class="card">	
+				<div class ="card_img">
+					<a href="#">
+  					<img src="/img/food_cat_care.jpg" alt=""/>
+  					</a>
+  				</div>	
+ 				<div class="card-body">
+   					 <h5 class="card-title">챠오츄르(4개입)</h5>
+   			 	 	<p class="card-text">
+   			 		 <b><fmt:formatNumber value="5500" pattern="#,###"/></b>원</p>
+		   		</div>
+		    </div>
+		    <div class="card">	
+				<div class ="card_img">
+					<a href="#">
+  					<img src="/img/food_cat_care.jpg" alt=""/>
+  					</a>
+  				</div>	
+ 				<div class="card-body">
+   					 <h5 class="card-title">챠오츄르(4개입)</h5>
+   			 	 	<p class="card-text">
+   			 		 <b><fmt:formatNumber value="5500" pattern="#,###"/></b>원</p>
+		   		</div>
+		    </div>
+		     
+		    
+	</div>	     
     <div id="catbest">
     	<p class="subtitle">고양이 베스트 상품</p>
+    	<div class="card">	
+			<div class ="card_img">
+				<a href="#">
+  				<img src="/img/food_cat_care.jpg" alt=""/>
+  				</a>
+  			</div>	
+ 					 <div class="card-body">
+   						 <h5 class="card-title">챠오츄르(4개입)</h5>
+   			 			 <p class="card-text">
+   			 			<b><fmt:formatNumber value="5500" pattern="#,###"/></b>원</p>
+		   			 </div>
+		     </div><div class="card">	
+			<div class ="card_img">
+				<a href="#">
+  				<img src="/img/food_cat_care.jpg" alt=""/>
+  				</a>
+  			</div>	
+ 					 <div class="card-body">
+   						 <h5 class="card-title">챠오츄르(4개입)</h5>
+   			 			 <p class="card-text">
+   			 			<b><fmt:formatNumber value="5500" pattern="#,###"/></b>원</p>
+		   			 </div>
+		     </div><div class="card">	
+			<div class ="card_img">
+				<a href="#">
+  				<img src="/img/food_cat_care.jpg" alt=""/>
+  				</a>
+  			</div>	
+ 					 <div class="card-body">
+   						 <h5 class="card-title">챠오츄르(4개입)</h5>
+   			 			 <p class="card-text">
+   			 			<b><fmt:formatNumber value="5500" pattern="#,###"/></b>원</p>
+		   			 </div>
+		     </div><div class="card">	
+			<div class ="card_img">
+				<a href="#">
+  				<img src="/img/food_cat_care.jpg" alt=""/>
+  				</a>
+  			</div>	
+ 					 <div class="card-body">
+   						 <h5 class="card-title">챠오츄르(4개입)</h5>
+   			 			 <p class="card-text">
+   			 			<b><fmt:formatNumber value="5500" pattern="#,###"/></b>원</p>
+		   			 </div>
+		     </div>
     </div>
+    
     <div id="newproduct">
+    
     	<p class="subtitle">신상품</p>
-    </div>
+    	<div class="card">
+    		<div class ="card_img">
+				<a href="#">
+  				<img src="/img/food_cat_ciao.jpg" alt=""/>
+  				</a>
+  			</div>
+ 			<div class="card-body">
+   				<h5 class="card-title">챠오츄르(4개입)</h5>
+   				<p class="card-text">
+   				<b><fmt:formatNumber value="5500" pattern="#,###"/></b>원</p>
+			</div>
+	    </div>
+	   
+    	<div class="card">
+    		<div class ="card_img">
+				<a href="#">
+  				<img src="/img/food_cat_ciao.jpg" alt=""/>
+  				</a>
+  			</div>
+ 			<div class="card-body">
+   				<h5 class="card-title">챠오츄르(4개입)</h5>
+   				<p class="card-text">
+   				<b><fmt:formatNumber value="5500" pattern="#,###"/></b>원</p>
+			</div>
+	    </div>
+	   
+    	<div class="card">
+    		<div class ="card_img">
+				<a href="#">
+  				<img src="/img/food_cat_ciao.jpg" alt=""/>
+  				</a>
+  			</div>
+ 			<div class="card-body">
+   				<h5 class="card-title">챠오츄르(4개입)</h5>
+   				<p class="card-text">
+   				<b><fmt:formatNumber value="5500" pattern="#,###"/></b>원</p>
+			</div>
+	    </div>
+	  
+    	<div class="card">
+    		<div class ="card_img">
+				<a href="#">
+  				<img src="/img/food_cat_ciao.jpg" alt=""/>
+  				</a>
+  			</div>
+ 			<div class="card-body">
+   				<h5 class="card-title">챠오츄르(4개입)</h5>
+   				<p class="card-text">
+   				<b><fmt:formatNumber value="5500" pattern="#,###"/></b>원</p>
+			</div>
+	    </div>
+
+	</div>
+ 
+
     <div id="news">
     	<p class="subtitle">알리미</p>
     	<hr>

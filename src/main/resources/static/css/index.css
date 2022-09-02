@@ -80,7 +80,6 @@
 	margin-top:10px;
 	width: 1200px;
 	height: 500px;
-	background-color: yellow;
 }
 
 /*    고양이 베스트div    */
@@ -89,7 +88,6 @@
 	margin-top:10px;
 	width: 1200px;
 	height: 500px;
-	background-color: green;
 }
 
 /*    신상품 div    */
@@ -99,7 +97,27 @@
 	margin-top:10px;
 	width: 1200px;
 	height: 500px;
-	background-color: #ccc;
+}
+
+/* 상품 카드 */
+
+div .card{
+	width: 280px;
+	margin: 10px 10px;
+	float: left;
+}
+.card img{
+	width:100%;
+	object-fit: cover;
+	transition: 0.3s;
+}
+.card_img{
+	overflow:hidden;
+}
+#dogbest a:hover img, #dogbest a:focus img,
+#catbest a:hover img, #catbest a:focus img,
+#newproduct a:hover img, #newproduct a:focus img{
+	transform: scale(1.2);
 }
 
 /*    알림 div    */

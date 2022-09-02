@@ -10,6 +10,7 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 
+<c:set var="path" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,13 +27,10 @@
 <link rel="stylesheet" href="/css/noticeList.css">
 <link rel="stylesheet" href="/css/qnaList.css">
 <link rel="stylesheet" href="/css/registerForm.css">
+
 <link rel="stylesheet" href="/css/foodProduct.css">
-<link rel="stylesheet" href="/css/bathProduct.css">
-<link rel="stylesheet" href="/css/toyProduct.css">
-<link rel="stylesheet" href="/css/beautyProduct.css">
-<link rel="stylesheet" href="/css/houseProduct.css">
-<link rel="stylesheet" href="/css/etcProduct.css">
-<link rel="stylesheet" href="/css/cart.css">
+
+<link rel="stylesheet" href="/css/orderForm.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
@@ -43,7 +41,12 @@
 
 
 <style>
-
+#container3 {
+	margin:0 auto;
+	width: 1500px;
+	height: 200px;
+	background-color: orange;
+}
 
 
 </style>
@@ -61,7 +64,7 @@
 				<ul id="topMenu">
 					<li><a href="/auth/loginForm">로그인</a></li>
 					<li><a href="/auth/adminCheck">회원가입</a></li>
-					<li><a href="/auth/cart">장바구니</a></li>
+					<li><a href="#">장바구니</a></li>
 					<li><a href="/notice/noticeList">고객센터</a></li>
 				</ul>
 				</c:when>
@@ -72,12 +75,11 @@
 						<c:if test="${principal.customer.roles eq 'ADMIN' }">
 						<li><a href="/product/registerForm">상품관리</a></li>
 						</c:if>
-						<li><a href="/notice/noticeList">고객센터</a></li>
 						<c:if test="${principal.customer.roles eq 'CUSTOMER' }">
-						<li><a href="/auth/cart">장바구니</a></li>
+						<li><a href="#">장바구니</a></li>
 						</c:if>
 						
-						
+						<li><a href="/notice/noticeList">고객센터</a></li>
 						<li><a href="/logout">로그아웃</a></li>
 					</ul>
 				</c:otherwise>
