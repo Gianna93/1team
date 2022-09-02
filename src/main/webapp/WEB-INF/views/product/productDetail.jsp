@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ include file="../layout/header.jsp"%>
 
 <div style=" margin: 0 auto; height:1400px; width: 1300px;"><br><br>
@@ -19,7 +20,7 @@
 						<c:if test="${product.pet eq 'dog'}"><label id="productPet">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>강아지용품</b></label></c:if>	
 						<c:if test="${product.pet eq 'cat'}"><label id="productPet">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>고양이용품</b></label></c:if>
 						<br>
-						<label class="card-text" id="productPrice"><b>가격&nbsp;&nbsp;:&nbsp;&nbsp;${product.price}	&nbsp;원</b></label>
+						<label class="card-text" id="productPrice"><b>가격&nbsp;&nbsp;:&nbsp;&nbsp;<fmt:formatNumber value="${product.price }" pattern="#,###"/>	&nbsp;원</b></label>
 						<br>
 						
 						<label class="card-text" id="productCount"><b>수량&nbsp;&nbsp;:&nbsp;&nbsp;<input type="number" name="favnum" min="1" max="99" style="margin-bottom : 10px; font-size: 15px; width:60px;" value="0">&nbsp;개</b><br></label>

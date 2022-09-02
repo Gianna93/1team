@@ -9,11 +9,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class CustomerController {
 
-	@GetMapping({"","/"})
-	public String index() {
-		return "index";
-	}
-
 	@GetMapping("/auth/joinForm")
 	public String joinForm() {
 		return "user/joinForm";

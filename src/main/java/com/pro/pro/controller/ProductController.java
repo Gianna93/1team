@@ -22,6 +22,12 @@ public class ProductController {
 		@Autowired
 		private ProductService productService;
 		
+		@GetMapping({"","/"})
+		public String index(Model model, @PageableDefault(size=1000, sort="id",
+				direction =  Sort.Direction.ASC)Pageable pageable) {
+			model.addAttribute("product", productService.상품목록(pageable)); 
+			return "index";
+		}
 		
 		@GetMapping({"/product/registerForm"})
 		public String registerForm() {

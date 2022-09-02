@@ -22,36 +22,7 @@ h1{
 </style>
 </head>
 <br>
-<<!--  
-<h1>공지사항</h1>
-<div class = "container">
 
-	<div>
-		<div>
-		<input type="hidden" id="faqid" value="${faq.faqid}">
-		<label for="title">${faq.title}</label>
-		<input type="text" id="title" style="border-style:none;">
-	</div>
-		<br>
-		<div>
-			<h3>${notice.title}</h3>
-		</div>
-		<hr/>
-	<div>
-		<label for="content">${faq.content}</label>
-			<input type="text" id="content" style="border-style:none;">
-	</div>
-		<hr/>
-	</div>	
-	<br><br>
-	<button class="btn btn-secondary" onclick="history.back()">돌아가기</button>
-	<c:if test="${notice.customer.userId==principal.customer.userId}">
-		<button class="btn btn-warning">
-		<a href="/notice/${notice.num}/updateForm">수정</a></button>
-		<button id="btn-delete" class="btn btn-danger">삭제</button>
-	</c:if>	
-</div>
--->
 <h1>공지사항</h1>
 <div class = "container">
 

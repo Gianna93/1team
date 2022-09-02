@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+	<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>	
 <%@ include file="layout/header.jsp"%>
 <div class='maincontainer'>
 
@@ -19,160 +20,62 @@
     <div id="dogbest">
     	<p class="subtitle">강아지 베스트 상품</p>
     	
+    	<c:forEach var = "product" items="${product.content}" begin="5" end="10" step="1">
+			<c:if test="${product.pet == 'dog'}">
 			<div class="card">	
 				<div class ="card_img">
-					<a href="#">
-  					<img src="/img/food_cat_care.jpg" alt=""/>
+					<a href="/product/productDetail/${product.id}">
+  					<img src="${product.image}" alt=""/>
   					</a>
   				</div>	
  				<div class="card-body">
-   					 <h5 class="card-title">챠오츄르(4개입)</h5>
+   					 <h5 class="card-title">${product.productName}</h5>
    			 	 	<p class="card-text">
-   			 		 <b><fmt:formatNumber value="5500" pattern="#,###"/></b>원</p>
+   			 		 <b><fmt:formatNumber value="${product.price}" pattern="#,###"/></b>원</p>
 		   		</div>
 		    </div>
-		    <div class="card">	
-				<div class ="card_img">
-					<a href="#">
-  					<img src="/img/food_cat_care.jpg" alt=""/>
-  					</a>
-  				</div>	
- 				<div class="card-body">
-   					 <h5 class="card-title">챠오츄르(4개입)</h5>
-   			 	 	<p class="card-text">
-   			 		 <b><fmt:formatNumber value="5500" pattern="#,###"/></b>원</p>
-		   		</div>
-		    </div>
-		    <div class="card">	
-				<div class ="card_img">
-					<a href="#">
-  					<img src="/img/food_cat_care.jpg" alt=""/>
-  					</a>
-  				</div>	
- 				<div class="card-body">
-   					 <h5 class="card-title">챠오츄르(4개입)</h5>
-   			 	 	<p class="card-text">
-   			 		 <b><fmt:formatNumber value="5500" pattern="#,###"/></b>원</p>
-		   		</div>
-		    </div>
-		    <div class="card">	
-				<div class ="card_img">
-					<a href="#">
-  					<img src="/img/food_cat_care.jpg" alt=""/>
-  					</a>
-  				</div>	
- 				<div class="card-body">
-   					 <h5 class="card-title">챠오츄르(4개입)</h5>
-   			 	 	<p class="card-text">
-   			 		 <b><fmt:formatNumber value="5500" pattern="#,###"/></b>원</p>
-		   		</div>
-		    </div>
-		     
+		   </c:if>
+		 </c:forEach>
+		</div>
 		    
-	</div>	     
+		  
     <div id="catbest">
     	<p class="subtitle">고양이 베스트 상품</p>
-    	<div class="card">	
-			<div class ="card_img">
-				<a href="#">
-  				<img src="/img/food_cat_care.jpg" alt=""/>
-  				</a>
-  			</div>	
- 					 <div class="card-body">
-   						 <h5 class="card-title">챠오츄르(4개입)</h5>
-   			 			 <p class="card-text">
-   			 			<b><fmt:formatNumber value="5500" pattern="#,###"/></b>원</p>
-		   			 </div>
-		     </div><div class="card">	
-			<div class ="card_img">
-				<a href="#">
-  				<img src="/img/food_cat_care.jpg" alt=""/>
-  				</a>
-  			</div>	
- 					 <div class="card-body">
-   						 <h5 class="card-title">챠오츄르(4개입)</h5>
-   			 			 <p class="card-text">
-   			 			<b><fmt:formatNumber value="5500" pattern="#,###"/></b>원</p>
-		   			 </div>
-		     </div><div class="card">	
-			<div class ="card_img">
-				<a href="#">
-  				<img src="/img/food_cat_care.jpg" alt=""/>
-  				</a>
-  			</div>	
- 					 <div class="card-body">
-   						 <h5 class="card-title">챠오츄르(4개입)</h5>
-   			 			 <p class="card-text">
-   			 			<b><fmt:formatNumber value="5500" pattern="#,###"/></b>원</p>
-		   			 </div>
-		     </div><div class="card">	
-			<div class ="card_img">
-				<a href="#">
-  				<img src="/img/food_cat_care.jpg" alt=""/>
-  				</a>
-  			</div>	
- 					 <div class="card-body">
-   						 <h5 class="card-title">챠오츄르(4개입)</h5>
-   			 			 <p class="card-text">
-   			 			<b><fmt:formatNumber value="5500" pattern="#,###"/></b>원</p>
-		   			 </div>
-		     </div>
+    	<c:forEach var = "product" items="${product.content}" begin="0" end="3" step="1">
+			<c:if test="${product.pet == 'cat'}">
+			<div class="card">	
+				<div class ="card_img">
+					<a href="/product/productDetail/${product.id}">
+  					<img src="${product.image}" alt=""/>
+  					</a>
+  				</div>	
+ 				<div class="card-body">
+   					 <h5 class="card-title">${product.productName}</h5>
+   			 	 	<p class="card-text">
+   			 		 <b><fmt:formatNumber value="${product.price}" pattern="#,###"/></b>원</p>
+		   		</div>
+		    </div>
+		   </c:if>
+		 </c:forEach>
     </div>
     
     <div id="newproduct">
     
     	<p class="subtitle">신상품</p>
-    	<div class="card">
-    		<div class ="card_img">
-				<a href="#">
-  				<img src="/img/food_cat_ciao.jpg" alt=""/>
-  				</a>
-  			</div>
- 			<div class="card-body">
-   				<h5 class="card-title">챠오츄르(4개입)</h5>
-   				<p class="card-text">
-   				<b><fmt:formatNumber value="5500" pattern="#,###"/></b>원</p>
-			</div>
-	    </div>
-	   
-    	<div class="card">
-    		<div class ="card_img">
-				<a href="#">
-  				<img src="/img/food_cat_ciao.jpg" alt=""/>
-  				</a>
-  			</div>
- 			<div class="card-body">
-   				<h5 class="card-title">챠오츄르(4개입)</h5>
-   				<p class="card-text">
-   				<b><fmt:formatNumber value="5500" pattern="#,###"/></b>원</p>
-			</div>
-	    </div>
-	   
-    	<div class="card">
-    		<div class ="card_img">
-				<a href="#">
-  				<img src="/img/food_cat_ciao.jpg" alt=""/>
-  				</a>
-  			</div>
- 			<div class="card-body">
-   				<h5 class="card-title">챠오츄르(4개입)</h5>
-   				<p class="card-text">
-   				<b><fmt:formatNumber value="5500" pattern="#,###"/></b>원</p>
-			</div>
-	    </div>
-	  
-    	<div class="card">
-    		<div class ="card_img">
-				<a href="#">
-  				<img src="/img/food_cat_ciao.jpg" alt=""/>
-  				</a>
-  			</div>
- 			<div class="card-body">
-   				<h5 class="card-title">챠오츄르(4개입)</h5>
-   				<p class="card-text">
-   				<b><fmt:formatNumber value="5500" pattern="#,###"/></b>원</p>
-			</div>
-	    </div>
+    	<c:forEach var = "product" items="${product.content}" begin="0" end="3" step="1">
+			<div class="card">	
+				<div class ="card_img">
+					<a href="/product/productDetail/${product.id}">
+  					<img src="${product.image}" alt=""/>
+  					</a>
+  				</div>	
+ 				<div class="card-body">
+   					 <h5 class="card-title">${product.productName}</h5>
+   			 	 	<p class="card-text">
+   			 		 <b><fmt:formatNumber value="${product.price}" pattern="#,###"/></b>원</p>
+		   		</div>
+		    </div>
+		 </c:forEach>
 
 	</div>
  
