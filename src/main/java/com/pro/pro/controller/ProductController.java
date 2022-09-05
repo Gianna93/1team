@@ -49,42 +49,42 @@ public class ProductController {
 		}
 		
 		@GetMapping({"/product/foodProduct"})
-		public String foodProduct(Model model, @PageableDefault(size=12, sort="id",
+		public String foodProduct(Model model, @PageableDefault(size=1000, sort="id",
 		direction =  Sort.Direction.DESC) Pageable pageable) {
 			model.addAttribute("product", productService.상품목록(pageable));
 			return "product/foodProduct";
 		}
 		
 		@GetMapping({"/product/bathProduct"})
-		public String bathProduct(Model model, @PageableDefault(size=12, sort="id",
+		public String bathProduct(Model model, @PageableDefault(size=1000, sort="id",
 		direction =  Sort.Direction.DESC) Pageable pageable) {
 			model.addAttribute("product", productService.상품목록(pageable));
 			return "product/bathProduct";
 		}
 		
 		@GetMapping({"/product/toyProduct"})
-		public String toyProduct(Model model, @PageableDefault(size=12, sort="id",
+		public String toyProduct(Model model, @PageableDefault(size=1000, sort="id",
 		direction =  Sort.Direction.DESC) Pageable pageable) {
 			model.addAttribute("product", productService.상품목록(pageable));
 			return "product/toyProduct";
 		}
 		
 		@GetMapping({"/product/beautyProduct"})
-		public String beautyProduct(Model model, @PageableDefault(size=12, sort="id",
+		public String beautyProduct(Model model, @PageableDefault(size=1000, sort="id",
 		direction =  Sort.Direction.DESC) Pageable pageable) {
 			model.addAttribute("product", productService.상품목록(pageable));
 			return "product/beautyProduct";
 		}
 		
 		@GetMapping({"/product/houseProduct"})
-		public String houseProduct(Model model, @PageableDefault(size=12, sort="id",
+		public String houseProduct(Model model, @PageableDefault(size=1000, sort="id",
 		direction =  Sort.Direction.DESC) Pageable pageable) {
 			model.addAttribute("product", productService.상품목록(pageable));
 			return "product/houseProduct";
 		}
 		
 		@GetMapping({"/product/etcProduct"})
-		public String etcProduct(Model model, @PageableDefault(size=12, sort="id",
+		public String etcProduct(Model model, @PageableDefault(size=1000, sort="id",
 		direction =  Sort.Direction.DESC) Pageable pageable) {
 			model.addAttribute("product", productService.상품목록(pageable));
 			return "product/etcProduct";

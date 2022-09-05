@@ -7,7 +7,6 @@
 <div class ="food_container">
 <h1 style="font-weight:900;">사료 / 간식</h1>
 <br><br>
-
 <div class="food_btndiv">
 	<div class="btn-group" role="group" aria-label="Basic radio toggle button group" style="margin-left:525px;">
  		<input type="radio" class="btn-check" name="select_pet" id="dog" value="dog" autocomplete="off" checked >
@@ -16,7 +15,6 @@
 		<label class="btn btn-outline-success" for="cat">고양이</label>
 	</div>
 </div>
-
 <br><br>
 <div id="dog_pop">
 <c:forEach var = "product" items="${product.content}">
@@ -26,9 +24,9 @@
   		<img src="${product.image}" alt="#" onclick="location.href='/product/productDetail/${product.id}';"  />
   		</div>
  		 <div class="food_card_body">
-   			<a href="/product/productDetail/${product.id}" style="text-decoration:none; color:black;"><h5 class="food_card_title">${product.productName}</h5></a>
+   			 <a href="/product/productDetail/${product.id}" style="text-decoration:none; color:black;"><h5 class="food_card_title">${product.productName}</h5></a>
    			 <a href="/product/productDetail/${product.id}" style="text-decoration:none; color:black;">
-   			 <p class="food_card-text"><b><fmt:formatNumber value="${product.price }" pattern="#,###"/></b>원</p></a>
+   			 <p class="food_card_text"><b><fmt:formatNumber value="${product.price }" pattern="#,###"/></b>원</p></a>
 		  </div>
 	</div>
 </c:if>	
@@ -42,7 +40,7 @@
 	<div class ="food_card_img">
   		<img src="${product.image}" alt="#" onclick="location.href='/product/productDetail/${product.id}';"  />
   		</div>
- 		 <div class="food_card_body">
+ 		<div class="food_card_body">
    			 <a href="/product/productDetail/${product.id}" style="text-decoration:none; color:black;"><h5 class="food_card_title">${product.productName}</h5></a>
    			 <a href="/product/productDetail/${product.id}" style="text-decoration:none; color:black;">
    			 <p class="food_card_text"><b><fmt:formatNumber value="${product.price }" pattern="#,###"/></b>원</p></a>
