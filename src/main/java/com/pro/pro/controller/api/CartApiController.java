@@ -30,5 +30,12 @@ public class CartApiController {
 		cartService.장바구니삭제(cart.getId());
 		return new ResponseDto<Integer>(HttpStatus.OK.value(),1);
 	}
+	
+	@DeleteMapping("/auth/clearCartProc")
+	public ResponseDto<String> clear(@RequestBody Cart cart){
+		System.out.println("장바구니 비우기 실행");
+		String a = cartService.장바구니비우기(cart.getUserid());
+		return new ResponseDto<String>(HttpStatus.OK.value(),a);
+	}
 
 }

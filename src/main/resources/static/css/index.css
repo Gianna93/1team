@@ -16,7 +16,7 @@
   height: 380px;
   overflow: hidden;
   position: relative;
-  border-radius:10px;
+  border-radius:5px;
 
 }
 
@@ -80,7 +80,6 @@
 	margin-top:10px;
 	width: 1200px;
 	height: 500px;
-	background-color: yellow;
 }
 
 /*    고양이 베스트div    */
@@ -89,7 +88,6 @@
 	margin-top:10px;
 	width: 1200px;
 	height: 500px;
-	background-color: green;
 }
 
 /*    신상품 div    */
@@ -99,7 +97,6 @@
 	margin-top:10px;
 	width: 1200px;
 	height: 500px;
-	background-color: #ccc;
 }
 
 /*    알림 div    */

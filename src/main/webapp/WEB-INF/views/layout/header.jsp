@@ -27,11 +27,6 @@
 <link rel="stylesheet" href="/css/qnaList.css">
 <link rel="stylesheet" href="/css/registerForm.css">
 <link rel="stylesheet" href="/css/foodProduct.css">
-<link rel="stylesheet" href="/css/bathProduct.css">
-<link rel="stylesheet" href="/css/toyProduct.css">
-<link rel="stylesheet" href="/css/beautyProduct.css">
-<link rel="stylesheet" href="/css/houseProduct.css">
-<link rel="stylesheet" href="/css/etcProduct.css">
 <link rel="stylesheet" href="/css/cart.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">

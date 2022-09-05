@@ -32,4 +32,14 @@ public class CartService {
 		cartRepository.deleteById(id);
 	}
 	
+	@Transactional
+	public String 장바구니비우기(String userid) {
+		if(cartRepository.existsByUserid(userid)) {
+		cartRepository.deleteAllByUserid(userid);
+			return "장바구니를 비웠습니다.";
+		}else {
+			return "장바구니가 텅텅";
+		}
+	}
+	
 }
