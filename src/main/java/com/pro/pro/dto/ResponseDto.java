@@ -1,6 +1,10 @@
 package com.pro.pro.dto;
 
 
+import org.springframework.data.domain.Page;
+
+import com.pro.pro.model.Product;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

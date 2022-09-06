@@ -1,0 +1,44 @@
+@charset "UTF-8";
+.food_container{
+
+	margin:0 auto;
+	margin-top:10px;
+	width: 1200px;
+}
+
+.food_btndiv{
+	width:1200px;
+	margin:0 auto;
+}
+
+#btn-group{
+	margin:0 auto;
+	width:200px;
+}
+div .card{
+	width:280px;
+	float: left;
+	margin: 10px 10px;
+}
+.card img{
+	width:100%;
+	object-fit: cover;
+	transition: 0.3s;
+	cursor: pointer;
+	overflow:hidden;
+}
+.food_card_img{
+	overflow:hidden;
+}
+.food_card_body{
+	margin-left:10px;
+	margin-top: 10px;
+}
+#dog_pop img:hover, #dog_pop img:focus,
+#cat_pop img:hover, #cat_pop img:focus{
+	transform: scale(1.2);
+}
+#food_page{
+	clear: both;
+	margin: 0 auto;
+}

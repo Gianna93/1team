@@ -35,7 +35,8 @@ div .card{
 	margin-top: 10px;
 }
 #dog_pop img:hover, #dog_pop img:focus,
-#cat_pop img:hover, #cat_pop img:focus{
+#cat_pop img:hover, #cat_pop img:focus,
+#pop img:hover, #pop img:focus{
 	transform: scale(1.2);
 }
 #food_page{

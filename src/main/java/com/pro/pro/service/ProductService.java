@@ -28,8 +28,8 @@ public class ProductService {
 			return productRepository.findById(id).orElseThrow(()->{ 
 				return new IllegalArgumentException("상품을 찾을 수 없습니다.");
 			});
-		}	
-	 
+		}
+	  
 	 @Transactional(readOnly=true)
 		public Page<Product> 상품목록(Pageable pageable){
 			return productRepository.findAll(pageable);

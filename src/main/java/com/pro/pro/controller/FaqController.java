@@ -19,25 +19,25 @@ public class FaqController {
 	@Autowired
 	private FaqService faqService;
 	
-	@GetMapping("/faq/faqForm") //post
+	@GetMapping("/faq/faqForm") 
 	public String postForm() {
 		return "faq/faqForm";
 	}
 	
-	@GetMapping("faq/faqList") //faq
-	public String Faq(Model model, @PageableDefault(size = 8, sort = "title", 
-	direction = Sort.Direction.ASC) Pageable pageable) {
+	@GetMapping("faq/faqList") 
+	public String Faq(Model model, @PageableDefault(size = 10, sort = "faqid", 
+	direction = Sort.Direction.DESC) Pageable pageable) {
 		model.addAttribute("faq", faqService.postList(pageable));
 		return "faq/faqList";
 	}
 	
-	@GetMapping("/faq/{faqid}") //{faqid}
+	@GetMapping("/faq/{faqid}") 
 	public String findById(@PathVariable int faqid, Model model) {
 		model.addAttribute("faq", faqService.postView(faqid));
 		return "faq/faqDetail";
 	}
 	
-	@GetMapping("faq/{faqid}/updateForm") //postupdate
+	@GetMapping("faq/{faqid}/updateForm") 
 	public String updateForm(@PathVariable int faqid, Model model) {
 		model.addAttribute("faq", faqService.postUpdate2(faqid));
 		return "faq/updateForm";

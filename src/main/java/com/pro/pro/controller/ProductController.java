@@ -1,6 +1,7 @@
 package com.pro.pro.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
@@ -32,6 +33,13 @@ public class ProductController {
 		@GetMapping({"/product/registerForm"})
 		public String registerForm() {
 			return "product/registerForm";
+		}
+		
+		@GetMapping({"/product/searchProduct"})
+		public String searchProduct(Model model, @PageableDefault(size=1000, sort="id",
+				direction =  Sort.Direction.DESC) Pageable pageable) {
+				model.addAttribute("product", productService.상품목록(pageable));
+			return "product/searchProduct";
 		}
 		
 		@ResponseBody

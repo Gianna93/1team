@@ -1,0 +1,33 @@
+@charset "UTF-8";
+.container {
+margin-top: 50px;
+	width: 1000px;
+	height: 700px;
+	margin: 0 auto;	
+}
+h1{
+	font-weight: 1000;
+	font-size: 25px;
+	text-align: center;
+	font-family: 'Gamja Flower', cursive;
+}
+
+table{
+	width:900px;
+	border-top: 1px solid #ccc;
+	border-collapse: collapse;
+	margin: 0 auto;
+}
+#board_menu{
+	margin-top: 50px;
+	margin-bottom: 50px;
+	text-align:center;
+}
+#btn-write{
+	float: right;
+}
+#left_align{width:200px; height: 50px;}
+.qna_num{width:50px; height: 50px; text-align: center;}
+.qna_title{width:300px; height: 50px; text-align: center;}
+.qna_writer{width:100px; height: 50px; text-align: center;}
+.qna_date{width:150px; height: 50px; text-align: center;}
