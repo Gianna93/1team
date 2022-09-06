@@ -3,6 +3,8 @@ package com.pro.pro.service;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,6 +22,11 @@ public class CustomerService {
 	
 	@Autowired
 	private BCryptPasswordEncoder encoder;
+	
+	@Transactional(readOnly=true)
+	public Page<Customer> 회원목록(Pageable pageable){
+		return customerRepository.findAll(pageable);
+	}
 	
 	@Transactional
 	public void 회원가입(Customer customer) {
@@ -77,5 +84,6 @@ public class CustomerService {
 		cus.setAddress1(customer.getAddress1());
 		cus.setAddress2(customer.getAddress2());
 		cus.setAddress3(customer.getAddress3());
+		customerRepository.save(cus);
 	}
 }

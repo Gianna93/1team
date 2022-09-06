@@ -2,20 +2,20 @@
 
 
 let index = {
-	
-	
+
+
 
 
 	init: function() {
-	
-		
+
+
 		$("#btn-cart").on("click", () => {
 			this.saveCart();
 		})
-		
-		
-		
-		$(".productCount").change(function(){
+
+
+
+		$(".productCount").change(function() {
 			var proCount = $(".productCount").val();
 			console.log(proCount)
 			var countPrice = $("#countPrice").text();
@@ -45,15 +45,15 @@ let index = {
 
 
 		})
-		
+
 		$("#btn-clear").on("click", () => {
 			this.clearCart();
 		})
-		
+
 		$("#btn-order").on("click", () => {
 			this.order();
 		})
-		
+
 
 	},
 
@@ -93,7 +93,7 @@ let index = {
 				if (confirm("장바구니로 이동하시겠습니까?") == true) {
 					location.href = "/auth/cart";
 				}
-				else{
+				else {
 					return;
 				}
 			}
@@ -101,124 +101,128 @@ let index = {
 				return;
 			}
 
-		}).fail(function(){
+		}).fail(function() {
 			alert("에러");
 		});
 
 	},
-	
-	clearCart:function(){
-		
+
+	clearCart: function() {
+
 		var userid = $("#userId").val();
-		
+
 		let data = {
-			
+
 			userid: userid
 		}
 		console.log(data);
-		
+
 		$.ajax({
 			type: "delete",
 			url: "/auth/clearCartProc",
 			data: JSON.stringify(data),
 			contentType: "application/json; charset=utf-8",
 			dataType: "json"
-		}).done(function(resp){
+		}).done(function(resp) {
 			if (confirm("장바구니를 비우시겠습니까?") == true) {
 				alert(resp.data);
 				location.href = "/auth/cart";
-			}else{
-					return;
-				}
-		}).fail(function(error){
+			} else {
+				return;
+			}
+		}).fail(function(error) {
 			alert("에러");
 		})
-		
-	},
-	
 
-	order :function(){
-		
+	},
+
+
+	order: function() {
+
 		var checked = document.querySelectorAll("input[type='checkbox']:checked");
-		for (var i = 0; i < checked.length; i++) {
-			var cartid = checked[i].id;
-			
-			let data = {
-				id:cartid
-			}
-			
-			$.ajax({
-			type: "post",
-			url: "/auth/findBycartidProc",
-			data: JSON.stringify(data),
-			contentType: "application/json; charset=utf-8",
-			dataType: "json"
-			}).done(function(resp){
-				
-				let data2 = {
-					productName: resp.data.productName,
-					price: resp.data.price,
-					sumprice: resp.data.sumprice,
-					category: resp.data.category,
-					content: resp.data.content,
-					pet: resp.data.pet,
-					phone: resp.data.phone,
-					addr1: resp.data.addr1,
-					addr2: resp.data.addr2,
-					addr3: resp.data.addr3,
-					count: resp.data.count,
-					image: resp.data.image,
-					userid: resp.data.userid,
-					state: "주문완료"
+		if (checked.length == 0) {
+			alert('상품을 선택해주세요');
+		} else {
+			for (var i = 0; i < checked.length; i++) {
+				var cartid = checked[i].id;
+
+				let data = {
+					id: cartid
 				}
+
 				$.ajax({
 					type: "post",
-					url: "/auth/addOrder",
-					data: JSON.stringify(data2),
+					url: "/auth/findBycartidProc",
+					data: JSON.stringify(data),
 					contentType: "application/json; charset=utf-8",
 					dataType: "json"
-				}).done(function(){
-					console.log('주문이 완료되었습니다.')
-				}).fail(function(){
-					console.log('에러입니다.')
-				});
-				
-				
-				
-				let data3={
-					id:resp.data.id
-				}
-				
-				$.ajax({
-					type: "delete",
-					url: "/auth/orderAndClearProc",
-					data: JSON.stringify(data3),
-					contentType: "application/json; charset=utf-8",
-					dataType: "json"
-				}).done(function(){
-					location.href = "/auth/cart";
-				}).fail(function(){
-					console.log('에러입니다.')
-				});
-				
-				
-				
-			})
-		}
-		
-		if (confirm("선택된 항목을 주문 하시겠습니까?") == true) {
-				alert('주문이 완료되었습니다.');
-			}else{
-					return;
-				}
+				}).done(function(resp) {
 
-        
-		
-		
+					let data2 = {
+						productName: resp.data.productName,
+						price: resp.data.price,
+						sumprice: resp.data.sumprice,
+						category: resp.data.category,
+						content: resp.data.content,
+						pet: resp.data.pet,
+						phone: resp.data.phone,
+						addr1: resp.data.addr1,
+						addr2: resp.data.addr2,
+						addr3: resp.data.addr3,
+						count: resp.data.count,
+						image: resp.data.image,
+						userid: resp.data.userid,
+						state: "주문완료"
+					}
+					$.ajax({
+						type: "post",
+						url: "/auth/addOrder",
+						data: JSON.stringify(data2),
+						contentType: "application/json; charset=utf-8",
+						dataType: "json"
+					}).done(function() {
+						console.log('주문이 완료되었습니다.')
+					}).fail(function() {
+						console.log('에러입니다.')
+					});
+
+
+
+					let data3 = {
+						id: resp.data.id
+					}
+
+					$.ajax({
+						type: "delete",
+						url: "/auth/orderAndClearProc",
+						data: JSON.stringify(data3),
+						contentType: "application/json; charset=utf-8",
+						dataType: "json"
+					}).done(function() {
+						location.href = "/auth/cart";
+					}).fail(function() {
+						console.log('에러입니다.')
+					});
+
+
+
+				})
+			}
+
+			if (confirm("선택된 항목을 주문 하시겠습니까?") == true) {
+				alert('주문이 완료되었습니다.');
+			} else {
+				return;
+			}
+
+
+
+
+		}
 	}
-	
-	
-	
+
+
+
 }
 
 
@@ -239,10 +243,10 @@ function itemSum(frm) {
 			sum += parseInt(frm.chkbox.value);
 		}
 	}
-	
-	
+
+
 	if (sum > 0) {
-		$("#total_sum").text(new Intl.NumberFormat('en-US').format(sum) + "원 + 3,000원 = " + new Intl.NumberFormat('en-US').format(sum + 3000)+"원");
+		$("#total_sum").text(new Intl.NumberFormat('en-US').format(sum) + "원 + 3,000원 = " + new Intl.NumberFormat('en-US').format(sum + 3000) + "원");
 	}
 	else {
 		$("#total_sum").text("");
@@ -253,5 +257,5 @@ function itemSum(frm) {
 
 
 
- //document.frm.addEventListener("DOMContentLoaded", itemSum(frm));
+//document.frm.addEventListener("DOMContentLoaded", itemSum(frm));
 index.init();

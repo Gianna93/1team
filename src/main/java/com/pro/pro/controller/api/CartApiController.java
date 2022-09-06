@@ -19,7 +19,7 @@ public class CartApiController {
 	
 	@PostMapping("/auth/saveCartProc")
 	public ResponseDto<Integer> save(@RequestBody Cart cart){
-		System.out.println("장바구니담기 실행");
+		System.out.println("장바구니 담기 실행");
 		cartService.장바구니담기(cart);
 		return new ResponseDto<Integer>(HttpStatus.OK.value(),1);
 	}

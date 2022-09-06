@@ -385,13 +385,17 @@ let index = {
 			contentType: "application/json; charset=utf-8",
 			dataType: "json"
 		}).done(function() {
-			alert("회원정보 수정이 완료되었습니다.");
-			location.href = "/";
+			if (confirm("회원정보를 수정 하시겠습니까?") == true) {
+				alert('회원정보가 수정되었습니다');
+			} else {
+				return;
+			}
+			location.href = "/auth/myPage";
 		});
 	},
 	
 	
-	
+
 	
 	
 	
@@ -574,7 +578,14 @@ let index = {
 
 index.init();
 
-
+	//////////////////////
+	///////전화번호변경//////
+	/////////////////////
+	
+	function editphone(){
+		$("#phone").removeAttr("disabled");
+		
+	}
 
 
 

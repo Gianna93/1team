@@ -4,10 +4,8 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ include file="../layout/header.jsp"%>
 
-<% int finalprice = 0; 
-	pageContext.setAttribute("finalprice", finalprice);
-%>
 
+<%! int a= 0; %>
 <c:choose>
 	<c:when test="${empty principal }">
 	<script>
@@ -55,6 +53,17 @@
 				<th></th>
 			</tr>
 			
+			<% a=0; %>
+			<c:forEach var = "cart" items="${carts.content}">
+			<c:if test="${cart.userid eq principal.customer.userid }">
+			<% a=1; %>
+			</c:if>
+			</c:forEach>
+			<c:if test="<%= a==0 %>">
+				<tr>
+					<td colspan="7"><b>장바구니가 비어있습니다.</b></td>
+				</tr>
+			</c:if>
 				<c:forEach var = "cart" items="${carts.content}">
 					
 						
