@@ -37,5 +37,20 @@ public class CartApiController {
 		String a = cartService.장바구니비우기(cart.getUserid());
 		return new ResponseDto<String>(HttpStatus.OK.value(),a);
 	}
-
+	
+	@PostMapping("/auth/findBycartidProc")
+	public ResponseDto<Cart> findById(@RequestBody Cart cart){
+		System.out.println("카트 목록 하나씩 검색");
+		Cart cartlist = cartService.장바구니목록(cart).orElseThrow(()->{
+			return new IllegalArgumentException("fail");
+		});
+		return new ResponseDto<Cart>(HttpStatus.OK.value(),cartlist);
+	}
+	
+	@DeleteMapping("/auth/orderAndClearProc")
+	public ResponseDto<Integer> orderAndClear(@RequestBody Cart cart){
+		System.out.println("주문후 장바구니 비우기 실행");
+		cartService.주문후장바구니삭제(cart);
+		return new ResponseDto<Integer>(HttpStatus.OK.value(),1);
+	}
 }

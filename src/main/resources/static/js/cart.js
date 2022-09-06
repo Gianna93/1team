@@ -50,7 +50,9 @@ let index = {
 			this.clearCart();
 		})
 		
-		
+		$("#btn-order").on("click", () => {
+			this.order();
+		})
 		
 
 	},
@@ -132,9 +134,88 @@ let index = {
 			alert("에러");
 		})
 		
-	}
+	},
 	
 
+	order :function(){
+		
+		var checked = document.querySelectorAll("input[type='checkbox']:checked");
+		for (var i = 0; i < checked.length; i++) {
+			var cartid = checked[i].id;
+			
+			let data = {
+				id:cartid
+			}
+			
+			$.ajax({
+			type: "post",
+			url: "/auth/findBycartidProc",
+			data: JSON.stringify(data),
+			contentType: "application/json; charset=utf-8",
+			dataType: "json"
+			}).done(function(resp){
+				
+				let data2 = {
+					productName: resp.data.productName,
+					price: resp.data.price,
+					sumprice: resp.data.sumprice,
+					category: resp.data.category,
+					content: resp.data.content,
+					pet: resp.data.pet,
+					phone: resp.data.phone,
+					addr1: resp.data.addr1,
+					addr2: resp.data.addr2,
+					addr3: resp.data.addr3,
+					count: resp.data.count,
+					image: resp.data.image,
+					userid: resp.data.userid,
+					state: "주문완료"
+				}
+				$.ajax({
+					type: "post",
+					url: "/auth/addOrder",
+					data: JSON.stringify(data2),
+					contentType: "application/json; charset=utf-8",
+					dataType: "json"
+				}).done(function(){
+					console.log('주문이 완료되었습니다.')
+				}).fail(function(){
+					console.log('에러입니다.')
+				});
+				
+				
+				
+				let data3={
+					id:resp.data.id
+				}
+				
+				$.ajax({
+					type: "delete",
+					url: "/auth/orderAndClearProc",
+					data: JSON.stringify(data3),
+					contentType: "application/json; charset=utf-8",
+					dataType: "json"
+				}).done(function(){
+					location.href = "/auth/cart";
+				}).fail(function(){
+					console.log('에러입니다.')
+				});
+				
+				
+				
+			})
+		}
+		
+		if (confirm("선택된 항목을 주문 하시겠습니까?") == true) {
+				alert('주문이 완료되었습니다.');
+			}else{
+					return;
+				}
+
+        
+		
+		
+	}
 	
 	
 	
