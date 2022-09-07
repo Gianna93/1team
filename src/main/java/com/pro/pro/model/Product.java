@@ -1,12 +1,19 @@
 package com.pro.pro.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -48,5 +55,10 @@ public class Product {
 	
 	@Column(nullable=false)
 	private String pet;
+	
+	@OrderBy("id desc")
+	@JsonIgnoreProperties({"product"})
+	@OneToMany(mappedBy="product", fetch=FetchType.EAGER)
+	private List<Review> review;
 
 }

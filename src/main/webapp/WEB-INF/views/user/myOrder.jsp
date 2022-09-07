@@ -52,6 +52,7 @@
 									</td>
 									<td>
 									<b>${order.productName }</b>
+									<input type="hidden" id="order_productName" value="${order.productName}">
 									</td>
 									<td>
 									
@@ -71,7 +72,8 @@
 									
 									<c:choose>
 										<c:when test="${order.state eq '배송완료'}"><b>${order.state }</b> <br>
-										<button type="button" class="btn btn-outline-dark" value="${order.id }" style="width: 80px; font-size:13px; height:30px; margin-top:5px; line-height: 15px;">후기작성</button>
+										<button id="btn-review" type="button" class="btn btn-outline-dark" value="${order.id }" style="width: 80px; font-size:13px; height:30px; margin-top:5px; line-height: 15px;">
+										후기작성</button>
 										</c:when>
 										<c:otherwise><b>${order.state }</b></c:otherwise>
 									</c:choose>
@@ -132,6 +134,6 @@
 
 
 
-
+<script type="text/javascript" src="/js/review.js"></script>
 <script type="text/javascript" src="/js/customer.js"></script>
 <%@ include file="../layout/footer.jsp"%>

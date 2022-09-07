@@ -25,7 +25,6 @@ public class ReplyApiController {
     public void save(@PathVariable int num,
                      @RequestBody Reply reply,
                      @AuthenticationPrincipal PrincipalDetail principalDetail) {
-    	System.out.println(num);
         replyService.replySave(num, reply, principalDetail.getCustomer());
     }
     

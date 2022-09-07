@@ -1,16 +1,31 @@
 let index={
 	init: function(){
 		$("#btn-save").on("click",()=>{
-			this.save();
+			this.saveCheck();
 		});
 		$("#btn-delete").on("click",()=>{
 			this.deleteById();
 		});
 		$("#btn-update").on("click",()=>{
-			this.update();
+			this.updateCheck();
 		});
 	},
-	
+	saveCheck: function(){
+		var title = $("#title").val();
+		var	content = $("#content").val();
+
+		if (title==""){
+			alert("제목을 입력해주세요.");
+			$("#title").focus();
+			return false;
+		}
+		else if (content==""){
+			alert("내용을 입력해주세요.");
+			$("#content").focus();
+			return false;
+		}
+		else this.save();
+	},
 	save: function(){
 		let data={
 			title: $("#title").val(),
@@ -43,7 +58,22 @@ let index={
 			alert(JSON.stringify(error));
 		});
 	},
-	
+	updateCheck: function(){
+		var title = $("#title").val();
+		var	content = $("#content").val();
+
+		if (title==""){
+			alert("제목을 입력해주세요.");
+			$("#title").focus();
+			return false;
+		}
+		else if (content==""){
+			alert("내용을 입력해주세요.");
+			$("#content").focus();
+			return false;
+		}
+		else this.update();
+	},
 	update: function(){
 		let id = $("#id").val();
 		let data={

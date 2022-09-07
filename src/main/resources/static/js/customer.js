@@ -568,9 +568,8 @@ let index = {
 		
 		
 		return true;
-	}
-
-
+	},
+	
 
 
 
