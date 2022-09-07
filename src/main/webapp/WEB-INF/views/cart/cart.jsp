@@ -4,10 +4,8 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ include file="../layout/header.jsp"%>
 
-<% int finalprice = 0; 
-	pageContext.setAttribute("finalprice", finalprice);
-%>
 
+<%! int a= 0; %>
 <c:choose>
 	<c:when test="${empty principal }">
 	<script>
@@ -42,7 +40,7 @@
 	<br>
 	<div class="cartcontainer">
 		<h1 style="font-weight:900;">장바구니</h1><br>
-		<form name="form" id="form" onload = "alert('hello')">
+		<form name="form" id="form" >
 		<table class="carttb">
 			<tr id="firsttr" >
 				<th></th>
@@ -55,6 +53,17 @@
 				<th></th>
 			</tr>
 			
+			<% a=0; %>
+			<c:forEach var = "cart" items="${carts.content}">
+			<c:if test="${cart.userid eq principal.customer.userid }">
+			<% a=1; %>
+			</c:if>
+			</c:forEach>
+			<c:if test="<%= a==0 %>">
+				<tr>
+					<td colspan="7"><b>장바구니가 비어있습니다.</b></td>
+				</tr>
+			</c:if>
 				<c:forEach var = "cart" items="${carts.content}">
 					
 						
@@ -63,31 +72,38 @@
 								<tr>
 									<td>
 									<input type="checkbox" id="${cart.id }" name="chkbox" onClick="itemSum(this.form);"  value="${cart.sumprice }">
-									${cart.id }
+									
 									<input type="hidden" id="cartId"  value="${cart.id }">
 									<input type="hidden" id="userId"  value="${cart.userid }">
 									</td>
 									<td>
 									<img src="${cart.image}">
-									<input type="hidden" value="${cart.image }">
+									<input type="hidden" value="${cart.image }" id="productImg">
 									</td>
 									<td>
 									<b>${cart.productName }</b>
-									<input type="hidden" value="${cart.productName }">
+									<input type="hidden" value="${cart.productName }" id="productName">
 									</td>
 									<td>
-									${cart.content }
-									<input type="hidden" value="${cart.content }">
+									
+									<c:if test="${cart.pet eq 'dog'}">${cart.content }/<b>강아지용</b></c:if>
+									<c:if test="${cart.pet eq 'cat'}">${cart.content }/<b>고양이용</b></c:if>
+									
+									<input type="hidden" value="${cart.content }" id="productContent">
+									<input type="hidden" value="${cart.pet }" id="productPet">
 									</td>
 									<td>
 				
 									<input type="number" value="${cart.count }" class="productCount" style="width: 40px;" min="1" max="99">
 									</td>
-									<td class='pritd'>
+									<td class='pritd' style="width: 150px;">
 									<span id="countPrice"><fmt:formatNumber value="${cart.price}" pattern="#,###" /></span>원
 									 / <span id="sumCountPrice"><fmt:formatNumber value="${cart.sumprice }" pattern="#,###" /></span>원
+									<input type="hidden" value="${cart.price}" id="Price">
+									<input type="hidden" value="${cart.sumprice}" id="sumPrice">
+									
 									</td>
-									<td>
+									<td style="width: 150px;">
 									<button type="button" class="btn btn-danger btn-cartdel" value="${cart.id }" >삭제</button>
 									</td>
 									
@@ -103,12 +119,12 @@
 			<td><b>총 금액 : </b></td>
 			<td colspan="3">
 			(합산금액 + 배송비 = 총 결제 금액)<br>
-			<span id="total_sum"></span>
+			<b><span id="total_sum"></span></b>
 					
 					
 
 			</td>
-			<td><button type="button" class="btn btn-success" id="order">주문하기</button></td>
+			<td><button type="button" class="btn btn-success" id="btn-order">주문하기</button></td>
 			<td><button type="button" class="btn btn-danger" id="btn-clear" >전체비우기</button></td>
 			</tr>
 		</table>

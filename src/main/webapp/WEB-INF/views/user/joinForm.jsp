@@ -54,7 +54,7 @@
 		
 		
 		
-		<select name="sel" id="sel" onchange="change()">
+		<select class="form-select form-select-sm" aria-label=".form-select-sm example" name="sel" id="sel" onchange="change()">
 				<option>선택하세요</option>
 				<option>naver.com</option>
 				<option>daum.net</option>
@@ -65,7 +65,7 @@
 		</select>
 		
 		
-		<br><br>
+		<br>
 
 
 
@@ -93,13 +93,13 @@
 		
 	<div class="form-group">
 			<label for="qestion"><b>질문</b></label><br>
-				<select name="sel2" id="sel2">
+				<select class="form-select form-select-sm" aria-label=".form-select-sm example"  name="sel2" id="sel2">
 					<option>아이디 찾기에 필요한 질문</option>
 					<option>어릴적 별명은?</option>
 					<option>내가 다닌 초등학교는?</option>
 					<option>감명깊게 읽은 책 이름은?</option>
 					<option>내가 사는 아파트의 이름은?</option>
-				</select><br><br>
+				</select><br>
 				<label for="answer"><b>답변</b></label>
 				<input type="text" class="form-control" placeholder="답변" id="answer">
 			<div id="id_check"></div>

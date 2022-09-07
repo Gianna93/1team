@@ -1,15 +1,20 @@
 package com.pro.pro.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.pro.pro.service.CustomerService;
 
 @Controller
 public class CustomerController {
 
-
+	@Autowired
+	CustomerService customerService;
 
 	@GetMapping("/auth/joinForm")
 	public String joinForm() {
@@ -50,7 +55,11 @@ public class CustomerController {
 	}
 	
 	@GetMapping("/auth/myPage")
-	public String myPage() {
+	public String myPage(Model model, @PageableDefault(size=10, sort="id",
+			direction = Sort.Direction.DESC) Pageable pageable) {
+		model.addAttribute("customers", customerService.회원목록(pageable));
 		return "user/myPage";
 	}
+	
+
 }

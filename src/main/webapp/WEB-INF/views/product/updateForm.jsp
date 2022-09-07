@@ -8,6 +8,7 @@
   <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
     <button class="nav-link" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" onclick="location.href='/product/registerForm'" >상품등록</button>
     <button class="nav-link active" id="v-pills-update-tab" data-bs-toggle="pill" data-bs-target="#v-pills-update" type="button" role="tab" aria-controls="v-pills-update" onclick="location.href='/product/updateForm'" >상품수정/삭제</button>
+ 	 <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" onclick="location.href='/product/orderAdmin'">고객주문내역</button>
   </div>
   <div class="tab-content" id="v-pills-tabContent">
   
@@ -107,7 +108,7 @@
 	<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
 	<button id="btn-update" class="btn btn-outline-dark" style="width:150px; float:left;">상품수정</button>
 	<button id="btn-delete" class="btn btn-outline-dark" style="width:150px; float:left;">상품삭제</button>
-	</div></div></div>
+	</div></div></div><br><br>
 	
 	
 
