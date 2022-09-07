@@ -7,6 +7,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.pro.pro.model.Notice;
 import com.pro.pro.model.Product;
 import com.pro.pro.repository.ProductRepository;
@@ -29,7 +30,7 @@ public class ProductService {
 				return new IllegalArgumentException("상품을 찾을 수 없습니다.");
 			});
 		}
-	  
+
 	 @Transactional(readOnly=true)
 		public Page<Product> 상품목록(Pageable pageable){
 			return productRepository.findAll(pageable);

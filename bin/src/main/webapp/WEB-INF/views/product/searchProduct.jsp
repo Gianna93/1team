@@ -12,34 +12,23 @@
 <h1 style="font-weight:900;">' <%=search %> ' 검색 결과</h1>
 <br><br>
 
-<c:choose>
-	<c:when test ="${search !=''}">
-					<c:if test = "${not fn:contains(product.content,search)}">
-						<p style="text-align:center;">해당 상품은 존재하지 않습니다.</p>
-					</c:if>
-					
-				<c:forEach var = "product" items="${product.content}">
-					<c:if test = "${fn:contains(product.content,search)
-									or fn:contains(product.productName,search)}">
-						<div id="pop">
-							<div class="card">
-								<div class ="food_card_img">
-		  							<img src="${product.image}" alt="#" onclick="location.href='/product/productDetail/${product.id}';"  />
-		  						</div>
-		 						 <div class="food_card_body">
-		   							 <a href="/product/productDetail/${product.id}" style="text-decoration:none; color:black;"><h5 class="food_card_title">${product.productName}</h5></a>
-		   							 <a href="/product/productDetail/${product.id}" style="text-decoration:none; color:black;">
-		   							 <p class="food_card_text"><b><fmt:formatNumber value="${product.price }" pattern="#,###"/></b>원</p></a>
-						 		</div>
-							</div>
-						</div>
-					</c:if>
-				</c:forEach>
-	</c:when>
-	<c:otherwise>
-			<p style="text-align:center;">검색어를 입력해주세요.</p>
-	</c:otherwise>
-</c:choose>
+<div id="pop">
+<c:forEach var = "product" items="${product.content}">
+<c:if test = "${fn:contains(product.productName,search)
+				or fn:contains(product.content,search)}">
+		<div class="card">
+			<div class ="food_card_img">
+  				<img src="${product.image}" alt="#" onclick="location.href='/product/productDetail/${product.id}';"  />
+  			</div>
+ 			 <div class="food_card_body">
+   				 <a href="/product/productDetail/${product.id}" style="text-decoration:none; color:black;"><h5 class="food_card_title">${product.productName}</h5></a>
+   				 <a href="/product/productDetail/${product.id}" style="text-decoration:none; color:black;">
+   				 <p class="food_card_text"><b><fmt:formatNumber value="${product.price }" pattern="#,###"/></b>원</p></a>
+			 </div>
+		</div>
+</c:if>
+</c:forEach>
+</div>
 
 
 <br><br>

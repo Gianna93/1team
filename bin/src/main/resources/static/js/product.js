@@ -43,6 +43,8 @@ let index={
 		
 		
 		
+		
+		
 	},
 	findById: function(){
 		let id = $("#product_name_selected").val();
@@ -157,7 +159,6 @@ let index={
          category: $("#product_category").val(),
          pet: $('input:radio[name="select_pet"]:checked').val()
 		};
-		console.log(data);
 		$.ajax({
 			type: "POST",
 			url:"/api/product/"+id,
@@ -171,7 +172,9 @@ let index={
 			alert(JSON.stringify(error));
 		});
 	
-	}
+	},
+	
+	
 	
 	
 	

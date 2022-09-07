@@ -48,8 +48,12 @@
 	<div id="hdcontainer">
 		<header>
 			<a href="/"><img src="/img/로고3.png" alt="냥반댁 댕댕이 로고" class="logo"></a>
-			<input type="text" id="search" placeholder=" 무엇이든지 검색해라냥 🐾">
-			<img src="/img/icon_btn.png" id="searchbtn">
+			<form action="/product/searchProduct" method="get">
+				<input type="text" id="search" name="search" placeholder=" 무엇이든지 검색해라냥 🐾">
+				<button type="submit" style="border:none; background-color:white">
+					<img src="/img/icon_btn.png" id="searchbtn">
+				</button>
+			</form>
 			<nav class="navbar navbar-expand-sm sticky-top">
 			<c:choose>
 				<c:when test="${empty principal }">
