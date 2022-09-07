@@ -56,7 +56,7 @@ h1{
 	<button class="btn btn-secondary" onclick="history.back()">돌아가기</button>
 	<c:if test="${qna.customer.userid==principal.customer.userid}">
 		<button class="btn btn-warning">
-		<a href="/qna/${qna.num}/updateForm">수정</a></button>
+		<a href="/qna/${qna.num}/updateForm" style="text-decoration: none; color: white;">수정</a></button>
 		<button id="btn-delete" class="btn btn-danger">삭제</button>
 	</c:if>	
 </div>

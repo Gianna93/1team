@@ -23,12 +23,12 @@
     	<c:forEach var = "product" items="${product.content}" begin="0" end="3" step="1">
 			<c:if test="${product.pet == 'dog'}">
 			<div class="card">	
-				<div class ="card_img">
+				<div class ="food_card_img">
 					<a href="/product/productDetail/${product.id}">
   					<img src="${product.image}" alt=""/>
   					</a>
   				</div>	
- 				<div class="card-body">
+ 				<div class="food_card_body">
    					 <h5 class="card-title">${product.productName}</h5>
    			 	 	<p class="card-text">
    			 		 <b><fmt:formatNumber value="${product.price}" pattern="#,###"/></b>원</p>
@@ -44,12 +44,12 @@
     	<c:forEach var = "product" items="${product.content}" begin="11" end="14" step="1">
 			<c:if test="${product.pet == 'cat'}">
 			<div class="card">	
-				<div class ="card_img">
+				<div class ="food_card_img">
 					<a href="/product/productDetail/${product.id}">
   					<img src="${product.image}" alt=""/>
   					</a>
   				</div>	
- 				<div class="card-body">
+ 				<div class="food_card_body">
    					 <h5 class="card-title">${product.productName}</h5>
    			 	 	<p class="card-text">
    			 		 <b><fmt:formatNumber value="${product.price}" pattern="#,###"/></b>원</p>
@@ -64,12 +64,12 @@
     	<p class="subtitle">신상품</p>
     	<c:forEach var = "product" items="${product.content}" begin="0" end="45" step="15">
 			<div class="card">	
-				<div class ="card_img">
+				<div class ="food_card_img">
 					<a href="/product/productDetail/${product.id}">
   					<img src="${product.image}" alt=""/>
   					</a>
   				</div>	
- 				<div class="card-body">
+ 				<div class="food_card_body">
    					 <h5 class="card-title">${product.productName}</h5>
    			 	 	<p class="card-text">
    			 		 <b><fmt:formatNumber value="${product.price}" pattern="#,###"/></b>원</p>

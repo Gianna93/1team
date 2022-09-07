@@ -54,7 +54,7 @@
 					<img src="/img/icon_btn.png" id="searchbtn">
 				</button>
 			</form>
-			<nav class="navbar navbar-expand-sm sticky-top">
+			<nav style="height:20px;" class="navbar navbar-expand-sm sticky-top">
 			<c:choose>
 				<c:when test="${empty principal }">
 				<ul id="topMenu">

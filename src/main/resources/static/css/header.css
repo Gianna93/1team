@@ -57,10 +57,10 @@ header>a>img {
 nav {
 	float: right;
 	width: 900px;
+	height: 30px;
 }
 
 #topMenu {
-	/* height: 100px; */
 	margin-left: 150px;
 }
 
@@ -94,7 +94,6 @@ ul {
 }
 
 #hdcontainer2 {
-
 	margin: 0 auto;
 	width: 1500px;
 	height: 60px;

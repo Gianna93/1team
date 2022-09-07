@@ -7,6 +7,12 @@ let index={
 			$("#btn-save").on("click",()=>{
 			this.saveCheck();
 		});
+			$("#btn-update").on("click",()=>{
+			this.updateCheck();
+		});
+		$("#btn-delete").on("click",()=>{
+			this.deleteCheck();
+		});
 			$('input[type="radio"][id="cat"]').on('click', function(){
   			var chkValue = $('input[type=radio][id="cat"]:checked').val();
   			if(chkValue){
@@ -31,20 +37,7 @@ let index={
 		$("#product_name_selected").on("change",()=>{
 			this.findById();
 		});
-		
-		$("#btn-delete").on("click",()=>{
-			this.deleteById();
-		});
-		$("#btn-update").on("click",()=>{
-			this.update();
-		});
-		
-		
-		
-		
-		
-		
-		
+
 	},
 	findById: function(){
 		let id = $("#product_name_selected").val();
@@ -135,6 +128,15 @@ let index={
 			alert(JSON.stringify(error));
 		});
 	},
+	deleteCheck: function(){
+		var productName = $("#product_name").val();
+		if (productName==""){
+			alert("상품을 선택해주세요.");
+			$("#product_name").focus();
+			return false;
+		}
+		else this.deleteById();
+	},
 	deleteById: function(){
 		let id = $("#product_name_selected").val();
 		$.ajax({
@@ -147,6 +149,40 @@ let index={
 		}).fail(function(error){
 			alert(JSON.stringify(error));
 		});
+	},
+	updateCheck: function(){
+		var productName = $("#product_name").val();
+        var price = $("#product_price").val();
+        var content = $("#product_content").val();
+        var image = $("#file-path").val();
+        var category = $("#product_category").val();
+        var pet = $('input:radio[name="select_pet"]:checked').val();
+		if (productName==""){
+			alert("상품을 선택해주세요.");
+			$("#product_name").focus();
+			return false;
+		}
+		else if (price==""){
+			alert("가격을 입력해주세요.");
+			$("#product_price").focus();
+			return false;
+		}
+		else if (content==""){
+			alert("상품설명을 입력해주세요.");
+			$("#product_content").focus();
+			return false;
+		}
+		else if (image==""){
+			alert("이미지를 선택해주세요.");
+			$("#file-path").focus();
+			return false;
+		}
+		else if (category==""){
+			alert("카테고리를 선택해주세요.");
+			$("#product_category").focus();
+			return false;
+		}
+		else this.update();
 	},
 	
 	update: function(){
