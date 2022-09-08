@@ -20,7 +20,7 @@
     <div id="dogbest">
     	<p class="subtitle">강아지 베스트 상품</p>
     	
-    	<c:forEach var = "product" items="${product.content}" begin="0" end="3" step="1">
+    	<c:forEach var = "product" items="${product}" begin="0" end="3" step="1">
 			<c:if test="${product.pet == 'dog'}">
 			<div class="card">	
 				<div class ="food_card_img">
@@ -41,7 +41,7 @@
 		  
     <div id="catbest">
     	<p class="subtitle">고양이 베스트 상품</p>
-    	<c:forEach var = "product" items="${product.content}" begin="11" end="14" step="1">
+    	<c:forEach var = "product" items="${product}" begin="11" end="14" step="1">
 			<c:if test="${product.pet == 'cat'}">
 			<div class="card">	
 				<div class ="food_card_img">
@@ -62,7 +62,7 @@
     <div id="newproduct">
     
     	<p class="subtitle">신상품</p>
-    	<c:forEach var = "product" items="${product.content}" begin="0" end="45" step="15">
+    	<c:forEach var = "product" items="${product}" begin="0" end="45" step="15">
 			<div class="card">	
 				<div class ="food_card_img">
 					<a href="/product/productDetail/${product.id}">

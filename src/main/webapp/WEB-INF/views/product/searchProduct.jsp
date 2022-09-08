@@ -14,13 +14,11 @@
 
 <c:choose>
 	<c:when test ="${search !=''}">
-					<c:if test = "${not fn:contains(product.content,search)}">
+					<c:if test = "${not fn:contains(product,search)}">
 						<p style="text-align:center;">해당 상품은 존재하지 않습니다.</p>
 					</c:if>
-					
-				<c:forEach var = "product" items="${product.content}">
-					<c:if test = "${fn:contains(product.content,search)
-									or fn:contains(product.productName,search)}">
+						<c:forEach var = "product" items="${product}">
+						<c:if test = "${fn:contains(product,search)}">	
 						<div id="pop">
 							<div class="card">
 								<div class ="food_card_img">
@@ -33,8 +31,9 @@
 						 		</div>
 							</div>
 						</div>
-					</c:if>
-				</c:forEach>
+						</c:if>
+						</c:forEach>
+					
 	</c:when>
 	<c:otherwise>
 			<p style="text-align:center;">검색어를 입력해주세요.</p>
@@ -43,24 +42,7 @@
 
 
 <br><br>
-<ul id="food_page" class="pagination justify-content-center">
-			<c:choose>
-				<c:when test="${product.first}">
-					<li class="page-item disabled"><a style="text-decoration:none; color:black" class="page-link" href="?page=${product.number-1}">◁</a></li>
-				</c:when>
-				<c:otherwise>
-					<li class="page-item"><a style="text-decoration:none; color:black" class="page-link" href="?page=${product.number-1}">◁</a></li>
-				</c:otherwise>
-			</c:choose>
-			<c:choose>
-				<c:when test="${product.last}">
-					<li class="page-item disabled"><a style="text-decoration:none; color:black" class="page-link" href="?page=${product.number+1}">▷</a></li>
-				</c:when>
-				<c:otherwise>
-					<li class="page-item"><a style="text-decoration:none; color:black" class="page-link" href="?page=${product.number+1}">▷</a></li>
-				</c:otherwise>
-			</c:choose>		
-		</ul>	
+
 
 	</div>
 <script type="text/javascript" src="/js/product.js"></script>

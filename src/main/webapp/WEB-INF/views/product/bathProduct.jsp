@@ -19,7 +19,7 @@
 
 <br><br>
 <div id="dog_pop">
-<c:forEach var = "product" items="${product.content}">
+<c:forEach var = "product" items="${product}">
 <c:if test="${product.category == 'bath' && product.pet == 'dog'}">
 	<div class="card">
 	<div class = "food_card_img">
@@ -36,7 +36,7 @@
 </div>
 
 <div id="cat_pop" style="display:none;">
-<c:forEach var = "product" items="${product.content}">
+<c:forEach var = "product" items="${product}">
 <c:if test="${product.category == 'bath' && product.pet == 'cat'}">
 	<div class="card">
 	<div class = "food_card_img">
@@ -52,24 +52,7 @@
 </div>
 
 <br><br>
-<ul id="food_page" class="pagination justify-content-center">
-			<c:choose>
-				<c:when test="${product.first}">
-					<li class="page-item disabled"><a style="text-decoration:none; color:black" class="page-link" href="?page=${product.number-1}">◁</a></li>
-				</c:when>
-				<c:otherwise>
-					<li class="page-item"><a style="text-decoration:none; color:black" class="page-link" href="?page=${product.number-1}">◁</a></li>
-				</c:otherwise>
-			</c:choose>
-			<c:choose>
-				<c:when test="${product.last}">
-					<li class="page-item disabled"><a style="text-decoration:none; color:black" class="page-link" href="?page=${product.number+1}">▷</a></li>
-				</c:when>
-				<c:otherwise>
-					<li class="page-item"><a style="text-decoration:none; color:black" class="page-link" href="?page=${product.number+1}">▷</a></li>
-				</c:otherwise>
-			</c:choose>		
-		</ul>	
+
 
 	</div>
 <script type="text/javascript" src="/js/product.js"></script>

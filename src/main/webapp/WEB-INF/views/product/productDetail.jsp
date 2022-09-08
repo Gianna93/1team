@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ include file="../layout/header.jsp"%>
 
 <div style=" margin: 0 auto; height:1400px; width: 1300px;"><br><br>
@@ -26,7 +27,7 @@
 						<input type="hidden" id="productPet" value="cat">
 						</c:if>
 						<br>
-						<label class="card-text"><b>가격&nbsp;&nbsp;:&nbsp;&nbsp;${product.price}	&nbsp;원</b></label>
+						<label class="card-text"><b>가격&nbsp;&nbsp;:&nbsp;&nbsp;<fmt:formatNumber value="${product.price }" pattern="#,###"/>	&nbsp;원</b></label>
 						<br>
 						
 						<label class="card-text"><b>수량&nbsp;&nbsp;:&nbsp;&nbsp;<input type="number" id="productCount" name="favnum" min="1" max="99" style="margin-bottom : 10px; font-size: 15px; width:60px;" value="1">&nbsp;개</b><br></label>

@@ -4,6 +4,9 @@
 	margin:0 auto;
 	margin-top:10px;
 	width: 1200px;
+	overflow: auto;
+	margin-bottom: 100px;
+	
 }
 
 .food_btndiv{
@@ -44,8 +47,4 @@ div .card{
 #newproduct img:hover, #newproduct img:focus
 {
 	transform: scale(1.2);
-}
-#food_page{
-	clear: both;
-	margin: 0 auto;
 }
