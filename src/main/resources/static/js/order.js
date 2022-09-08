@@ -49,9 +49,17 @@ let index = {
 				alert('에러입니다')
 			});
 		
-		})
+		});
+	
+		
+		
+	},
+	
+	writeReply:function(id){
+		
 		
 	}
+	
 
 
 }

@@ -24,8 +24,7 @@
 	<br><br>
 	<button class="btn btn-secondary" onclick="history.back()">돌아가기</button>
 	<c:if test="${notice.customer.userid==principal.customer.userid}">
-		<button class="btn btn-warning">
-		<a href="/notice/${notice.num}/updateForm">수정</a></button>
+		<button class="btn btn-warning" style="color:white;"onclick="location.href='/notice/${notice.num }/updateForm';">수정</button>
 		<button id="btn-delete" class="btn btn-danger">삭제</button>
 	</c:if>	
 </div>

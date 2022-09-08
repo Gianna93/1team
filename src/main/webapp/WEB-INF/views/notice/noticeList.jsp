@@ -13,7 +13,7 @@
 </div>
 <h1 id="titleh1">공지사항</h1>
 <br>
-<div class = "noticecontainer">
+<div class = "container">
 	<table id="tb">
 	
 		<tr style="border-bottom: 1px solid #ccc; background-color: #f1f3f5">

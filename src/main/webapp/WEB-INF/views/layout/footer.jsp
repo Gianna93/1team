@@ -8,7 +8,7 @@
         <li><a href="/info/provision">이용약관</a></li>
         <li><a href="/info/personalInfo">개인정보취급방침</a></li>
         <li><a href="/notice/noticeList">고객센터</a></li>
-        <li><a href="#">이용안내</a></li>
+        <li><a href="/info/serviceInfo">이용안내</a></li>
       </ul>
     </div>
     <div id="uldiv2">

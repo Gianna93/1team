@@ -71,7 +71,7 @@
 								
 								<tr>
 									<td>
-									<input type="checkbox" id="${cart.id }" name="chkbox" onClick="itemSum(this.form);"  value="${cart.sumprice }">
+									<input type="checkbox" id="${cart.id }" class="chk${cart.id }" name="chkbox" onClick="itemSum(this.form);"  value="${cart.sumprice }">
 									
 									<input type="hidden" id="cartId"  value="${cart.id }">
 									<input type="hidden" id="userId"  value="${cart.userid }">
@@ -94,13 +94,15 @@
 									</td>
 									<td>
 				
-									<input type="number" value="${cart.count }" class="productCount" style="width: 40px;" min="1" max="99">
+									<input type="number" id="num${cart.id }" value="${cart.count }" class="p_num" name="productCount${cart.id }" style="width: 40px;" min="1" max="99" onchange="javascript:index.changeCount(${cart.id}); javascript:itemSum(this.form); countno(${cart.id});">
+									<input type="hidden" class="hidecount${cart.id }" value="${cart.count }">
 									</td>
 									<td class='pritd' style="width: 150px;">
 									<span id="countPrice"><fmt:formatNumber value="${cart.price}" pattern="#,###" /></span>원
-									 / <span id="sumCountPrice"><fmt:formatNumber value="${cart.sumprice }" pattern="#,###" /></span>원
-									<input type="hidden" value="${cart.price}" id="Price">
+									 / <span class="sumCountPrice${cart.id }"><fmt:formatNumber value="${cart.sumprice }" pattern="#,###" /></span>원
+									<input type="hidden" value="${cart.price}" class="Price${cart.id }">
 									<input type="hidden" value="${cart.sumprice}" id="sumPrice">
+									<input type="hidden" class="hideSumprice${cart.id }" value="${cart.sumprice }">
 									
 									</td>
 									<td style="width: 150px;">
@@ -120,6 +122,7 @@
 			<td colspan="3">
 			(합산금액 + 배송비 = 총 결제 금액)<br>
 			<b><span id="total_sum"></span></b>
+			
 					
 					
 

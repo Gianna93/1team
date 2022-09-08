@@ -71,7 +71,7 @@
 									
 									<c:choose>
 										<c:when test="${order.state eq '배송완료'}"><b>${order.state }</b> <br>
-										<button type="button" class="btn btn-outline-dark" value="${order.id }" style="width: 80px; font-size:13px; height:30px; margin-top:5px; line-height: 15px;">후기작성</button>
+										<button type="button" class="btn btn-outline-dark btn-reply${order.id }" value="${order.id }" style="width: 80px; font-size:13px; height:30px; margin-top:5px; line-height: 15px;" onclick="javascript:index.writeReply(${cart.id});">후기작성</button>
 										</c:when>
 										<c:otherwise><b>${order.state }</b></c:otherwise>
 									</c:choose>

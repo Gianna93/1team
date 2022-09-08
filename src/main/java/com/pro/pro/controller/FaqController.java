@@ -25,8 +25,8 @@ public class FaqController {
 	}
 	
 	@GetMapping("faq/faqList") //faq
-	public String Faq(Model model, @PageableDefault(size = 8, sort = "title", 
-	direction = Sort.Direction.ASC) Pageable pageable) {
+	public String Faq(Model model, @PageableDefault(size = 10, sort = "faqid", 
+	direction = Sort.Direction.DESC) Pageable pageable) {
 		model.addAttribute("faq", faqService.postList(pageable));
 		return "faq/faqList";
 	}
@@ -37,7 +37,7 @@ public class FaqController {
 		return "faq/faqDetail";
 	}
 	
-	@GetMapping("faq/{faqid}/updateForm") //postupdate
+	@GetMapping("faq/updateForm/{faqid}") //postupdate
 	public String updateForm(@PathVariable int faqid, Model model) {
 		model.addAttribute("faq", faqService.postUpdate2(faqid));
 		return "faq/updateForm";

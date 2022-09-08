@@ -17,11 +17,13 @@
 }
 div .card{
 	width:280px;
+	height:362px;
 	float: left;
 	margin: 10px 10px;
 }
 .card img{
-	width:100%;
+	width:278px;
+	height:278px;
 	object-fit: cover;
 	transition: 0.3s;
 	cursor: pointer;
@@ -40,5 +42,7 @@ div .card{
 }
 #food_page{
 	clear: both;
+	top:50px;
 	margin: 0 auto;
+	margin-top:30px;
 }

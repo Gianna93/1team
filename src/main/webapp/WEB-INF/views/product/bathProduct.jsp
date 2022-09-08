@@ -51,7 +51,8 @@
 </c:forEach>
 </div>
 
-<br><br>
+
+<br>
 <ul id="food_page" class="pagination justify-content-center">
 			<c:choose>
 				<c:when test="${product.first}">

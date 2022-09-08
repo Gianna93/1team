@@ -14,4 +14,8 @@ public class InfoController {
 	public String provision() {
 		return "info/provision";
 	}
+	@GetMapping("/info/serviceInfo")
+	public String serviceInfo() {
+		return "info/serviceInfo";
+	}
 }

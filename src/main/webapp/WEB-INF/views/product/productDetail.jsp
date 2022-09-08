@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ include file="../layout/header.jsp"%>
 
 <div style=" margin: 0 auto; height:1400px; width: 1300px;"><br><br>
@@ -13,24 +14,26 @@
 				
 				<div class="col p-4 position-static">
 					<div class="card-body">
-						<h4 class="card-text"><b>제품명&nbsp;&nbsp;:&nbsp;&nbsp;${product.productName}</b></h4><br>
+						<h4 class="card-text" style="font-size: 30px;"><b>제품명&nbsp;&nbsp;:&nbsp;&nbsp;${product.productName}</b></h4><br>
 						<br>
-						<label class="card-text"><b>분류&nbsp;&nbsp;:&nbsp;&nbsp;${product.category}	&nbsp;</b></label>
+						<label style="font-size:20px; text-transform : uppercase;"><b>분류&nbsp;&nbsp;:&nbsp;&nbsp;${product.category}	&nbsp;</b></label>
 						<br>
 						<c:if test="${product.pet eq 'dog'}">
-						<label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>강아지용품</b></label>
+						<label style="font-size:20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>강아지용품</b></label>
 						<input type="hidden" id="productPet" value="dog">
+						<br>
 						</c:if>	
 						<c:if test="${product.pet eq 'cat'}">
-						<label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>고양이용품</b></label>
+						<label style="font-size:20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>고양이용품</b></label>
 						<input type="hidden" id="productPet" value="cat">
+						<br>
 						</c:if>
 						<br>
-						<label class="card-text"><b>가격&nbsp;&nbsp;:&nbsp;&nbsp;${product.price}	&nbsp;원</b></label>
+						<label class="card-text"><b>가격&nbsp;&nbsp;:&nbsp;&nbsp;<fmt:formatNumber value="${product.price }" pattern="#,###"/> 원</b></label>
 						<br>
+						<br>
+						<label class="card-text"><b>수량&nbsp;&nbsp;:&nbsp;&nbsp;<input type="number" id="productCount" name="favnum" min="1" max="99" style="margin-bottom : 10px; font-size: 15px; width:60px;" value="1">&nbsp;개&nbsp;(최대 99개)</b><br></label>
 						
-						<label class="card-text"><b>수량&nbsp;&nbsp;:&nbsp;&nbsp;<input type="number" id="productCount" name="favnum" min="1" max="99" style="margin-bottom : 10px; font-size: 15px; width:60px;" value="1">&nbsp;개</b><br></label>
-						<p>(최대 99개)</p>
 						
 						
 						<input type="hidden" value="${product.productName}" id="productName">
