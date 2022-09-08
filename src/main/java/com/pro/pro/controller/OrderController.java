@@ -17,17 +17,15 @@ public class OrderController {
 	OrderService orderService;
 	
 	@GetMapping("/auth/myOrder")
-	public String orderList(Model model, @PageableDefault(size=10, sort="id",direction = Sort.Direction.DESC)
-	Pageable pageable) {
-		model.addAttribute("orders",orderService.주문목록(pageable));
+	public String orderList(Model model) {
+		model.addAttribute("orders",orderService.주문목록());
 		return "/user/myOrder";
 	}
 	
 	
 	@GetMapping("/product/orderAdmin")
-	public String orderListAll(Model model, @PageableDefault(size=10, sort="id",direction = Sort.Direction.DESC)
-	Pageable pageable) {
-		model.addAttribute("orders",orderService.주문목록(pageable));
+	public String orderListAll(Model model) {
+		model.addAttribute("orders",orderService.주문목록());
 		return "/product/orderAdmin";
 	}
 	

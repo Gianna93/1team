@@ -34,7 +34,7 @@
 				<th></th>
 			</tr>
 			
-				<c:forEach var = "order" items="${orders.content}">
+				<c:forEach var = "order" items="${orders}">
 						
 								
 								<tr>
@@ -78,29 +78,6 @@
 					
 					
 				</c:forEach>
-			<tr>
-			<td colspan="7">
-			<ul id="food_page" class="pagination justify-content-center">
-			<c:choose>
-				<c:when test="${product.first}">
-					<li class="page-item disabled"><a style="text-decoration:none; color:black" class="page-link" href="?page=${product.number-1}">◁</a></li>
-				</c:when>
-				<c:otherwise>
-					<li class="page-item"><a style="text-decoration:none; color:black" class="page-link" href="?page=${product.number-1}">◁</a></li>
-				</c:otherwise>
-			</c:choose>
-			<c:choose>
-				<c:when test="${product.last}">
-					<li class="page-item disabled"><a style="text-decoration:none; color:black" class="page-link" href="?page=${product.number+1}">▷</a></li>
-				</c:when>
-				<c:otherwise>
-					<li class="page-item"><a style="text-decoration:none; color:black" class="page-link" href="?page=${product.number+1}">▷</a></li>
-				</c:otherwise>
-			</c:choose>		
-		</ul>
-			
-			</td>
-			</tr>
 	
 		</table>
 		</form>

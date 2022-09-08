@@ -27,7 +27,7 @@
 			</tr>
 			
 			<% a=0; %>
-			<c:forEach var = "order" items="${orders.content}">
+			<c:forEach var = "order" items="${orders}">
 			<c:if test="${order.userid eq principal.customer.userid }">
 			<% a=1; %>
 			</c:if>
@@ -37,7 +37,7 @@
 					<td colspan="7"><b>주문한 내역이 없습니다.</b></td>
 				</tr>
 			</c:if>
-				<c:forEach var = "order" items="${orders.content}">
+				<c:forEach var = "order" items="${orders}">
 						<% int b=0; b++; %>
 						
 							<c:if test="${order.userid eq principal.customer.userid }">
@@ -94,29 +94,6 @@
 					
 					
 
-			</td>
-			</tr>
-			<tr>
-			<td colspan="7">
-			<ul id="food_page" class="pagination justify-content-center">
-			<c:choose>
-				<c:when test="${product.first}">
-					<li class="page-item disabled"><a style="text-decoration:none; color:black" class="page-link" href="?page=${product.number-1}">◁</a></li>
-				</c:when>
-				<c:otherwise>
-					<li class="page-item"><a style="text-decoration:none; color:black" class="page-link" href="?page=${product.number-1}">◁</a></li>
-				</c:otherwise>
-			</c:choose>
-			<c:choose>
-				<c:when test="${product.last}">
-					<li class="page-item disabled"><a style="text-decoration:none; color:black" class="page-link" href="?page=${product.number+1}">▷</a></li>
-				</c:when>
-				<c:otherwise>
-					<li class="page-item"><a style="text-decoration:none; color:black" class="page-link" href="?page=${product.number+1}">▷</a></li>
-				</c:otherwise>
-			</c:choose>		
-		</ul>
-			
 			</td>
 			</tr>
 		</table>
