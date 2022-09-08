@@ -37,4 +37,11 @@ public class OrderApiController {
 		return new ResponseDto<Integer>(HttpStatus.OK.value(),1);
 	}
 	
+	@PutMapping("/auth/ReplycompleteProc")
+	public ResponseDto<Integer> Replycomplete(@RequestBody Order order){
+		System.out.println("후기작성완료로 변경");
+		orderService.후기작성완료(order);
+		return new ResponseDto<Integer>(HttpStatus.OK.value(),1);
+	}
+	
 }

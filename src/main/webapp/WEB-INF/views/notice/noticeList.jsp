@@ -37,7 +37,11 @@
 		</c:forEach>
 
 	</table>
-	
+	<div class="btn-div">
+	<c:if test="${principal.customer.roles=='ADMIN'}">
+     <button type="button" style="background-color:black; color:white; border-radius:10px; width:120px; height : 40px;" onclick="location.href='/notice/noticeForm'">공지사항쓰기</button>
+  </c:if>
+  </div>
 	
 	<br><br>
 	
@@ -60,9 +64,10 @@
 			</c:choose>		
 		</ul>	
 	<br><br>
- <c:if test="${principal.customer.roles=='ADMIN'}">
-     <button type="button" style="background-color:black; color:white; border-radius:10px; width:120px; height : 40px; " onclick="location.href='/notice/noticeForm'">공지사항쓰기</button>
-  </c:if>
+	<div>
+	
+	</div>
+ 
 </div>
 <br><br>
 <%@ include file="../layout/footer.jsp"%>

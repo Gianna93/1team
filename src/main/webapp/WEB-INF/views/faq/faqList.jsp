@@ -29,7 +29,14 @@
             <td class="notice_writer">${faq.customer.userid}</td>
          </tr>
    </c:forEach>
+   
+   
 </table>
+<div class="btn-div">
+ <c:if test="${principal.customer.roles=='ADMIN'}">
+       <button type="button" style="background-color:black; color:white; border-radius:10px; width:120px; height : 40px; " onclick="location.href='/faq/faqForm'">FAQ쓰기</button>
+	</c:if> 
+</div>
    <br><br>
    
    <ul id="page" class="pagination justify-content-center">
@@ -51,9 +58,9 @@
          </c:choose>      
       </ul>   
    <br><br>
- <c:if test="${principal.customer.roles=='ADMIN'}">
-       <button type="button" style="background-color:black; color:white; border-radius:10px; width:120px; height : 40px; margin-left:140px; " onclick="location.href='/faq/faqForm'">FAQ쓰기</button>
-</c:if> 
+   
+   	
+
 </div>
 <br><br>
 <%@ include file="../layout/footer.jsp"%>

@@ -80,4 +80,7 @@ public class Order {
 	
 	@Column(nullable=false)
 	private String state;
+	
+	@Column(nullable=false)
+	private String pronum;
 }

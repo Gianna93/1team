@@ -53,7 +53,12 @@
 		</c:forEach>
 
 	</table>
-	
+	<div class="btn-div2">
+		<c:if test="${principal.customer.roles=='CUSTOMER'}">
+		<button type="button" style="background-color:black; color:white; border-radius:10px; width:120px; height : 40px; " onclick="location.href='/qna/qnaForm'">문의하기</button>
+		
+	</c:if>
+	</div>
 	
 	<br><br>
 	
@@ -76,10 +81,7 @@
 			</c:choose>		
 		</ul>	
 	<br><br>
-	<c:if test="${principal.customer.roles=='CUSTOMER'}">
-		<button type="button" style="background-color:black; color:white; border-radius:10px; width:120px; height : 40px; margin-left:140px;" onclick="location.href='/qna/qnaForm'">문의하기</button>
-		
-	</c:if>
+	
 </div>
 <br><br>
 <script type="text/javascript" src="/js/qna.js"></script>

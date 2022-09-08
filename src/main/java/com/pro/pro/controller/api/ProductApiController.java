@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pro.pro.dto.ResponseDto;
-import com.pro.pro.model.Notice;
 import com.pro.pro.model.Product;
 import com.pro.pro.service.ProductService;
 
@@ -40,4 +39,11 @@ public class ProductApiController {
 			productService.상품삭제(id);
 			return new ResponseDto<Integer>(HttpStatus.OK.value(),1);
 		}
+		
+		@PostMapping("/product/pronumCheckProc")
+		public boolean pronumCheck(@RequestBody Product product) {
+			boolean pronumchk = productService.일련번호중복체크(product);
+			return pronumchk;
+		}
+		
 }

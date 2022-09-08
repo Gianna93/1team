@@ -1,13 +1,12 @@
 package com.pro.pro.service;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.pro.pro.model.Notice;
 import com.pro.pro.model.Product;
 import com.pro.pro.repository.ProductRepository;
 
@@ -31,8 +30,8 @@ public class ProductService {
 		}	
 	 
 	 @Transactional(readOnly=true)
-		public Page<Product> 상품목록(Pageable pageable){
-			return productRepository.findAll(pageable);
+		public List<Product> 상품목록(){
+			return productRepository.findAll();
 		}	
 	 
 	 @Transactional
@@ -51,4 +50,9 @@ public class ProductService {
 		public void 상품삭제(int id) { 
 			productRepository.deleteById(id);
 		}
+	 
+	 @Transactional
+	 	public boolean 일련번호중복체크(Product product) {
+		 return productRepository.existsByPronum(product.getPronum());
+	 }
 }

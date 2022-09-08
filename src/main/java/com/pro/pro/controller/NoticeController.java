@@ -9,7 +9,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import com.pro.pro.dto.ResponseDto;
 import com.pro.pro.service.NoticeService;
 
 @Controller

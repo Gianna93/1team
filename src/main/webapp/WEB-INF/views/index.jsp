@@ -8,10 +8,10 @@
 	  
     <div id="slideShow">
       <div id="slides">
-        <a href="#"><img src="/img/slide-1.jpg"></a>
-        <a href="#"><img src="/img/slide-2.jpg"></a>
-        <a href="#"><img src="/img/slide-3.jpg"></a>
-        <a href="#"><img src="/img/slide-4.jpg"></a>
+        <img src="/img/slide-1.jpg">
+        <img src="/img/slide-2.jpg">
+        <img src="/img/slide-3.jpg">
+        <img src="/img/slide-4.jpg">
         <button id="prev">&lang;</button>
         <button id="next">&rang;</button> 
       </div>
@@ -20,10 +20,10 @@
     <div id="dogbest">
     	<p class="subtitle">강아지 베스트 상품</p>
     	
-    	<c:forEach var = "product" items="${product.content}" begin="0" end="3" step="1">
+    	<c:forEach var = "product" items="${product}" begin="0" end="3" step="1">
 			<c:if test="${product.pet == 'dog'}">
 			<div class="card">	
-				<div class ="card_img">
+				<div class ="food_card_img">
 					<a href="/product/productDetail/${product.id}">
   					<img src="${product.image}" alt=""/>
   					</a>
@@ -41,10 +41,10 @@
 		  
     <div id="catbest">
     	<p class="subtitle">고양이 베스트 상품</p>
-    	<c:forEach var = "product" items="${product.content}" begin="11" end="14" step="1">
+    	<c:forEach var = "product" items="${product}" begin="11" end="14" step="1">
 			<c:if test="${product.pet == 'cat'}">
 			<div class="card">	
-				<div class ="card_img">
+				<div class ="food_card_img">
 					<a href="/product/productDetail/${product.id}">
   					<img src="${product.image}" alt=""/>
   					</a>
@@ -62,9 +62,9 @@
     <div id="newproduct">
     
     	<p class="subtitle">신상품</p>
-    	<c:forEach var = "product" items="${product.content}" begin="0" end="45" step="15">
+    	<c:forEach var = "product" items="${product}" begin="0" end="45" step="15">
 			<div class="card">	
-				<div class ="card_img">
+				<div class ="food_card_img">
 					<a href="/product/productDetail/${product.id}">
   					<img src="${product.image}" alt=""/>
   					</a>

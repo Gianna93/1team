@@ -1,12 +1,13 @@
 package com.pro.pro.service;
 
+
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.pro.pro.model.Customer;
 import com.pro.pro.model.Order;
 import com.pro.pro.repository.OrderRepository;
 
@@ -16,10 +17,22 @@ public class OrderService {
 	@Autowired
 	private OrderRepository orderRepository;
 	
+
+	
+	
 	@Transactional(readOnly=true)
-	public Page<Order> 주문목록(Pageable pageable){
-		return orderRepository.findAll(pageable);
+	public List<Order> 주문목록(){
+		return orderRepository.findAll();
 	}
+	
+	
+	@Transactional
+	public Order 주문찾기(int id){
+		return orderRepository.findById(id).orElseThrow(()->{
+			return new IllegalArgumentException("fail");
+			});
+	}
+	
 	
 	@Transactional
 	public void 주문하기(Order order) {
@@ -36,6 +49,14 @@ public class OrderService {
 	}
 	@Transactional
 	public void 배송완료(Order order) {
+		Order ord = orderRepository.findById(order.getId()).orElseThrow(()->{
+			return new IllegalArgumentException("fail");
+		});
+		ord.setState(order.getState());
+		orderRepository.save(ord);
+	}
+	@Transactional
+	public void 후기작성완료(Order order) {
 		Order ord = orderRepository.findById(order.getId()).orElseThrow(()->{
 			return new IllegalArgumentException("fail");
 		});

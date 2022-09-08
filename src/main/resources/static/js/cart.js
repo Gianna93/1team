@@ -71,7 +71,8 @@ let index = {
 			addr2: $("#proAddr2").val(),
 			addr3: $("#proAddr3").val(),
 			addr3: $("#proAddr3").val(),
-			phone: $("#proPhone").val()
+			phone: $("#proPhone").val(),
+			pronum: $("#productNumber").val()
 		}
 
 		console.log(data);
@@ -191,6 +192,7 @@ let index = {
 									count: realcount,
 									image: resp.data.image,
 									userid: resp.data.userid,
+									pronum: resp.data.pronum,
 									state: "주문완료"
 								}
 								$.ajax({

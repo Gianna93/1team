@@ -10,6 +10,6 @@ import com.pro.pro.model.Product;
 public interface ProductRepository extends JpaRepository<Product,Integer>{
 
 	Optional<Product> findById(int id);
-	
+	boolean existsByPronum(String pronum);
 
 }

@@ -1,5 +1,7 @@
 package com.pro.pro.model;
 
+import java.sql.Timestamp;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,47 +10,52 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Table(name="product")
+@Table(name="productReply")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @Entity
 @SequenceGenerator(
-			name = "PRODUCT_SEQ_GENERATOR"
-			, sequenceName = "PRODUCT_SEQ"
+			name = "proReply_SEQ_GENERATOR"
+			, sequenceName = "proReply_SEQ"
 			, initialValue = 1
 			, allocationSize = 1 
 		)
-public class Product {
-		
+
+public class productReply {
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="PRODUCT_SEQ_GENERATOR")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="proReply_SEQ_GENERATOR")
 	private int id;
 	
-	@Column(nullable=false, length=2000)
+	
+	@Column(nullable=false)
+	private String title;
+	
+	@Column(nullable=false)
+	private String pronum;
+	
+	@Column(nullable=false)
 	private String productName;
 	
-	@Column(nullable=false, length=100)
-	private String price;
-	
-	@Column(nullable=false, length=2000)
+	@Column(nullable=false)
 	private String content;
 	
-	@Column
-	private String image;
+	@Column(nullable=false)
+	@CreationTimestamp
+	private Timestamp replyDate;
 	
 	@Column(nullable=false)
-	private String category;
+	private String userid;
 	
 	@Column(nullable=false)
-	private String pet;
-
-	@Column(nullable=false, unique=true)
-	private String pronum;
+	private String orderid;
+	
 }

@@ -70,4 +70,6 @@ public class Cart {
 	@Column(nullable=false)
 	private String phone;
 	
+	@Column(nullable=false)
+	private String pronum;
 }

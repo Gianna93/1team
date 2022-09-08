@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+.replycontainer{
+	
+	margin:0 auto;
+	width:800px;
+}
+
+#btn-writeReply{
+	width:300px;
+	margin:0 auto;
+	margin-left:250px;
+}

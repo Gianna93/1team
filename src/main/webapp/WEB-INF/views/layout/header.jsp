@@ -28,6 +28,8 @@
 <link rel="stylesheet" href="/css/registerForm.css">
 <link rel="stylesheet" href="/css/foodProduct.css">
 <link rel="stylesheet" href="/css/cart.css">
+<link rel="stylesheet" href="/css/writeReply.css">
+<link rel="stylesheet" href="/css/faqList.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
@@ -36,20 +38,18 @@
 <link rel="stylesheet" href="/css/summernote/summernote-lite.css">
 
 
-
-<style>
-
-
-
-</style>
 </head>
 <body>
 
 	<div id="hdcontainer">
 		<header>
 			<a href="/"><img src="/img/로고3.png" alt="냥반댁 댕댕이 로고" class="logo"></a>
-			<input type="text" id="search" placeholder=" 무엇이든지 검색해라냥 🐾">
-			<img src="/img/icon_btn.png" id="searchbtn">
+			<form action="/product/searchProduct" method="get">
+				<input type="text" id="search" name="search" placeholder=" 무엇이든지 검색해라냥 🐾">
+				<button type="submit" style="border:none; background-color:white">
+					<img src="/img/icon_btn.png" id="searchbtn">
+				</button>
+			</form>
 			<nav class="navbar navbar-expand-sm sticky-top">
 			<c:choose>
 				<c:when test="${empty principal }">

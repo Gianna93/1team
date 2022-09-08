@@ -1,10 +1,9 @@
 package com.pro.pro.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -25,8 +24,8 @@ public class CartService {
 	}
 	
 	@Transactional(readOnly=true)
-	public Page<Cart> 카트목록(Pageable pageable) {
-		return cartRepository.findAll(pageable);
+	public List<Cart> 카트목록() {
+		return cartRepository.findAll();
 	}
 	
 	@Transactional

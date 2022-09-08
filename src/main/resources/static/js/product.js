@@ -7,6 +7,9 @@ let index = {
 		$("#btn-save").on("click", () => {
 			this.saveCheck();
 		});
+		$("#btn-delete").on("click",()=>{
+			this.deleteCheck();
+		});
 		$('input[type="radio"][id="cat"]').on('click', function() {
 			var chkValue = $('input[type=radio][id="cat"]:checked').val();
 			if (chkValue) {
@@ -39,7 +42,9 @@ let index = {
 			this.updateCheck();
 			this.save2();
 		});
-
+		$("#product_number").on("keyup", () => {
+			this.pronumchk();
+		});
 
 
 
@@ -57,6 +62,7 @@ let index = {
 			$('#product_price').val(resp.data.price);
 			$('#product_content').val(resp.data.content);
 			$('#product_category').val(resp.data.category);
+			$('#product_number').val(resp.data.pronum);
 
 			if (resp.data.pet == 'cat') {
 				$("#cat").prop('checked', true);
@@ -75,7 +81,7 @@ let index = {
 		var content = $("#product_content").val();
 		var image = $("#file-path").val();
 		var category = $("#product_category").val();
-		var pet = $('input:radio[name="select_pet"]:checked').val();
+		var pronum = $("#pronumchk").val();
 		if (productName == "") {
 			alert("상품명을 입력해주세요.");
 			$("#product_name").focus();
@@ -99,6 +105,16 @@ let index = {
 		else if (category == "") {
 			alert("카테고리를 선택해주세요.");
 			$("#product_category").focus();
+			return false;
+		}
+		else if (pronum == "") {
+			alert("일련번호를 입력해주세요");
+			$("#product_number").focus();
+			return false;
+		}
+		else if ($("#product_number").val().length!=4) {
+			alert("일련번호는 4자리로 입력해주세요");
+			$("#product_number").focus();
 			return false;
 		}
 		else this.save();
@@ -134,6 +150,42 @@ let index = {
 		document.getElementById('file-path').value = filename;
 
 	},
+	
+	pronumchk:function(){
+		let data={
+			pronum: $("#product_number").val()
+		}
+		$.ajax({
+			type: "POST",
+			async: false,
+			url: "/product/pronumCheckProc",
+			data: JSON.stringify(data),
+			contentType: "application/json; charset=utf-8",
+			dataType: "json",
+			success : function(data){
+				if($("#product_number").val().length==4){
+					if(data==true){
+						alert('해당일련번호가 이미 존재합니다');
+						$("#pronumchk").val("");
+						
+					}else{
+						$("#pronumchk").val($("#product_number").val());
+					}
+				}else{
+					$("#pronumchk").val("");
+				}
+			},
+			error:function(){
+				alert('에러입니다.');
+			}
+		});
+	},
+	
+	
+	
+	
+	
+	
 	save: function() {
 		let data = {
 			productName: $("#product_name").val(),
@@ -141,7 +193,8 @@ let index = {
 			content: $("#product_content").val(),
 			image: $("#file-path").val(),
 			category: $("#product_category").val(),
-			pet: $('input:radio[name="select_pet"]:checked').val()
+			pet: $('input:radio[name="select_pet"]:checked').val(),
+			pronum: $("#pronumchk").val()
 
 		};
 		$.ajax({
@@ -150,13 +203,26 @@ let index = {
 			data: JSON.stringify(data),
 			contentType: "application/json; charset=utf-8",
 			dataType: "json"
-		}).done(function(resp) {
+		}).done(function() {
 			alert("상품이 등록되었습니다.");
 			location.href = "/product/registerForm";
 		}).fail(function(error) {
 			alert(JSON.stringify(error));
 		});
 	},
+	
+	deleteCheck: function(){
+		var productName = $("#product_name").val();
+		if (productName==""){
+			alert("상품을 선택해주세요.");
+			$("#product_name").focus();
+			return false;
+		}
+		else this.deleteById();
+	},
+	
+	
+	
 	deleteById: function() {
 		let id = $("#product_name_selected").val();
 		$.ajax({

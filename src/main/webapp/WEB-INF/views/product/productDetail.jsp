@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%! int a= 0; %>
 <%@ include file="../layout/header.jsp"%>
 
-<div style=" margin: 0 auto; height:1400px; width: 1300px;"><br><br>
+<div style=" margin: 0 auto;  width: 1300px;"><br><br>
 	<div class="row mb-6">
 		<div class="col-md-12">
 			<div class="row g-0 mb-4 h-md-250 position-relative">
@@ -39,12 +40,14 @@
 						<input type="hidden" value="${product.productName}" id="productName">
 						<input type="hidden" value="${product.category}" id="productCategory">
 						<input type="hidden" value="${product.price}" id="productPrice">
+						<input type="hidden" value="${product.pronum}" id="productNumber">
 						
 						<input type="hidden" value="${principal.customer.userid }" id="proUserid">
 						<input type="hidden" value="${principal.customer.address1 }" id="proAddr1">
 						<input type="hidden" value="${principal.customer.address2 }" id="proAddr2">
 						<input type="hidden" value="${principal.customer.address3 }" id="proAddr3">
 						<input type="hidden" value="${principal.customer.phone }" id="proPhone">
+						
 						
 						<br><!-- ${item.account} -->
 						<div style="margin-bottom:30px; border-top: solid black 1px; width:550px;" ></div>
@@ -63,8 +66,64 @@
 						</c:choose>
 							
 						</div>
+					
 					</div>
 				</div>
+				<div style="border-top: 1px solid black; margin-top: 55px; width:1200px;">
+				<br>
+				<h1 id="titleh1">상품후기</h1>
+
+
+
+
+
+					<table class="table table-hover" style="text-align: center;">
+						<thead class="table-dark">
+							<tr>
+								<th scope="col">작성날짜</th>
+								<th scope="col">후기제목</th>	
+								<th scope="col">후기내용</th>
+								<th scope="col">작성자</th>
+							</tr>
+						</thead>
+						<tbody>
+							<%
+							a = 0;
+							%>
+							<c:forEach var="reply" items="${proRe}">
+								<c:if test="${reply.pronum eq product.pronum }">
+									<%
+									a = 1;
+									%>
+								</c:if>
+							</c:forEach>
+							<c:if test="<%=a == 0%>">
+								<tr>
+									<td colspan="4"><b>후기가 없습니다.</b></td>
+								</tr>
+							</c:if>
+
+
+							<c:forEach var="reply" items="${proRe }">
+								<c:if test="${reply.pronum eq product.pronum }">
+									<tr>
+									<td style="width: 100px;"><b><fmt:formatDate value="${reply.replyDate}"
+												pattern="yyyy-MM-dd" /></b></td>
+										<td style="width: 200px;"><b>${reply.title }</b></td>
+										
+										<td style="width: 500px;"><b>${reply.content }</b></td>
+										<td style="width: 80px;"><b>${reply.userid }</b></td>
+									</tr>
+								</c:if>
+							</c:forEach>
+
+						</tbody>
+					</table>
+
+
+				
+				</div>
+				
 				<div style="border-top: solid black 1px; margin-top: 55px; width:1200px;">
 				<br>
 				 <h1 id="titleh1">상품설명</h1>
@@ -101,6 +160,8 @@
 휴대폰 결제는 <span style="background-color:#ced25c;"><b>부분취소는 불가능하고 당월 취소만 가능</b></span>하니, 취소하실 때 참고 부탁드립니다.</p>
 	
 </div>
+
+<br><br>
 
 <script type="text/javascript" src="/js/cart.js"></script>
 <%@ include file="../layout/footer.jsp"%>

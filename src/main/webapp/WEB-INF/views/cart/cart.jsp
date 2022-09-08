@@ -54,7 +54,7 @@
 			</tr>
 			
 			<% a=0; %>
-			<c:forEach var = "cart" items="${carts.content}">
+			<c:forEach var = "cart" items="${carts}">
 			<c:if test="${cart.userid eq principal.customer.userid }">
 			<% a=1; %>
 			</c:if>
@@ -64,7 +64,7 @@
 					<td colspan="7"><b>장바구니가 비어있습니다.</b></td>
 				</tr>
 			</c:if>
-				<c:forEach var = "cart" items="${carts.content}">
+				<c:forEach var = "cart" items="${carts}">
 					
 						
 							<c:if test="${cart.userid eq principal.customer.userid }">
@@ -75,6 +75,7 @@
 									
 									<input type="hidden" id="cartId"  value="${cart.id }">
 									<input type="hidden" id="userId"  value="${cart.userid }">
+									<input type="hidden" id="productNumber" value="${cart.pronum }">
 									</td>
 									<td>
 									<img src="${cart.image}">

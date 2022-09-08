@@ -54,6 +54,12 @@
 		</div>
 		<br>
 		<div class="form-group">
+		<label for="product_number"><b>상품일련번호</b></label>
+			<input type="text" class="form-control" placeholder="일련번호" id="product_number" name="product_number" required>
+			<input type="hidden" id="pronumchk">
+		</div>
+		<br>
+		<div class="form-group">
 			<label id="product_pet" for="product_pet"><b>해당 반려동물</b></label>
 			<input type="radio" name="select_pet" id="dog" value="dog" checked>강아지
 			<input type="radio" name="select_pet" id="cat" value="cat">고양이

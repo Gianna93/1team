@@ -25,42 +25,42 @@
 			<select id="product_name_selected">
 				<option value="" selected>--- 선택 ---</option>
 				<optgroup label ="사료/간식">
-					<c:forEach var = "product" items="${product.content}">
+					<c:forEach var = "product" items="${product}">
 						<c:if test="${product.category == 'food'}">
 							<option value="${product.id}">${product.productName}</option>
 						</c:if>
 					</c:forEach>	
 				</optgroup>
 				<optgroup label ="화장실/위생">
-					<c:forEach var = "product" items="${product.content}">
+					<c:forEach var = "product" items="${product}">
 						<c:if test="${product.category == 'bath'}">
 							<option value="${product.id}">${product.productName}</option>
 						</c:if>
 					</c:forEach>	
 				</optgroup>
 				<optgroup label ="장난감">
-					<c:forEach var = "product" items="${product.content}">
+					<c:forEach var = "product" items="${product}">
 						<c:if test="${product.category == 'toy'}">
 							<option value="${product.id}">${product.productName}</option>
 						</c:if>
 					</c:forEach>	
 				</optgroup>
 				<optgroup label ="미용/목욕">
-					<c:forEach var = "product" items="${product.content}">
+					<c:forEach var = "product" items="${product}">
 						<c:if test="${product.category == 'beauty'}">
 							<option value="${product.id}">${product.productName}</option>
 						</c:if>
 					</c:forEach>	
 				</optgroup>
 				<optgroup label ="하우스">
-					<c:forEach var = "product" items="${product.content}">
+					<c:forEach var = "product" items="${product}">
 						<c:if test="${product.category == 'house'}">
 							<option value="${product.id}">${product.productName}</option>
 						</c:if>
 					</c:forEach>	
 				</optgroup>
 				<optgroup label ="기타">
-					<c:forEach var = "product" items="${product.content}">
+					<c:forEach var = "product" items="${product}">
 						<c:if test="${product.category == 'etc'}">
 							<option value="${product.id}">${product.productName}</option>
 						</c:if>
@@ -99,6 +99,12 @@
 			</select>
 		</div>
 		<br>
+		<div class="form-group">
+			<label for="product_number"><b>일련번호</b></label>
+			<input type="text" class="form-control"  id="product_number" name="product_number" disabled>
+		</div>
+		<br>
+		
 		<div class="form-group">
 			<label name="select_pet" id="product_pet" for="product_pet"><b>해당 반려동물</b></label>
 			<input type="radio" name="select_pet" id="dog" value="dog">강아지
