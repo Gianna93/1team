@@ -18,4 +18,8 @@ public class InfoController {
 	public String serviceInfo() {
 		return "info/serviceInfo";
 	}
+	@GetMapping("/info/company")
+	public String company() {
+		return "info/company";
+	}
 }

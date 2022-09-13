@@ -15,4 +15,6 @@ public class NewsController {
 	public String mooeja() {
 		return "news/mooeja";
 	}
+	
+	
 }

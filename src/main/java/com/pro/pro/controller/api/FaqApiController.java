@@ -30,9 +30,8 @@ public class FaqApiController {
 	}
 	
 	@DeleteMapping("/api/faq/{faqid}") ///api/FAQ/{faqid}
-	public ResponseDto<Integer> deleteById(@RequestBody Faq faq){
-		System.out.println(faq);
-		faqService.postDelete(faq);
+	public ResponseDto<Integer> deleteById(@PathVariable int faqid){
+		faqService.postDelete(faqid);
 		return new ResponseDto<Integer>(HttpStatus.OK.value(),1);
 	} 
 	@PutMapping("/api/faq/{faqid}") ///api/FAQ/{faqid} 

@@ -44,8 +44,7 @@
 		<table class="carttb">
 			<tr id="firsttr" >
 				<th></th>
-				<th></th>
-				<th>상품명</th>
+				<th colspan="2">상품명</th>
 				<th>상품설명</th>
 				<th>개수</th>
 				<th>개별금액 / 합산급액</th>

@@ -13,7 +13,9 @@
 	</div>
 </div>
 
-<h1 id="titleh1">자주 묻는 질문</h1>
+<div id="hdimgdiv">
+<img src="/img/faq.jpg">
+</div>
 <br>
 <div class="container">
 <table id="tb">

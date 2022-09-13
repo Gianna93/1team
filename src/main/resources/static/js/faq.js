@@ -1,20 +1,20 @@
-let index={
+let index = {
 
-	init: function(){
+	init: function() {
 
-		$("#faq-save").on("click",()=>{
+		$("#faq-save").on("click", () => {
 
 			this.save();
 
 		});
 
-		$("#faq-delete").on("click",()=>{
+		$("#faq-delete").on("click", () => {
 
 			this.deleteById();
 
 		});
 
-		$("#faq-update").on("click",()=>{
+		$("#faq-update").on("click", () => {
 
 			this.update();
 
@@ -22,15 +22,15 @@ let index={
 
 	},
 
- 
 
-	
 
-	save: function(){
+
+
+	save: function() {
 
 		//alert('user의 save함수 호출됨');
 
-		let data={
+		let data = {
 
 			title: $("#title").val(),
 
@@ -38,37 +38,40 @@ let index={
 
 		};
 
-		$.ajax({ 
+		if (confirm("자주묻는질문을 등록하시겠습니까?")) {
+			$.ajax({
 
-			type:"POST",
+				type: "POST",
 
-			url:"/faq/api/faq/",
+				url: "/faq/api/faq/",
 
-			data:JSON.stringify(data), 
+				data: JSON.stringify(data),
 
-			contentType:"application/json; charset=utf-8",
+				contentType: "application/json; charset=utf-8",
 
-			dataType:"json" 
+				dataType: "json"
 
-		}).done(function(resp){
+			}).done(function(resp) {
 
-			alert("글쓰기가 완료되었습니다.");
+				alert("질문 등록이 완료되었습니다.");
 
-			location.replace('/faq/faqList');
+				location.replace('/faq/faqList');
 
-		}).fail(function(error){
+			}).fail(function(error) {
 
-			alert(JSON.stringify(error));
+				alert(JSON.stringify(error));
 
-		});
-
+			});
+		} else {
+			return;
+		}
 	},
 
-	deleteById: function(){
+	deleteById: function() {
 
-		let id= $("#faqid").val();
+		let faqid = $("#faqid").val();
 
-		let data={
+		let data = {
 
 			faqid: $("#faqid").val(),
 
@@ -80,39 +83,41 @@ let index={
 
 		console.log(faqid);
 
-		
 
-		$.ajax({ 
+		if (confirm("해당 질문을 삭제 하시겠습니까?")) {
+			$.ajax({
 
-			type:"DELETE",
+				type: "DELETE",
 
-			url:"/api/faq/"+id,
+				url: "/api/faq/" + faqid,
 
-			data:JSON.stringify(data), 
+				data: JSON.stringify(data),
 
-			contentType:"application/json; charset=utf-8",
+				contentType: "application/json; charset=utf-8",
 
-			dataType:"json" 
+				dataType: "json"
 
-		}).done(function(resp){
+			}).done(function(resp) {
 
-			alert("삭제가 완료되었습니다.");
+				alert("삭제가 완료되었습니다.");
 
-			location.replace('/faq/faqList');
+				location.href="/faq/faqList";
 
-		}).fail(function(error){
+			}).fail(function(error) {
 
-			alert(JSON.stringify(error));
+				alert(JSON.stringify(error));
 
-		});
+			});
+		} else {
+			return
+		}
+	},
 
-	},	
+	update: function() {
 
-	update : function(){
+		let faqid = $("#faqid").val();
 
-		let faqid= $("#faqid").val();
-
-		let data={
+		let data = {
 
 			faqid: $("#faqid").val(),
 
@@ -122,33 +127,35 @@ let index={
 
 		};
 
- 
 
-	$.ajax({
+		if (confirm("해당 질문을 수정 하시겠습니까?")) {
+			$.ajax({
 
-		type:"PUT",
+				type: "PUT",
 
-		url:"/api/faq/"+faqid,
+				url: "/api/faq/" + faqid,
 
-		data:JSON.stringify(data), 
+				data: JSON.stringify(data),
 
-		contentType:"application/json; charset=utf-8",
+				contentType: "application/json; charset=utf-8",
 
-		dataType:"json" 
+				dataType: "json"
 
-		}).done(function(resp){
+			}).done(function(resp) {
 
-			alert("글쓰기가 완료되었습니다.");
+				alert("질문 수정이 완료되었습니다.");
 
-			location.replace('/faq/faqList');
+				location.replace('/faq/faqList');
 
-		}).fail(function(error){
+			}).fail(function(error) {
 
-			alert(JSON.stringify(error));
+				alert(JSON.stringify(error));
 
-		});
-
-	},	
+			});
+		} else {
+			return;
+		}
+	},
 
 }
 

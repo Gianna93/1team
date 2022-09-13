@@ -30,7 +30,7 @@
 		
 		<div class="form-group">
 			<label for="product_content"><b>상품 설명</b></label>
-			<input type="text" class="form-control" placeholder="상품 설명" id="product_content" name="product_content">
+			<input type="text" class="form-control" placeholder="2000자 이내로 상품 설명 입력" id="product_content" name="product_content">
 		</div>
 		
 		<div class="form-group">
@@ -42,7 +42,7 @@
 		<br>
 		<div class="form-group">
 			<label for="product_category"><b>상품 카테고리</b></label>
-			<select id="product_category">
+			<select id="product_category" class="form-select form-select-sm" aria-label=".form-select-sm example">
 				<option value="" selected>-- 선택 --</option>
 				<option value="food">사료/간식</option>
 				<option value="bath">화장실/위생</option>

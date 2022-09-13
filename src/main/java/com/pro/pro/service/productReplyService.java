@@ -3,6 +3,7 @@ package com.pro.pro.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,6 +23,6 @@ public class productReplyService {
 	
 	@Transactional
 	public List<productReply> 후기목록(){
-		return productreplyRepository.findAll();
+		return productreplyRepository.findAll(Sort.by(Sort.Direction.DESC, "replyDate"));
 	}
 }

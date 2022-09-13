@@ -11,7 +11,9 @@
 		<button type="button" class="btn btn-outline-secondary" onclick="location.href='/qna/qnaList'" style="color: black">1:1문의</button>
 	</div>
 </div>
-<h1 id="titleh1">1:1문의</h1>
+<div id="hdimgdiv">
+<img src="/img/qna.jpg">
+</div>
 <br>
 <div class = "container">
 	<table>

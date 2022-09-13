@@ -8,10 +8,10 @@
 	  
     <div id="slideShow">
       <div id="slides">
-        <img src="/img/slide-1.jpg">
-        <img src="/img/slide-2.jpg">
-        <img src="/img/slide-3.jpg">
-        <img src="/img/slide-4.jpg">
+        <a href="/auth/holdsomeball"><img src="/img/slide-1.jpg"></a>
+        <a href="/auth/bite"><img src="/img/slide-2.jpg"></a>
+        <a href="/auth/chaochur"><img src="/img/slide-3.jpg"></a>
+        <a><img src="/img/slide-4.jpg"></a>
         <button id="prev">&lang;</button>
         <button id="next">&rang;</button> 
       </div>
@@ -41,7 +41,7 @@
 		  
     <div id="catbest">
     	<p class="subtitle">고양이 베스트 상품</p>
-    	<c:forEach var = "product" items="${product}" begin="11" end="14" step="1">
+    	<c:forEach var = "product" items="${product}" begin="17" end="20" step="1">
 			<c:if test="${product.pet == 'cat'}">
 			<div class="card">	
 				<div class ="food_card_img">

@@ -4,7 +4,7 @@
 	 <div id="ftcontainer">
     <div id="uldiv">
       <ul id="footerul">
-        <li><a href="#">회사소개</a></li>
+        <li><a href="/info/company">회사소개</a></li>
         <li><a href="/info/provision">이용약관</a></li>
         <li><a href="/info/personalInfo">개인정보취급방침</a></li>
         <li><a href="/notice/noticeList">고객센터</a></li>

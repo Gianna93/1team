@@ -33,6 +33,25 @@ public class ProductController {
 			return "index";
 		}
 		
+		@GetMapping("/auth/chaochur")
+		public String chochur(Model model) {
+			model.addAttribute("product", productService.상품목록()); 
+			return "slideDetail/chaochur";
+		}
+		
+
+		@GetMapping({"/auth/holdsomeball"})
+		public String slideDetail(Model model) {
+			model.addAttribute("product", productService.상품목록());
+			return "slideDetail/holdsomeball";
+		}
+		
+		@GetMapping({"/auth/bite"})
+		public String bite(Model model) {
+			model.addAttribute("product", productService.상품목록());
+			return "slideDetail/bite";
+		}
+		
 		@GetMapping({"/product/registerForm"})
 		public String registerForm() {
 			return "product/registerForm";

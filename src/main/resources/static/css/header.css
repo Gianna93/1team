@@ -28,10 +28,13 @@ header>a>img {
 #loginsp{
 	position:absolute;
 	margin-top:-140px;
-	margin-left:262px;
+	margin-left:260px;
+	padding:5px 10px;
 	font-family: 'Gamja Flower', cursive;
 	font-size:1.3em;
-	color: rgb(64, 128, 128);
+	color:black;
+	background-color: #ddd;
+	border-radius: 5px;
 }
 
 #search {

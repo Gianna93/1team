@@ -22,7 +22,7 @@
 		<div class="form-group">
 			<label for="product_name"><b>상품명</b></label>
 			<input id="product_name" type="hidden">
-			<select id="product_name_selected">
+			<select id="product_name_selected" class="form-select form-select-sm" aria-label=".form-select-sm example">
 				<option value="" selected>--- 선택 ---</option>
 				<optgroup label ="사료/간식">
 					<c:forEach var = "product" items="${product}">
@@ -71,12 +71,12 @@
 		
 		<div class="form-group">
 			<label for="product_price"><b>가격</b></label>
-			<input type="text" class="form-control" id="product_price" name="product_price" required>
+			<input type="text" class="form-control" id="product_price" name="product_price" placeholder="가격" required>
 		</div>
 		
 		<div class="form-group">
 			<label for="product_content"><b>상품 설명</b></label>
-			<input type="text" class="form-control"  id="product_content" name="product_content">
+			<input type="text" class="form-control"  id="product_content" name="product_content" placeholder="2000자 이내로 상품 설명 입력">
 		</div>
 		
 		<div class="form-group">
@@ -88,7 +88,7 @@
 		<br>
 		<div class="form-group">
 			<label for="product_category"><b>상품 카테고리</b></label>
-			<select id="product_category">
+			<select id="product_category" class="form-select form-select-sm" aria-label=".form-select-sm example">
 				<option value="" selected>-- 선택 --</option>
 				<option value="food">사료/간식</option>
 				<option value="bath">화장실/위생</option>

@@ -20,12 +20,13 @@ h1{
 </head>
 <br>
 
-<h1>공지사항</h1>
+<h1>자주묻는질문</h1>
 <div class = "container">
 
 	<div>
 		<div>
 			글 번호 : <span id="num"><i>${faq.faqid}</i></span>
+			<input type="hidden" value="${faq.faqid}" id="faqid">
 			작성자 : <span id="id"><i>${faq.customer.userid}</i></span>
 		</div>
 		<br>
@@ -40,8 +41,10 @@ h1{
 	</div>	
 	<br><br>
 	<button class="btn btn-secondary" onclick="history.back()">돌아가기</button>
-	<button class="btn btn-warning" style="color:white;"onclick="location.href='/faq/updateForm/${faqid}';">수정</button>	
-	<button class="btn btn-danger"  id="faq-delete">삭제</button>
+	<c:if test="${principal.customer.roles eq 'ADMIN' }">
+		<button class="btn btn-warning" style="color:white;"onclick="location.href='/faq/updateForm/${faqid}';">수정</button>	
+		<button class="btn btn-danger"  id="faq-delete">삭제</button>
+	</c:if>
 </div>
 <br>	
 

@@ -40,7 +40,7 @@ String today = sf.format(now);%>
 		
 			
 </form>
-	<button id="btn-writeReply" class="btn btn-dark" value="${orders.id }">후기등록</button>
+	<button id="btn-writeReply" class="btn btn-dark" value="${orders.id }" >후기등록</button>
 </div>
 
 <script>

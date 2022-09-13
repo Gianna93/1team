@@ -55,10 +55,7 @@ let index = {
 		
 	},
 	
-	writeReply:function(id){
-		
-		
-	}
+	
 	
 
 

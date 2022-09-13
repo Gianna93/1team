@@ -27,16 +27,23 @@ let index = {
 			let data = {
 				id: cartid
 			}
-			$.ajax({
-				type: "delete",
-				url: "/auth/deleteCartProc",
-				data: JSON.stringify(data),
-				contentType: "application/json; charset=utf-8",
-				dataType: "json"
-			}).done(function() {
-				alert('삭제되었습니다');
-				location.href = "/auth/cart";
-			})
+
+			if (confirm("해당 상품을 장바구니에서 삭제 하시겠습니까?") == true) {
+				$.ajax({
+					type: "delete",
+					url: "/auth/deleteCartProc",
+					data: JSON.stringify(data),
+					contentType: "application/json; charset=utf-8",
+					dataType: "json"
+				}).done(function() {
+					alert('삭제되었습니다');
+					location.href = "/auth/cart";
+				})
+			}
+			else {
+				return;
+			}
+
 
 
 		})
@@ -76,15 +83,15 @@ let index = {
 		}
 
 		console.log(data);
+		if (confirm("장바구니에 담으시겠습니까?") == true) {
+			$.ajax({
+				type: "POST",
+				url: "/auth/saveCartProc",
+				data: JSON.stringify(data),
+				contentType: "application/json; charset=utf-8",
+				dataType: "json"
+			}).done(function() {
 
-		$.ajax({
-			type: "POST",
-			url: "/auth/saveCartProc",
-			data: JSON.stringify(data),
-			contentType: "application/json; charset=utf-8",
-			dataType: "json"
-		}).done(function() {
-			if (confirm("장바구니에 담으시겠습니까?") == true) {
 				alert("장바구니에 담았습니다.");
 				if (confirm("장바구니로 이동하시겠습니까?") == true) {
 					location.href = "/auth/cart";
@@ -92,15 +99,15 @@ let index = {
 				else {
 					return;
 				}
-			}
-			else {
-				return;
-			}
 
-		}).fail(function() {
-			alert("에러");
-		});
 
+			}).fail(function() {
+				alert("에러");
+			});
+		}
+		else {
+			return;
+		}
 	},
 
 	clearCart: function() {
@@ -113,22 +120,24 @@ let index = {
 		}
 		console.log(data);
 
-		$.ajax({
-			type: "delete",
-			url: "/auth/clearCartProc",
-			data: JSON.stringify(data),
-			contentType: "application/json; charset=utf-8",
-			dataType: "json"
-		}).done(function(resp) {
-			if (confirm("장바구니를 비우시겠습니까?") == true) {
+
+		if (confirm("장바구니를 비우시겠습니까?") == true) {
+			$.ajax({
+				type: "delete",
+				url: "/auth/clearCartProc",
+				data: JSON.stringify(data),
+				contentType: "application/json; charset=utf-8",
+				dataType: "json"
+			}).done(function(resp) {
 				alert(resp.data);
 				location.href = "/auth/cart";
-			} else {
-				return;
-			}
-		}).fail(function() {
-			alert("에러");
-		})
+			}).fail(function() {
+				alert("에러");
+			})
+		} else {
+			return;
+		}
+
 
 	},
 
@@ -144,7 +153,7 @@ let index = {
 				var realcount;
 				var realSumPrice;
 				for (var i = 0; i < checked.length; i++) {
-					
+
 					var a = 0;
 					for (var j = 0; j < checked.length; j++) {
 						var cartid = checked[j].id;
@@ -156,7 +165,7 @@ let index = {
 						alert('체크된 상품의 수량을 확인하세요')
 						return;
 					} else {
-						
+
 						(function(i) {
 							var cartid = checked[i].id;
 							realcount = $(".hidecount" + cartid).val();
@@ -322,5 +331,4 @@ function countno(id) {
 }
 
 
-//document.frm.addEventListener("DOMContentLoaded", itemSum(frm));
 index.init();

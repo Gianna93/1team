@@ -7,7 +7,7 @@ let index = {
 		$("#btn-save").on("click", () => {
 			this.saveCheck();
 		});
-		$("#btn-delete").on("click",()=>{
+		$("#btn-delete").on("click", () => {
 			this.deleteCheck();
 		});
 		$('input[type="radio"][id="cat"]').on('click', function() {
@@ -35,9 +35,7 @@ let index = {
 			this.findById();
 		});
 
-		$("#btn-delete").on("click", () => {
-			this.deleteById();
-		});
+	
 		$("#btn-update").on("click", () => {
 			this.updateCheck();
 			this.save2();
@@ -112,7 +110,12 @@ let index = {
 			$("#product_number").focus();
 			return false;
 		}
-		else if ($("#product_number").val().length!=4) {
+		else if (pronum == "0000") {
+			alert("일련번호는 0001 이상이어야합니다");
+			$("#product_number").focus();
+			return false;
+		}
+		else if ($("#product_number").val().length != 4) {
 			alert("일련번호는 4자리로 입력해주세요");
 			$("#product_number").focus();
 			return false;
@@ -120,23 +123,23 @@ let index = {
 		else this.save();
 	},
 
-	updateCheck:function(){
-		if($("#product_price").val()==""){
+	updateCheck: function() {
+		if ($("#product_price").val() == "") {
 			alert('가격을 입력해주세요');
 			$("#product_price").focus();
 			return false;
 		}
-		if($("#product_content").val()==""){
+		if ($("#product_content").val() == "") {
 			alert('상품 설명을 입력해주세요');
 			$("#product_content").focus();
 			return false;
 		}
-		if($("#file-path").val()==""){
+		if ($("#file-path").val() == "") {
 			alert('이미지를 등록해주세요');
 			$("#product_price").focus();
 			return false;
 		}
-		if($("#product_category").val()==""){
+		if ($("#product_category").val() == "") {
 			alert('카테고리를 등록해주세요');
 			$("#product_category").focus();
 			return false;
@@ -150,9 +153,9 @@ let index = {
 		document.getElementById('file-path').value = filename;
 
 	},
-	
-	pronumchk:function(){
-		let data={
+
+	pronumchk: function() {
+		let data = {
 			pronum: $("#product_number").val()
 		}
 		$.ajax({
@@ -162,30 +165,30 @@ let index = {
 			data: JSON.stringify(data),
 			contentType: "application/json; charset=utf-8",
 			dataType: "json",
-			success : function(data){
-				if($("#product_number").val().length==4){
-					if(data==true){
+			success: function(data) {
+				if ($("#product_number").val().length == 4) {
+					if (data == true) {
 						alert('해당일련번호가 이미 존재합니다');
 						$("#pronumchk").val("");
-						
-					}else{
+
+					} else {
 						$("#pronumchk").val($("#product_number").val());
 					}
-				}else{
+				} else {
 					$("#pronumchk").val("");
 				}
 			},
-			error:function(){
+			error: function() {
 				alert('에러입니다.');
 			}
 		});
 	},
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
 	save: function() {
 		let data = {
 			productName: $("#product_name").val(),
@@ -197,56 +200,69 @@ let index = {
 			pronum: $("#pronumchk").val()
 
 		};
-		$.ajax({
-			type: "POST",
-			url: "api/product",
-			data: JSON.stringify(data),
-			contentType: "application/json; charset=utf-8",
-			dataType: "json"
-		}).done(function() {
-			alert("상품이 등록되었습니다.");
-			location.href = "/product/registerForm";
-		}).fail(function(error) {
-			alert(JSON.stringify(error));
-		});
+
+		if (confirm("상품을 등록하시겠습니까?") == true) {
+			$.ajax({
+				type: "POST",
+				url: "api/product",
+				data: JSON.stringify(data),
+				contentType: "application/json; charset=utf-8",
+				dataType: "json"
+			}).done(function() {
+				alert("상품이 등록되었습니다.");
+				location.href = "/product/registerForm";
+			}).fail(function(error) {
+				alert(JSON.stringify(error));
+			});
+
+
+		}
+		else {
+			return;
+		}
+
 	},
-	
-	deleteCheck: function(){
+
+	deleteCheck: function() {
 		var productName = $("#product_name").val();
-		if (productName==""){
+		if (productName == "") {
 			alert("상품을 선택해주세요.");
 			$("#product_name").focus();
 			return false;
 		}
 		else this.deleteById();
 	},
-	
-	
-	
+
+
+
 	deleteById: function() {
 		let id = $("#product_name_selected").val();
-		$.ajax({
-			type: "DELETE",
-			url: "/api/product/" + id,
-			dataType: "json"
-		}).done(function(resp) {
-			alert("해당 상품이 삭제되었습니다.");
-			location.href = "/product/updateForm";
-		}).fail(function(error) {
-			alert(JSON.stringify(error));
-		});
+		if (confirm("상품을 삭제하시겠습니까?")) {
+			$.ajax({
+				type: "DELETE",
+				url: "/api/product/" + id,
+				dataType: "json"
+			}).done(function(resp) {
+				alert("해당 상품이 삭제되었습니다.");
+				location.href = "/product/updateForm";
+			}).fail(function(error) {
+				alert(JSON.stringify(error));
+			});
+		} else {
+			return;
+		}
 	},
 
 
-	save2: function(){
-		if($("#product_price").val()!=""&&
-		$("#product_content").val()!=""&&
-		$("#file-path").val()!=""&&
-		$("#product_category").val()!=""
-		){
+	save2: function() {
+		if ($("#product_price").val() != "" &&
+			$("#product_content").val() != "" &&
+			$("#file-path").val() != "" &&
+			$("#product_category").val() != ""
+		) {
 			this.update();
 		}
-		
+
 	},
 
 
@@ -261,19 +277,22 @@ let index = {
 			pet: $('input:radio[name="select_pet"]:checked').val()
 		};
 		console.log(data);
-		$.ajax({
-			type: "POST",
-			url: "/api/product/" + id,
-			data: JSON.stringify(data),
-			contentType: "application/json; charset=utf-8",
-			dataType: "json"
-		}).done(function(resp) {
-			alert("상품정보가 수정되었습니다.");
-			location.href = "/product/updateForm";
-		}).fail(function(error) {
-			alert(JSON.stringify(error));
-		});
-
+		if (confirm("해당 상품의 정보를 변경하시겠습니까?") == true) {
+			$.ajax({
+				type: "POST",
+				url: "/api/product/" + id,
+				data: JSON.stringify(data),
+				contentType: "application/json; charset=utf-8",
+				dataType: "json"
+			}).done(function(resp) {
+				alert("상품정보가 수정되었습니다.");
+				location.href = "/product/updateForm";
+			}).fail(function(error) {
+				alert(JSON.stringify(error));
+			});
+		} else {
+			return;
+		}
 	}
 
 
