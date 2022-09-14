@@ -22,7 +22,7 @@
 		<div class="form-group">
 			<label for="product_name"><b>상품명</b></label>
 			<input id="product_name" type="hidden">
-			<select id="product_name_selected" class="form-select form-select-sm" aria-label=".form-select-sm example">
+			<select id="product_name_selected" class="form-select form-select-sm" aria-label=".form-select-sm example" >
 				<option value="" selected>--- 선택 ---</option>
 				<optgroup label ="사료/간식">
 					<c:forEach var = "product" items="${product}">

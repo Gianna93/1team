@@ -54,25 +54,27 @@
 			<c:choose>
 				<c:when test="${empty principal }">
 				<ul id="topMenu">
-					<li><a href="/auth/loginForm">로그인</a></li>
-					<li><a href="/auth/adminCheck">회원가입</a></li>
 					<li><a href="/auth/cart">장바구니</a></li>
 					<li><a href="/notice/noticeList">고객센터</a></li>
+					<li><a href="/auth/adminCheck">회원가입</a></li>
+					<li><a href="/auth/loginForm">로그인</a></li>
+					
+					
 				</ul>
 				</c:when>
 				<c:otherwise>
 					<span id="loginsp"><b>${principal.customer.name}(${principal.customer.userid})님</b></span>
 					<ul id="topMenu">
-						<li><a href="/auth/myPage">마이페이지</a><li>
-						<c:if test="${principal.customer.roles eq 'ADMIN' }">
-						<li><a href="/product/registerForm">상품/주문관리</a></li>
-						</c:if>
-						<li><a href="/notice/noticeList">고객센터</a></li>
 						<c:if test="${principal.customer.roles eq 'CUSTOMER' }">
-						<li><a href="/auth/cart">장바구니</a></li>
+							<li><a href="/auth/cart">장바구니</a></li>
+						</c:if>
+						<c:if test="${principal.customer.roles eq 'ADMIN' }">
+							<li><a href="/product/registerForm">상품/주문관리</a></li>
 						</c:if>
 						
 						
+						<li><a href="/auth/myPage">마이페이지</a><li>
+						<li><a href="/notice/noticeList">고객센터</a></li>
 						<li><a href="/logout">로그아웃</a></li>
 					</ul>
 				</c:otherwise>

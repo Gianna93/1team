@@ -83,30 +83,34 @@ let index = {
 		}
 
 		console.log(data);
-		if (confirm("장바구니에 담으시겠습니까?") == true) {
-			$.ajax({
-				type: "POST",
-				url: "/auth/saveCartProc",
-				data: JSON.stringify(data),
-				contentType: "application/json; charset=utf-8",
-				dataType: "json"
-			}).done(function() {
+		if (productCount >= 1 && productCount <= 99) {
+			if (confirm("장바구니에 담으시겠습니까?") == true) {
+				$.ajax({
+					type: "POST",
+					url: "/auth/saveCartProc",
+					data: JSON.stringify(data),
+					contentType: "application/json; charset=utf-8",
+					dataType: "json"
+				}).done(function() {
 
-				alert("장바구니에 담았습니다.");
-				if (confirm("장바구니로 이동하시겠습니까?") == true) {
-					location.href = "/auth/cart";
-				}
-				else {
-					return;
-				}
+					alert("장바구니에 담았습니다.");
+					if (confirm("장바구니로 이동하시겠습니까?") == true) {
+						location.href = "/auth/cart";
+					}
+					else {
+						return;
+					}
 
 
-			}).fail(function() {
-				alert("에러");
-			});
-		}
-		else {
-			return;
+				}).fail(function() {
+					alert("에러");
+				});
+			}
+			else {
+				return;
+			}
+		} else {
+			alert('수량을 확인하세요')
 		}
 	},
 
@@ -157,7 +161,7 @@ let index = {
 					var a = 0;
 					for (var j = 0; j < checked.length; j++) {
 						var cartid = checked[j].id;
-						if ($(".hidecount" + cartid).val() == 0) {
+						if ($(".hidecount" + cartid).val() <= 0||$(".hidecount" + cartid).val() >= 100) {
 							a = 1;
 						}
 					}
@@ -257,12 +261,24 @@ let index = {
 		var count = parseInt(item.getAttribute('value'));
 		var newval = event.target.classList.contains('up') ? count + 1 : event.target.classList.contains('down') ? count - 1 : event.target.value;
 
-		if (parseInt(newval) < 0 || parseInt(newval) > 99) { return false; }
+		if (parseInt(newval) < 0 || parseInt(newval) > 99) {
+			$("#num"+id).val("0");
+			$("#num"+id).focus();
+			$(".hidecount" + id).val("");
+			$(".hideSumprice" + id).val(0);
+			$(".sumCountPrice"+id).text(0);
+			return false;
+		}
 
 		item.setAttribute('value', newval);
 		item.value = parseInt(newval);
 
-		$(".hidecount" + id).val(newval + "");
+		if(parseInt(newval)<=0||parseInt(newval)>=100){
+			$(".hidecount" + id).val("");
+		}else{
+			$(".hidecount" + id).val(newval + "");
+		}
+		
 		console.log(newval);
 
 		var price = AddComma(parseInt($(".Price" + id).val()) * newval);
@@ -323,8 +339,8 @@ function AddComma(num) {
 }
 
 function countno(id) {
-	if ($("#num" + id).val() == 0) {
-		alert('수량은 1 이상을 입력해주세요')
+	if ($("#num" + id).val() <= 0||$("#num" + id).val() >= 100) {
+		alert('수량은 1~100 사이로 입력해주세요')
 		$("#num" + id).focus();
 		return;
 	}

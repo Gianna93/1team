@@ -40,6 +40,7 @@ let index = {
 	save: function() {
 		if ($("#userid").val() != ""
 			&& $("#reid").val() != ""
+			&& $("#reid").val() == $("#userid").val()
 			&& $("#password").val() != ""
 			&& $("#password2").val() != ""
 			&& $("#password").val() == $("#password2").val()
@@ -242,6 +243,7 @@ let index = {
 
 			if (res.data != "fail") {
 				$("#find_id").text("회원님의 아이디는 " + res.data + " 입니다.");
+				$("#find_id").css("background-color", "white");
 				$("#saveid").val(res.data);
 			} else {
 				$("#find_id").text("아이디를 찾을 수 없습니다.");
@@ -429,8 +431,12 @@ let index = {
 			$("#userid").focus();
 			return false;
 		}
+		if($("#userid").val()!=$("#reid").val()){
+			alert("중복체크를 다시 진행해주세요.");
+			return false;
+		}
 		if ($("#userid").val().length < 5) {
-			alert("아이디는 5글자 이상으로 입력해주세");
+			alert("아이디는 5글자 이상으로 입력해주세요");
 			$("#userid").focus();
 			return false;
 		}

@@ -25,7 +25,7 @@ System.out.print(ide);
 			</div>
 			<br>
 			<label for="qestion"><b>질문</b></label><br>
-			<select name="sel" id="sel">
+			<select name="sel" id="sel" class="form-select form-select-sm" aria-label=".form-select-sm example">
 					<option>질문을 선택하세요</option>
 					<option>어릴적 별명은?</option>
 					<option>내가 다닌 초등학교는?</option>

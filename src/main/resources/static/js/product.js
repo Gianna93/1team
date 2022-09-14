@@ -124,6 +124,11 @@ let index = {
 	},
 
 	updateCheck: function() {
+		if (product_name_selected.selectedIndex == 0) {
+			alert('상품을 선택해주세요');
+			$("#product_price").focus();
+			return false;
+		}
 		if ($("#product_price").val() == "") {
 			alert('가격을 입력해주세요');
 			$("#product_price").focus();
@@ -255,7 +260,8 @@ let index = {
 
 
 	save2: function() {
-		if ($("#product_price").val() != "" &&
+		if (product_name_selected.selectedIndex != 0&&
+			$("#product_price").val() != "" &&
 			$("#product_content").val() != "" &&
 			$("#file-path").val() != "" &&
 			$("#product_category").val() != ""

@@ -1,0 +1,241 @@
+
+set define off;
+
+Insert into customer (ID,ADDRESS1,ADDRESS2,ADDRESS3,ANSWER,EMAIL1,EMAIL2,NAME,PASSWORD,PHONE,QESTION,ROLES,USERID)
+values (user_seq.nextval,'admin','admin','admin','그린초','admin','admin','admin','$2a$10$20tWqQ4TXPJVFh1L1ZYBp.uaYSDSecQ6cAnvu5sPyB0lt92w3GxvS','01012345678','내가 다닌 초등학교는?','ADMIN','admin');
+Insert into  customer(ID,ADDRESS1,ADDRESS2,ADDRESS3,ANSWER,EMAIL1,EMAIL2,NAME,PASSWORD,PHONE,QESTION,ROLES,USERID)
+values (user_seq.nextval,'06921','서울 동작구 만양로 5 (상도동)','3201-805','그린초','user','naver.com','박해원','$2a$10$HaQBsQAoEryHLuQTu2qFVuFEgfEpNrEv626As1RmyHwAg1iuko0Ci','01031938501','내가 다닌 초등학교는?','CUSTOMER','user');
+
+
+
+INSERT INTO product (ID, CATEGORY, CONTENT, IMAGE, PET, PRICE, PRODUCTNAME,PRONUM) 
+VALUES (product_seq.nextval, 'food', '강아지 영양 간식', '/img/dog _feed_cooked.jpg', 'dog', '5500', '애견비책','0001');
+INSERT INTO product (ID, CATEGORY, CONTENT, IMAGE, PET, PRICE, PRODUCTNAME,PRONUM) 
+VALUES (product_seq.nextval, 'food', '강아지 치즈', '/img/dog_cheese.jpg', 'dog', '7250', '덴탈케어 수제간식','0002');
+INSERT INTO product (ID, CATEGORY, CONTENT, IMAGE, PET, PRICE, PRODUCTNAME,PRONUM) 
+VALUES (product_seq.nextval, 'food', '강아지 수제 간식', '/img/dog_chewingstick.jpg', 'dog', '4500', '코기 홀릭','0003');
+INSERT INTO product (ID, CATEGORY, CONTENT, IMAGE, PET, PRICE, PRODUCTNAME,PRONUM) 
+VALUES (product_seq.nextval, 'food', '강아지 사료', '/img/dog_feed(2).jpg', 'dog', '29500', '네츄럴오(쌀과 연어)','0004');
+INSERT INTO product (ID, CATEGORY, CONTENT, IMAGE, PET, PRICE, PRODUCTNAME,PRONUM) 
+VALUES (product_seq.nextval, 'food', '강아지 사료', '/img/dog_feed(3).jpg', 'dog', '32950', '도비 어덜트','0005');
+INSERT INTO product (ID, CATEGORY, CONTENT, IMAGE, PET, PRICE, PRODUCTNAME,PRONUM) 
+VALUES (product_seq.nextval, 'food', '강아지 사료', '/img/dog_feed(4).jpg', 'dog', '33250', '도비 올라이프','0006');
+INSERT INTO product (ID, CATEGORY, CONTENT, IMAGE, PET, PRICE, PRODUCTNAME,PRONUM) 
+VALUES (product_seq.nextval, 'food', '강아지 사료', '/img/dog_feed(5).jpg', 'dog', '32490', '도비 진도','0007');
+INSERT INTO product (ID, CATEGORY, CONTENT, IMAGE, PET, PRICE, PRODUCTNAME,PRONUM) 
+VALUES (product_seq.nextval, 'food', '강아지 사료', '/img/dog_feed.jpg', 'dog', '65250', '엑설런트 대용량','0008');
+INSERT INTO product (ID, CATEGORY, CONTENT, IMAGE, PET, PRICE, PRODUCTNAME,PRONUM) 
+VALUES (product_seq.nextval, 'food', '강아지 소시지', '/img/dog_sausage.jpg', 'dog', '2250', '맘스쿠킹','0009');
+insert into product (ID, CATEGORY, CONTENT, IMAGE, PET, PRICE, PRODUCTNAME, PRONUM) 
+VALUES (product_seq.nextval, 'food', '강아지 사료', '/img/도그팡1.jpg', 'dog', '3150', '시저 홀썸볼(닭고기,고구마)','0010');
+insert into product (ID, CATEGORY, CONTENT, IMAGE, PET, PRICE, PRODUCTNAME, PRONUM) 
+VALUES (product_seq.nextval, 'food', '강아지 사료', '/img/도그팡2.jpg', 'dog', '3150', '시저 홀썸볼(닭고기,당근)','0011');
+insert into product (ID, CATEGORY, CONTENT, IMAGE, PET, PRICE, PRODUCTNAME, PRONUM) 
+VALUES (product_seq.nextval, 'food', '강아지 사료', '/img/도그팡3.jpg', 'dog', '3150', '시저 홀썸볼(쇠고기, 닭고기)','0012');
+insert into product (ID, CATEGORY, CONTENT, IMAGE, PET, PRICE, PRODUCTNAME, PRONUM) 
+VALUES (product_seq.nextval, 'food', '강아지 사료', '/img/도그팡4.jpg', 'dog', '3150', '시저 홀썸볼(쇠고기)','0013');
+Insert into product (ID,CATEGORY,CONTENT,IMAGE,PET,PRICE,PRODUCTNAME, PRONUM) 
+values (product_seq.nextval,'food','네츄럴코어 바이트 치킨 덕 2종 콤보','/img/네추럴1.jpg','dog','7200','네츄럴코어 바이트 치킨 덕 2종 콤보', '0014');
+Insert into product (ID,CATEGORY,CONTENT,IMAGE,PET,PRICE,PRODUCTNAME, PRONUM) 
+values (product_seq.nextval,'food','네추럴코어 바이트 치킨','/img/네추럴2.jpg','dog','3800','네추럴코어 바이트 치킨', '0015');
+Insert into product (ID,CATEGORY,CONTENT,IMAGE,PET,PRICE,PRODUCTNAME, PRONUM) 
+values (product_seq.nextval,'food','네추럴코어 바이트 덕','/img/네추럴3.jpg','dog','3800','네추럴코어 바이트 덕', '0016');
+
+
+
+INSERT INTO product (ID, CATEGORY, CONTENT, IMAGE, PET, PRICE, PRODUCTNAME,PRONUM) 
+VALUES (product_seq.nextval, 'food', '고양이 짜먹는 간식', '/img/food_cat_ciao.jpg', 'cat', '2250', '챠오 츄르 참치','0017');
+INSERT INTO product (ID, CATEGORY, CONTENT, IMAGE, PET, PRICE, PRODUCTNAME,PRONUM) 
+VALUES (product_seq.nextval, 'food', '고양이 동결건조 트릿', '/img/food_cat_mandoo.jpg', 'cat', '26490', '캣만두 치킨','0018');
+INSERT INTO product (ID, CATEGORY, CONTENT, IMAGE, PET, PRICE, PRODUCTNAME,PRONUM) 
+VALUES (product_seq.nextval, 'food', '마따따비 열매', '/img/food_cat_matatabi.jpg', 'cat', '2690', '동결건조 마따따비','0019');
+INSERT INTO product (ID, CATEGORY, CONTENT, IMAGE, PET, PRICE, PRODUCTNAME,PRONUM) 
+VALUES (product_seq.nextval, 'food', '엘라이신 영양 간식', '/img/food_cat_pouch.jpg', 'cat', '28800', '참치 스튜','0020');
+INSERT INTO product (ID, CATEGORY, CONTENT, IMAGE, PET, PRICE, PRODUCTNAME,PRONUM) 
+VALUES (product_seq.nextval, 'food', '고양이 습식캔', '/img/food_cat_salmon_can.jpg', 'cat', '3990', '웰니스 참치캔','0021');
+INSERT INTO product (ID, CATEGORY, CONTENT, IMAGE, PET, PRICE, PRODUCTNAME,PRONUM) 
+VALUES (product_seq.nextval, 'food', '고양이 습식캔', '/img/food_cat_shrimp_can.jpg', 'cat', '3990', '웰니스 새우캔','0022');
+INSERT INTO product (ID, CATEGORY, CONTENT, IMAGE, PET, PRICE, PRODUCTNAME,PRONUM) 
+VALUES (product_seq.nextval, 'food', '연어 스틱 간식', '/img/food_cat_stick.jpg', 'cat', '12350', '고양이 스틱','0023');
+INSERT INTO product (ID, CATEGORY, CONTENT, IMAGE, PET, PRICE, PRODUCTNAME,PRONUM) 
+VALUES (product_seq.nextval, 'food', '템테이션 간식', '/img/food_cat_temtation.jpg', 'cat', '13670', '템테이션(닭고기맛)','0024');
+INSERT INTO product (ID, CATEGORY, CONTENT, IMAGE, PET, PRICE, PRODUCTNAME,PRONUM) 
+VALUES (product_seq.nextval, 'food', '고양이 습식캔', '/img/food_cat_chicken_can.jpg', 'cat', '2150', '닭고기 캔','0025');
+INSERT INTO product (ID, CATEGORY, CONTENT, IMAGE, PET, PRICE, PRODUCTNAME,PRONUM) 
+VALUES (product_seq.nextval, 'food', '고양이 캣닢', '/img/food_cat_catnip.jpg', 'cat', '3300', '캣닢','0026');
+Insert into product (ID,CATEGORY,CONTENT,IMAGE,PET,PRICE,PRODUCTNAME,PRONUM)
+values (product_seq.nextval,'food','필수 비타민,미네랄, 오메가3가 풍부하여 활력 충전에 1등','/img/chaochur1.jpg','cat','29900','이나바 챠오츄르 참치 60p','0027');
+Insert into product (ID,CATEGORY,CONTENT,IMAGE,PET,PRICE,PRODUCTNAME,PRONUM)
+values (product_seq.nextval,'food','단백질이 풍부하고 열량이 낮아 다이어트,성인병 예방에 효과만점','/img/chaochur2.jpg','cat','29900','이나바 챠오츄르 60p','0028');
+Insert into product (ID,CATEGORY,CONTENT,IMAGE,PET,PRICE,PRODUCTNAME,PRONUM) 
+values (product_seq.nextval,'food','닭가슴살의 이미다졸다펩티드 성분이 피로예방, 피로회복력을 높이는데 좋습니다','/img/chaochur3.jpg','cat','29900','이나바 챠오츄르 60p','0029');
+Insert into product (ID,CATEGORY,CONTENT,IMAGE,PET,PRICE,PRODUCTNAME,PRONUM) 
+values (product_seq.nextval,'food','단백질이 풍부하고 열량이 낮아 다이어트,성인병 예방에 효과만점','/img/chaochur4.jpg','cat','38900','이나바 챠오츄르 60p','0030');
+
+
+INSERT INTO product (ID, CATEGORY, CONTENT, IMAGE, PET, PRICE, PRODUCTNAME,PRONUM) 
+VALUES (product_seq.nextval, 'bath', '강아지 화장실', '/img/dog_bath(2).jpg', 'dog', '25000', '강아지 화장실','0031');
+INSERT INTO product (ID, CATEGORY, CONTENT, IMAGE, PET, PRICE, PRODUCTNAME,PRONUM) 
+VALUES (product_seq.nextval, 'bath', '강아지 화장실', '/img/dog_bath(3).jpg', 'dog', '22250', '강아지 화장실','0032');
+INSERT INTO product (ID, CATEGORY, CONTENT, IMAGE, PET, PRICE, PRODUCTNAME,PRONUM) 
+VALUES (product_seq.nextval, 'bath', '강아지 화장실', '/img/dog_bath(4).jpg', 'dog', '32500', '강아지 화장실','0033');
+INSERT INTO product (ID, CATEGORY, CONTENT, IMAGE, PET, PRICE, PRODUCTNAME,PRONUM) 
+VALUES (product_seq.nextval, 'bath', '강아지 발판 ', '/img/dog_bath.jpg', 'dog', '11150', '강아지 발판','0034');
+
+INSERT INTO product (ID, CATEGORY, CONTENT, IMAGE, PET, PRICE, PRODUCTNAME,PRONUM) 
+VALUES (product_seq.nextval, 'bath', '고양이 화장실 매트', '/img/bath_cat_mat.jpg', 'cat', '9500', '발 매트','0035');
+INSERT INTO product (ID, CATEGORY, CONTENT, IMAGE, PET, PRICE, PRODUCTNAME,PRONUM) 
+VALUES (product_seq.nextval, 'bath', '고양이 화장실 모래', '/img/bath_cat_mrlee.jpg', 'cat', '31250', '벤토나이트 모래','0036');
+INSERT INTO product (ID, CATEGORY, CONTENT, IMAGE, PET, PRICE, PRODUCTNAME,PRONUM) 
+VALUES (product_seq.nextval, 'bath', '고양이 화장실 모래', '/img/bath_cat_queen.jpg', 'cat', '22250', '두부 모래','0037');
+INSERT INTO product (ID, CATEGORY, CONTENT, IMAGE, PET, PRICE, PRODUCTNAME,PRONUM) 
+VALUES (product_seq.nextval, 'bath', '고양이 화장실', '/img/bath_cat_scoopers.jpg', 'cat', '43150', '스쿠퍼(대)','0038');
+INSERT INTO product (ID, CATEGORY, CONTENT, IMAGE, PET, PRICE, PRODUCTNAME,PRONUM) 
+VALUES (product_seq.nextval, 'bath', '고양이 화장실(후드형)', '/img/bath_cat_toilet.jpg', 'cat', '29900', '후드형 화장실','0039');
+
+INSERT INTO product (ID, CATEGORY, CONTENT, IMAGE, PET, PRICE, PRODUCTNAME,PRONUM) 
+VALUES (product_seq.nextval, 'toy', '강아지 장난감', '/img/dog_boomerang(2).jpg', 'dog', '12000', '부메랑','0040');
+INSERT INTO product (ID, CATEGORY, CONTENT, IMAGE, PET, PRICE, PRODUCTNAME,PRONUM) 
+VALUES (product_seq.nextval, 'toy', '강아지 장난감', '/img/dog_boomerang.jpg', 'dog', '9950', '부메랑','0041');
+INSERT INTO product (ID, CATEGORY, CONTENT, IMAGE, PET, PRICE, PRODUCTNAME,PRONUM) 
+VALUES (product_seq.nextval, 'toy', '강아지 장난감', '/img/dog_floss(2).jpg', 'dog', '2950', '끈 장난감','0042');
+INSERT INTO product (ID, CATEGORY, CONTENT, IMAGE, PET, PRICE, PRODUCTNAME,PRONUM) 
+VALUES (product_seq.nextval, 'toy', '강아지 장난감', '/img/dog_floss.jpg', 'dog', '1950', '끈 장난감','0043');
+INSERT INTO product (ID, CATEGORY, CONTENT, IMAGE, PET, PRICE, PRODUCTNAME,PRONUM) 
+VALUES (product_seq.nextval, 'toy', '강아지 장난감', '/img/dog_matsmile^__^.jpg', 'dog', '4950', '꽃 인형','0044');
+INSERT INTO product (ID, CATEGORY, CONTENT, IMAGE, PET, PRICE, PRODUCTNAME,PRONUM) 
+VALUES (product_seq.nextval, 'toy', '강아지 장난감', '/img/dog_nosework(2).jpg', 'dog', '4950', '버섯 인형','0045');
+INSERT INTO product (ID, CATEGORY, CONTENT, IMAGE, PET, PRICE, PRODUCTNAME,PRONUM) 
+VALUES (product_seq.nextval, 'toy', '강아지 장난감', '/img/dog_nosework(3).jpg', 'dog', '4950', '배 인형','0046');
+INSERT INTO product (ID, CATEGORY, CONTENT, IMAGE, PET, PRICE, PRODUCTNAME,PRONUM) 
+VALUES (product_seq.nextval, 'toy', '강아지 장난감', '/img/dog_nosework.jpg', 'dog', '4950', '소주 인형','0047');
+
+INSERT INTO product (ID, CATEGORY, CONTENT, IMAGE, PET, PRICE, PRODUCTNAME,PRONUM) 
+VALUES (product_seq.nextval, 'toy', '고양이 장난감', '/img/toy_cat_bug.jpg', 'cat', '2250', '무당벌레','0048');
+INSERT INTO product (ID, CATEGORY, CONTENT, IMAGE, PET, PRICE, PRODUCTNAME,PRONUM) 
+VALUES (product_seq.nextval, 'toy', '고양이 장난감', '/img/toy_cat_circuit.jpg', 'cat', '23000', '공놀이 서킷','0049');
+INSERT INTO product (ID, CATEGORY, CONTENT, IMAGE, PET, PRICE, PRODUCTNAME,PRONUM) 
+VALUES (product_seq.nextval, 'toy', '고양이 장난감', '/img/toy_cat_cushion.jpg', 'cat', '4950', '고양이 쿠션','0050');
+INSERT INTO product (ID, CATEGORY, CONTENT, IMAGE, PET, PRICE, PRODUCTNAME,PRONUM) 
+VALUES (product_seq.nextval, 'toy', '고양이 장난감', '/img/toy_cat_fishing.jpg', 'cat', '1960', '낚싯대','0051');
+INSERT INTO product (ID, CATEGORY, CONTENT, IMAGE, PET, PRICE, PRODUCTNAME,PRONUM) 
+VALUES (product_seq.nextval, 'toy', '고양이 장난감', '/img/toy_cat_helicopter.jpg', 'cat', '8500', '헬리콥터','0052');
+INSERT INTO product (ID, CATEGORY, CONTENT, IMAGE, PET, PRICE, PRODUCTNAME,PRONUM) 
+VALUES (product_seq.nextval, 'toy', '고양이 장난감', '/img/toy_cat_mouse.jpg', 'cat', '5300', '쥐','0053');
+INSERT INTO product (ID, CATEGORY, CONTENT, IMAGE, PET, PRICE, PRODUCTNAME,PRONUM) 
+VALUES (product_seq.nextval, 'toy', '고양이 장난감', '/img/toy_cat_palm.jpg', 'cat', '33000', '야자수 스크래쳐','0054');
+INSERT INTO product (ID, CATEGORY, CONTENT, IMAGE, PET, PRICE, PRODUCTNAME,PRONUM) 
+VALUES (product_seq.nextval, 'toy', '고양이 장난감', '/img/toy_cat_scratcher.jpg', 'cat', '33000', '당근 스크래쳐','0055');
+INSERT INTO product (ID, CATEGORY, CONTENT, IMAGE, PET, PRICE, PRODUCTNAME,PRONUM) 
+VALUES (product_seq.nextval, 'toy', '고양이 장난감', '/img/toy_cat_tower.jpg', 'cat', '55000', '캣 타워','0056');
+INSERT INTO product (ID, CATEGORY, CONTENT, IMAGE, PET, PRICE, PRODUCTNAME,PRONUM) 
+VALUES (product_seq.nextval, 'toy', '고양이 장난감', '/img/toy_cat_tube.jpg', 'cat', '22500', '캣 튜브','0057');
+INSERT INTO product (ID, CATEGORY, CONTENT, IMAGE, PET, PRICE, PRODUCTNAME,PRONUM) 
+VALUES (product_seq.nextval, 'toy', '고양이 장난감', '/img/toy_cat_turnel.jpg', 'cat', '19750', '캣 터널','0058');
+
+Insert into product (ID,CATEGORY,CONTENT,IMAGE,PET,PRICE,PRODUCTNAME,PRONUM) values (product_seq.nextval,'beauty','보습효과가 기존 샴푸보다 강한 노마진 샴푸','/img/dog_shampoo_moisture.jpg','dog','9000','노마진 샴푸(보습) 1L','0059');
+Insert into product (ID,CATEGORY,CONTENT,IMAGE,PET,PRICE,PRODUCTNAME,PRONUM) values (product_seq.nextval,'beauty','강아지 피부에 덜 자극적인 샴푸','/img/dog_shampoo_puremild.jpg','dog','9000','노마진 샴푸(퓨어마일드)1L','0060');
+Insert into product (ID,CATEGORY,CONTENT,IMAGE,PET,PRICE,PRODUCTNAME,PRONUM) values (product_seq.nextval,'beauty','편하게','/img/dog_showerhead.JPG','dog','10000','편하게 씻겨요 샤워부스','0061');
+Insert into product (ID,CATEGORY,CONTENT,IMAGE,PET,PRICE,PRODUCTNAME,PRONUM) values (product_seq.nextval,'etc','편한 안락소파 (시티)','/img/dog_sofa8 city.jpg','dog','85000','코지 도그 안락소파8(시티)','0062');
+Insert into product (ID,CATEGORY,CONTENT,IMAGE,PET,PRICE,PRODUCTNAME,PRONUM) values (product_seq.nextval,'etc','편한 안락소파 (진)','/img/dog_sofa8 jean.jpg','dog','85000','코지 도그 안락소파8(진)','0063');
+Insert into product (ID,CATEGORY,CONTENT,IMAGE,PET,PRICE,PRODUCTNAME,PRONUM) values (product_seq.nextval,'etc','편한 안락소파 (웨스티)','/img/dog_sofa8 westie.jpg','dog','85000','코지 도그 안락소파8(웨스티)','0064');
+Insert into product (ID,CATEGORY,CONTENT,IMAGE,PET,PRICE,PRODUCTNAME,PRONUM) values (product_seq.nextval,'beauty','날카로운 발톱도 순식간에 갈아주는 토케어','/img/dog_toecare(2).jpg','dog','2000','토케어 발톱갈이','0065');
+Insert into product (ID,CATEGORY,CONTENT,IMAGE,PET,PRICE,PRODUCTNAME,PRONUM) values (product_seq.nextval,'beauty','날카로운 발톱도 순식간에 갈아주는 토케어 발톱깎이','/img/dog_toecare.jpg','dog','3000','토케어 발톱깎이','0066');
+Insert into product (ID,CATEGORY,CONTENT,IMAGE,PET,PRICE,PRODUCTNAME,PRONUM) values (product_seq.nextval,'beauty','소형 및 중형견을 위한 안전한 욕조','/img/dog_tub.jpg','dog','25000','강아지 욕조','0067');
+Insert into product (ID,CATEGORY,CONTENT,IMAGE,PET,PRICE,PRODUCTNAME,PRONUM) values (product_seq.nextval,'house','냥냥이 편하고 안락한 이동용 백','/img/etc_cat_bag.jpg','cat','45000','고양이 백','0068');
+Insert into product (ID,CATEGORY,CONTENT,IMAGE,PET,PRICE,PRODUCTNAME,PRONUM) values (product_seq.nextval,'etc','고양이 심신 안정용 귀리화분','/img/etc_cat_catnip.jpg','cat','15000','캣그라스 (귀리) 화분동봉','0069');
+Insert into product (ID,CATEGORY,CONTENT,IMAGE,PET,PRICE,PRODUCTNAME,PRONUM) values (product_seq.nextval,'etc','우리 고양이 아프지 않은 발톱정리(安全のペディキュア)','/img/etc_cat_cutnail.jpg','cat','4500','고양이 발톱정리를 위한 페디큐어','0070');
+Insert into product (ID,CATEGORY,CONTENT,IMAGE,PET,PRICE,PRODUCTNAME,PRONUM) values (product_seq.nextval,'etc','고양이 캣닢차 심신안정에 도움이 되요!','/img/food_cat_catnip.jpg','cat','15000','차마시는 고양이 캣닢차','0071');
+Insert into product (ID,CATEGORY,CONTENT,IMAGE,PET,PRICE,PRODUCTNAME,PRONUM) values (product_seq.nextval,'etc','매 시간 정량의 식사가 나와요 야옹','/img/health_cat_auto.jpg','cat','35000','고양이 체중조절용 밥그릇','0072');
+Insert into product (ID,CATEGORY,CONTENT,IMAGE,PET,PRICE,PRODUCTNAME,PRONUM) values (product_seq.nextval,'beauty','고양이 귀세척제 청결유지','/img/health_cat_earcleaner.jpg','cat','12000','하이포 편백수 귀세척제','0073');
+Insert into product (ID,CATEGORY,CONTENT,IMAGE,PET,PRICE,PRODUCTNAME,PRONUM) values (product_seq.nextval,'beauty','고양이 보습을 위한 젤','/img/health_cat_hairball.jpg','cat','30000','뉴트리벳 헤어젤','0074');
+Insert into product (ID,CATEGORY,CONTENT,IMAGE,PET,PRICE,PRODUCTNAME,PRONUM) values (product_seq.nextval,'beauty','고양이 치아 위생을 위한 치약','/img/health_cat_toothpaste.jpg','cat','8000','고양이 덴탈 치약','0075');
+Insert into product (ID,CATEGORY,CONTENT,IMAGE,PET,PRICE,PRODUCTNAME,PRONUM) values (product_seq.nextval,'beauty','고양이 털갈이를 위한 굿초이스','/img/beauty_cat_brush.jpg','cat','10000','캣 브러쉬(고양이용)','0076');
+Insert into product (ID,CATEGORY,CONTENT,IMAGE,PET,PRICE,PRODUCTNAME,PRONUM) values (product_seq.nextval,'beauty','고양이 털관리에 유용한 클리퍼','/img/beauty_cat_clipper.jpg','cat','20000','고양이 뷰티용 클리퍼','0077');
+Insert into product (ID,CATEGORY,CONTENT,IMAGE,PET,PRICE,PRODUCTNAME,PRONUM) values (product_seq.nextval,'beauty','편하게 씻겨요 샤워부스 & 브러쉬 원터치','/img/dog_brush n showerhead.JPG','dog','20000','샤워부스 & 브러쉬','0078');
+Insert into product (ID,CATEGORY,CONTENT,IMAGE,PET,PRICE,PRODUCTNAME,PRONUM) values (product_seq.nextval,'house','우리 강아지를 위한 안락하고 단단한 하우스','/img/dog_cage.jpg','dog','65000','강아지 케이지(M)','0079');
+Insert into product (ID,CATEGORY,CONTENT,IMAGE,PET,PRICE,PRODUCTNAME,PRONUM) values (product_seq.nextval,'house','우리 강아지를 위한 안락하고 단단한 하우스','/img/dog_cage_Lsize.jpg','dog','105000','강아지 케이지(L)','0080');
+Insert into product (ID,CATEGORY,CONTENT,IMAGE,PET,PRICE,PRODUCTNAME,PRONUM) values (product_seq.nextval,'house','우리 강아지를 위한 안락하고 단단한 하우스','/img/dog_cage_small.jpg','dog','55000','강아지 케이지(S)','0081');
+Insert into product (ID,CATEGORY,CONTENT,IMAGE,PET,PRICE,PRODUCTNAME,PRONUM) values (product_seq.nextval,'etc','여름에도 시원한 우리 강아지를 위한 선택','/img/dog_coolmat.JPG','dog','20000','여름에도 시원한 우리 강아지 쿨매트','0082');
+Insert into product (ID,CATEGORY,CONTENT,IMAGE,PET,PRICE,PRODUCTNAME,PRONUM) values (product_seq.nextval,'etc','면 100% 제조 따듯한 솜이 우리 강아지를 편안히','/img/dog_cushion_cozy.JPG','dog','35000','편안한 도그 쿠션','0083');
+Insert into product (ID,CATEGORY,CONTENT,IMAGE,PET,PRICE,PRODUCTNAME,PRONUM) values (product_seq.nextval,'etc','강아지 치악력 훈련을 위한 치실 손잡이 장난감','/img/dog_floss.JPG','dog','3000','디스코독 치실 손잡이','0084');
+Insert into product (ID,CATEGORY,CONTENT,IMAGE,PET,PRICE,PRODUCTNAME,PRONUM) values (product_seq.nextval,'etc','강아지 치악력 훈련을 위한 치실 기본형 장난감','/img/dog_floss(2).jpg','dog','1500','디스코독 치실 기본','0085');
+Insert into product (ID,CATEGORY,CONTENT,IMAGE,PET,PRICE,PRODUCTNAME,PRONUM) values (product_seq.nextval,'etc','강아지를 편히 감싸는 꿀벌 하네스','/img/dog_harness(2).JPG','dog','30000','소형견 꿀벌 하네스','0086');
+Insert into product (ID,CATEGORY,CONTENT,IMAGE,PET,PRICE,PRODUCTNAME,PRONUM) values (product_seq.nextval,'etc','풀세트 하네스','/img/dog_harness.JPG','dog','50000','소형견 하네스 리드줄 풀세트','0087');
+Insert into product (ID,CATEGORY,CONTENT,IMAGE,PET,PRICE,PRODUCTNAME,PRONUM) values (product_seq.nextval,'etc','우리 강아지 넉넉하게 다닐수 있는 리드줄','/img/dog_lead_black.JPG','dog','4000','강아지 리드줄 (블랙)','0088');
+Insert into product (ID,CATEGORY,CONTENT,IMAGE,PET,PRICE,PRODUCTNAME,PRONUM) values (product_seq.nextval,'etc','우리 강아지 넉넉하게 다닐수 있는 리드줄','/img/dog_lead_red.JPG','dog','4000','강아지 리드줄 (레드)','0089');
+Insert into product (ID,CATEGORY,CONTENT,IMAGE,PET,PRICE,PRODUCTNAME,PRONUM) values (product_seq.nextval,'etc','넉넉한 둘레 그리고 쓸리지 않는 가죽재질','/img/dog_leash_navy.JPG','dog','11000','강아지 유로 목줄& 인식표(네이비)','0090');
+Insert into product (ID,CATEGORY,CONTENT,IMAGE,PET,PRICE,PRODUCTNAME,PRONUM) values (product_seq.nextval,'etc','넉넉한 둘레 그리고 쓸리지 않는 가죽재질','/img/dog_leash_wine.jpg','dog','10000','강아지 유로 목줄& 인식표(와인)','0091');
+Insert into product (ID,CATEGORY,CONTENT,IMAGE,PET,PRICE,PRODUCTNAME,PRONUM) values (product_seq.nextval,'beauty','향긋한 카모마일 & 로즈마리향','/img/dog_shampoo_chamomile n rosemary.jpg','dog','13000','샴푸 카모마일&로즈마리향','0092');
+Insert into product (ID,CATEGORY,CONTENT,IMAGE,PET,PRICE,PRODUCTNAME,PRONUM) values (product_seq.nextval,'beauty','달콤한 코코넛밀크향이 댕댕이를 감싸네','/img/dog_shampoo_coconut.jpg','dog','13000','샴푸 코코넛밀크향','0093');
+insert into product (id, category, content, image, pet, price, productname,PRONUM) 
+VALUES (product_seq.nextval, 'house', '고양이 쿠션', '/img/house_cat_bread.jpg', 'cat', '30000', '고양이 숨숨집','0094');
+insert into product (id, category, content, image, pet, price, productname,PRONUM) 
+VALUES (product_seq.nextval, 'house', '고양이 쿠션', '/img/house_cat_milk.jpg', 'cat', '30000', '고양이 숨숨집','0095');
+insert into product (id, category, content, image, pet, price, productname,PRONUM) 
+VALUES (product_seq.nextval, 'house', '고양이 쿠션', '/img/house_cat_sofa.jpg', 'cat', '35000', '고양이 숨숨집','0096');
+commit;
+
+
+insert into notice(num, content, count, createdate, title, customerid)
+values(notice_seq.nextval,'<p>안녕하세요, 냥반댁댕댕이입니다.</p>
+<p>추석 연휴 이후 택배사 물류 폭주로 인하여, 배송지연이 발생하고 있습니다.</p>
+<p>냥반댁댕댕이몰 회원님들의 너그러운 양해 부탁드립니다.</p>
+<p>감사합니다.</p>','200', sysdate, '배송지연 안내드립니다.','1');
+
+insert into notice(num, content, count, createdate, title, customerid)
+values(notice_seq.nextval,'<p>안녕하세요, 냥반댁댕댕이입니다.</p>
+<p>냥반댁댕댕이는 유통기한 3개월 미만 상품을 판매시 보상해드리고 있습니다 .</p>
+<p>- 유의사항 -</p>
+<p>1. 제조일과는 별개로 유통기한이 3개월 미만으로 남은 상품을 판매할 때 해당됩니다.</p>
+<p>2. 배송완료 후 7일 이내 상품에 대해서만 처리 가능합니다.</p>','855', sysdate, '유통기한 책임제 안내드립니다.','1');
+
+insert into notice(num, content, count, createdate, title, customerid)
+values(notice_seq.nextval,'<p>안녕하세요, 냥반댁댕댕이입니다.</p>
+<p>냥반댁댕댕이를 사랑해 주시는 고객님들께 진심으로 감사드립니다.</p>
+<p>지속적인 원료 및 인건비 상승 등의 요인으로 부득이하게 일부 상품의 가격을 인상하게 되었습니다.</p>
+<p>냥반댁댕댕이를 아껴주시는 고객님들께 가격인상을 안내하게 되어 참으로 죄송한 마음이 앞섭니다.</p>
+<p>반려동물에 대한 진심을 담아 양질의 제품을 변함없이 제공하고자 불가피하게 내린 결정이오니</p>
+<p>깊은 이해와 양해 부탁드립니다. 감사합니다.</p>','900', sysdate, '가격 인상 안내드립니다.','1');
+
+insert into faq(faqid, content, title, customerid)
+values(faq_seq.nextval,'<p>회원ID를 잃어버린 경우</p>
+<p>로그인 -> [아이디찾기]에서 핸드폰번호를 입력하시면 웹에서 바로 회원ID를 확인하실 수 있습니다.</p>
+<p>비밀번호를 잊어버린 경우</p>
+<p>로그인 -> [비밀번호찾기]에서 아이디, 질문 및 답변을 입력하시면, 비밀번호 변경이 가능합니다.</p>'
+,'회원 아이디와 비밀번호를 잃어버렸습니다.','1');
+
+insert into faq(faqid, content, title, customerid)
+values(faq_seq.nextval,'<p>주문 후에는 제품의 변경이 임의로 되지 않습니다.</p>
+<p>제품의 변경 또는 기본 배송 정보의 변경 등 구매 정보의 변경을 원하시는 경우에는</p>
+<p>홈페이지 내 1:1 문의게시판에 문의해주시면 즉각적인 처리를 도와드립니다.</p>'
+,'주소를 잘 못 적었어요. 상품을 바꿔서 보내주세요.','1');
+
+insert into faq(faqid, content, title, customerid)
+values(faq_seq.nextval,'<p>상품 불량, 상품 파손, 오배송 등의 냥반댁댕댕이 책임사유로 인한 교환 및 반품의 배송비는 냥반댁댕댕이가 전액 부담합니다.</p>
+<p>고객님의 단순 변심으로 인한 교환 및 반품은 고객님께서 배송비를 전액 부담하셔야 합니다.</p>
+<p>* 상품 개봉시 환불 처리가 불가하오니 이점 양해 부탁드립니다.</p>'
+,'교환 및 반품은 어떻게 하나요?','1');
+
+insert into faq(faqid, content, title, customerid)
+values(faq_seq.nextval,'<p>냥반댁댕댕이 회원가입시, 주민등록번호 요청을 하지 않습니다. </p>
+<p>[회원가입] 메뉴를 통해 일정 양식의 가입항목을 기입함으로써 회원에 가입되며, 가입 즉시 서비스를 이용하실 수 있습니다.</p>'
+,'회원가입을 할 때 주민등록번호를 입력해야 하나요?','1');
+
+insert into faq(faqid, content, title, customerid)
+values(faq_seq.nextval,'<p>영업일 : 오후 2시 까지</p>
+<p>토요일 : 오후 1시 까지</p>
+<p>주문하신 상품에 한하여 당일 출고 됩니다.</p>
+<p>수량과 지역에 따라 1~3일 지연 될 수 있으니 양해 부탁드리며,</p>
+<p>주문배송현황은 마이페이지에서 상세 조회가 가능합니다.</p>'
+,'주문한 상품은 언제 배송되나요?','1');
+
+
+insert into faq(faqid, content, title, customerid)
+values(faq_seq.nextval,'<p>배송날짜를 지정할 수 없습니다.</p>
+<p>부득이한 사정으로 배송날짜 변경이 필요하실 경우에는 고객센터 > 1:1 문의로 접수해주시면, 신속하게 처리해 드리겠습니다.</p>'
+,'배송 날짜를 지정할 수 있나요?','1');
+
+commit;
+
+

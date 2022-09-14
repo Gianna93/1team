@@ -3,7 +3,7 @@
 <%@ include file="../layout/header.jsp"%>
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-
+<%! int a= 0; %>
 <div class="d-flex align-items-start">
   <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
     <button class="nav-link " id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" onclick="location.href='/product/registerForm'" >상품등록</button>
@@ -32,7 +32,17 @@
 				<th>상태변경</th>
 				<th></th>
 			</tr>
-			
+				<% a=0; %>
+			<c:forEach var = "order" items="${orders}">
+			<c:if test="${not empty order}">
+			<% a=1; %>
+			</c:if>
+			</c:forEach>
+			<c:if test="<%= a==0 %>">
+				<tr>
+					<td colspan="9"><b>주문한 내역이 없습니다.</b></td>
+				</tr>
+			</c:if>
 				<c:forEach var = "order" items="${orders}">
 						
 								
