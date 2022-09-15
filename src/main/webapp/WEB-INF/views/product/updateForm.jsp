@@ -71,7 +71,7 @@
 		
 		<div class="form-group">
 			<label for="product_price"><b>가격</b></label>
-			<input type="text" class="form-control" id="product_price" name="product_price" placeholder="가격" required>
+			<input type="text" class="form-control" id="product_price" name="product_price" placeholder="가격" required oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');">
 		</div>
 		
 		<div class="form-group">

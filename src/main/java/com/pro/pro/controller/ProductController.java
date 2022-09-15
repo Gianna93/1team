@@ -134,5 +134,12 @@ public class ProductController {
 		model.addAttribute("proRe", productreplyService.후기목록());
 		return "product/productDetail";
 	}
+	
+	@GetMapping({ "/product/productDetail/pronum/{pronum}" })
+	public String productDetail2(@PathVariable String pronum, Model model) {
+		model.addAttribute("product", productService.상품상세2(pronum));
+		model.addAttribute("proRe", productreplyService.후기목록());
+		return "product/productDetail";
+	}
 
 }

@@ -25,7 +25,7 @@
 		
 		<div class="form-group">
 		<label for="product_price"><b>가격</b></label>
-			<input type="text" class="form-control" placeholder="가격" id="product_price" name="product_price" required>
+			<input type="text" class="form-control" placeholder="가격" id="product_price" name="product_price" required oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');">
 		</div>
 		
 		<div class="form-group">
@@ -55,7 +55,7 @@
 		<br>
 		<div class="form-group">
 		<label for="product_number"><b>상품일련번호</b></label>
-			<input type="text" class="form-control" placeholder="일련번호" id="product_number" name="product_number" required>
+			<input type="text" class="form-control" placeholder="일련번호" id="product_number" name="product_number" required oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');">
 			<input type="hidden" id="pronumchk">
 		</div>
 		<br>

@@ -94,7 +94,7 @@
 									</td>
 									<td>
 				
-									<input type="number" id="num${cart.id }" value="${cart.count }" class="p_num" name="productCount${cart.id }" style="width: 60px;" min="1" max="99" onchange="javascript:index.changeCount(${cart.id}); javascript:itemSum(this.form); countno(${cart.id});" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+									<input type="number" id="num${cart.id }" value="${cart.count }" class="p_num" name="productCount${cart.id }" style="width: 60px;" min="1" max="99" onchange="javascript:index.changeCount(${cart.id}); javascript:itemSum(this.form); countno(${cart.id});" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');">
 									<input type="hidden" class="hidecount${cart.id }" value="${cart.count }">
 									</td>
 									<td class='pritd' style="width: 150px;">

@@ -89,6 +89,10 @@ let index = {
 			alert("가격을 입력해주세요.");
 			$("#product_price").focus();
 			return false;
+		}else if(parseInt(price)<0){
+			alert("가격은 1이상 입력해주세요");
+			$("#product_price").focus();
+			return false;
 		}
 		else if (content == "") {
 			alert("상품설명을 입력해주세요.");

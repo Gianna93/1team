@@ -50,7 +50,9 @@
 									
 									</td>
 									<td>
-									<img src="${order.image}">
+									<a href="/product/productDetail/pronum/${order.pronum}">
+  										<img src="${order.image}">
+  									</a>
 									</td>
 									<td>
 									<b>${order.productName }</b>

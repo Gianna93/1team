@@ -33,7 +33,7 @@
 						<label class="card-text"><b>가격&nbsp;&nbsp;:&nbsp;&nbsp;<fmt:formatNumber value="${product.price }" pattern="#,###"/> 원</b></label>
 						<br>
 						<br>
-						<label class="card-text"><b>수량&nbsp;&nbsp;:&nbsp;&nbsp;<input type="number" id="productCount" name="favnum" min="1" max="99" style="margin-bottom : 10px; font-size: 15px; width:60px;" value="1" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">&nbsp;개&nbsp;(최대 99개)</b><br></label>
+						<label class="card-text"><b>수량&nbsp;&nbsp;:&nbsp;&nbsp;<input type="number" id="productCount" name="favnum" min="1" max="99" style="margin-bottom : 10px; font-size: 15px; width:60px;" value="1" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');">&nbsp;개&nbsp;(최대 99개)</b><br></label>
 						
 						
 						

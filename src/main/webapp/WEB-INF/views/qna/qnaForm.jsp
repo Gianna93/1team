@@ -32,7 +32,11 @@ h1{
 		<div class="form-group">
 			<label for="content">Content</label>
 			<textarea rows="5" class="form-control summernote" id="content"
-			placeholder="내용을 입력해주세요." required></textarea>
+			placeholder="내용을 입력해주세요." required>
+			문의 카테고리 : &nbsp;<br>
+			문의 날짜 : &nbsp;<br>
+			문의 내용 : &nbsp; 
+			</textarea>
 		</div>
 	</form>
 	<button id="btn-save" class="btn btn-primary">저장</button>	

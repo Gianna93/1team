@@ -38,7 +38,7 @@
 		</div>
 		<div class="form-group">
 			<label for="phone"><b>전화번호</b></label> <br>
-			<input type="text" class="form-control" id="phone" placeholder="'-' 는 생략">
+			<input type="text" class="form-control" id="phone" placeholder="'-' 는 생략" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');">
 			<div id="ph-chk"></div>
 			<input type="hidden" id=phnchk>
 		</div>

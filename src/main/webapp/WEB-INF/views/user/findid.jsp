@@ -16,7 +16,7 @@
 		<form action="findPassword" method="get">
 			<div class="form-group">
 				<label for="phone"><b>전화번호로 아이디찾기</b></label> <br>
-				<input type="text" class="form-control" id="phone" placeholder="'-'없이 휴대폰 번호를 입력해주세요.">
+				<input type="text" class="form-control" id="phone" placeholder="'-'없이 휴대폰 번호를 입력해주세요." oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');">
 				<input type="hidden" name="saveid" id="saveid">
 			<input type="button" value ="아이디 찾기" class="btn btn-success" id="btn-findid">
 			</div>

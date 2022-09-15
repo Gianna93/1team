@@ -52,7 +52,10 @@
 									
 									</td>
 									<td>
-									<img src="${order.image}">
+									<a href="/product/productDetail/pronum/${order.pronum}">
+  										<img src="${order.image}">
+  									</a>
+									
 									</td>
 									<td>
 									<b>${order.productName }</b>
@@ -75,8 +78,19 @@
 									<td style="width: 100px;"><b>${order.state}</b></td>
 									<td style="width: 150px;">
 									<div class="btn-group btn-group-sm" role="group" aria-label="...">
-										<button type="button" class="btn btn-outline-dark btn-deliver" value="${order.id }" >배송중</button>
-										<button type="button" class="btn btn-outline-dark btn-delcomp" value="${order.id }">배송완료</button>
+									
+									<c:choose>
+										<c:when test="${order.state eq '후기작성완료' }">
+											<button type="button" class="btn btn-outline-dark btn-deliver" value="${order.id }" disabled>배송중</button>
+											<button type="button" class="btn btn-outline-dark btn-delcomp" value="${order.id }" disabled>배송완료</button>
+										</c:when>
+										<c:otherwise>
+											<button type="button" class="btn btn-outline-dark btn-deliver" value="${order.id }">배송중</button>
+											<button type="button" class="btn btn-outline-dark btn-delcomp" value="${order.id }">배송완료</button>
+										</c:otherwise>
+									</c:choose>
+									
+										
 										
 									</div>
 									</td>

@@ -9,11 +9,11 @@ let index = {
 				return false;
 			} else if ($("#content").val() == "") {
 				console.log("후기를 입력하세요")
-				alert("후기을 입력하세요")
+				alert("후기를 입력하세요")
 				return false;
-			}else if($("#content").val().length<20){
-				console.log("후기를 20자이상 입력하세요")
-				alert("후기를 20자이상 입력하세요")
+			}else if($("#content").val().length<10){
+				console.log("후기를 10자이상 입력하세요")
+				alert("후기를 10자이상 입력하세요")
 				return false;
 			}
 			

@@ -1,14 +1,18 @@
 let index = {
 	init: function() {
 		$("#btn-save").on("click", () => {
-			this.save();
+			this.saveCheck();
+			if ($("#title").val() != "" && $("#content").val() != "") {
+				this.save();
+			}
+
 		});
 		$("#btn-delete").on("click", () => {
 			this.replyDelete();
 			this.deleteById();
 		});
 		$("#btn-update").on("click", () => {
-			this.update();
+			this.updateCheck();
 		});
 	},
 
@@ -34,6 +38,34 @@ let index = {
 		} else {
 			return;
 		}
+	},
+
+	saveCheck: function() {
+
+		if ($("#title").val() == "") {
+			alert("제목을 입력하세요.");
+			return false;
+		}
+		if ($("#content").val() == "") {
+			alert("문의사항 내용을 입력하세요.");
+			return false;
+		}
+		return true;
+	},
+	
+	updateCheck: function() {
+
+		if ($("#title").val() == "") {
+			alert("제목을 입력하세요.");
+			return false;
+		}
+		else if ($("#content").val() == "") {
+			alert("문의사항 내용을 입력하세요.");
+			return false;
+		}else{
+			this.update();
+		}
+		return true;
 	},
 
 	deleteById: function() {

@@ -2,13 +2,16 @@ let index = {
 
 	init: function() {
 		$("#btn-save").on("click", () => {
-			this.save();
+			this.saveCheck();
+			if ($("#title").val() != "" && $("#content").val() != "") {
+				this.save();
+			}
 		});
 		$("#btn-delete").on("click", () => {
 			this.deleteById();
 		});
 		$("#btn-update").on("click", () => {
-			this.update();
+			this.updateCheck();
 		});
 	},
 
@@ -35,7 +38,36 @@ let index = {
 		}
 
 	},
+	
+	saveCheck: function() {
 
+		if ($("#title").val() == "") {
+			alert("제목을 입력하세요.");
+			return false;
+		}
+		if ($("#content").val() == "") {
+			alert("문의사항 내용을 입력하세요.");
+			return false;
+		}
+		return true;
+	},
+	
+	updateCheck: function() {
+
+		if ($("#title").val() == "") {
+			alert("제목을 입력하세요.");
+			return false;
+		}
+		else if ($("#content").val() == "") {
+			alert("문의사항 내용을 입력하세요.");
+			return false;
+		}else{
+			this.update();
+			return true;
+		}
+		
+	},
+	
 	deleteById: function() {
 		var id = $("#num").text();
 		if (confirm("공지사항을 삭제하시겠습니까?")) {

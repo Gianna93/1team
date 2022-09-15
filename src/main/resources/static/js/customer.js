@@ -320,7 +320,7 @@ let index = {
 			return false;
 		}
 		if (password != password2) {
-			alert("비밀번호를 일치하지 않습니다. 확인해주세요.")
+			alert("비밀번호가 일치하지 않습니다.")
 			$("#password2").focus();
 			return false;
 		}
@@ -432,11 +432,11 @@ let index = {
 			return false;
 		}
 		if($("#userid").val()!=$("#reid").val()){
-			alert("중복체크를 다시 진행해주세요.");
+			alert("아이디 중복체크를 확인하세요.");
 			return false;
 		}
 		if ($("#userid").val().length < 5) {
-			alert("아이디는 5글자 이상으로 입력해주세요");
+			alert("아이디는 5글자 이상으로 입력하세요");
 			$("#userid").focus();
 			return false;
 		}
@@ -456,7 +456,7 @@ let index = {
 			return false;
 		}
 		if (password != password2) {
-			alert("비밀번호를 일치하지 않습니다. 확인해주세요.")
+			alert("비밀번호가 일치하지 않습니다.")
 			$("#password2").focus();
 			return false;
 		}

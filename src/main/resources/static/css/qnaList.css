@@ -1,7 +1,12 @@
 @charset "UTF-8";
-.container {
+.fixcontainer{
+	margin : 0 auto;
+	width : 1500px;
+
+}
+.boxcontainer {
 margin-top: 50px;
-	width: 1000px;
+	width: 1500px;
 	height: 700px;
 	margin: 0 auto;	
 }

@@ -5,19 +5,21 @@
 <%@ include file="../layout/header.jsp"%>
 
 
-<div id="board_menu">
+<div class="fixcontainer">
+<div id="board_menu"><!--board_fix로 버튼 움직이는거 잡아놓기-->
 	<div id="button">
 		<button type="button" class="btn btn-outline-secondary" onclick="location.href='/notice/noticeList'" style="color: black">공지사항</button>
 		<button type="button" class="btn btn-outline-secondary" onclick="location.href='/faq/faqList'" style="color: black">자주묻는질문</button>
 		<button type="button" class="btn btn-outline-secondary" onclick="location.href='/qna/qnaList'" style="color: black">1:1문의</button>
 	</div>
 </div>
+</div>
 
 <div id="hdimgdiv">
 <img src="/img/faq.jpg">
 </div>
 <br>
-<div class="container">
+<div class="boxcontainer">
 <table id="tb">
     <tr style="border-bottom: 1px solid #ccc; background-color: #f1f3f5">
       <th class="notice_num">번호</th>

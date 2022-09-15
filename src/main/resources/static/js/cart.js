@@ -340,7 +340,7 @@ function AddComma(num) {
 
 function countno(id) {
 	if ($("#num" + id).val() <= 0||$("#num" + id).val() >= 100) {
-		alert('수량은 1~100 사이로 입력해주세요')
+		alert('수량은 1~99 사이로 입력해주세요')
 		$("#num" + id).focus();
 		return;
 	}

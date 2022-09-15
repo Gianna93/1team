@@ -29,6 +29,12 @@ public class ProductService {
 				return new IllegalArgumentException("상품을 찾을 수 없습니다.");
 			});
 		}	
+	 @Transactional(readOnly=true)
+		public Product 상품상세2(String pronum) {
+			return productRepository.findByPronum(pronum).orElseThrow(()->{ 
+				return new IllegalArgumentException("상품을 찾을 수 없습니다.");
+			});
+		}
 	 
 	 @Transactional(readOnly=true)
 		public List<Product> 상품목록(){
