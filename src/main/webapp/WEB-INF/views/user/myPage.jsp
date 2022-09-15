@@ -46,7 +46,7 @@
 		</div>
 		<div class="form-group">
 			<label for="phone"><b>전화번호</b></label> <br>
-			<input type="text" class="form-control" id="phone" placeholder="'-' 는 생략" value="${customers.phone }" disabled>
+			<input type="text" class="form-control" id="phone" placeholder="'-' 는 생략" value="${customers.phone }" disabled oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');">
 			<input type="button" id="btn-editphone" class="btn btn-dark" onclick="editphone()" value="전화번호변경">
 			<div id="ph-chk"></div>
 			<input type="hidden" id=phnchk value="${customers.phone }">
